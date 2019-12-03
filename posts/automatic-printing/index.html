@@ -1,0 +1,25 @@
+<!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en-us lang=en-us><head><link href=https://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=generator content="Hugo 0.60.1"><meta name=viewport content="width=device-width,initial-scale=1"><title>Automatic Printing &#183; salman</title><meta name=description content><link type=text/css rel=stylesheet href=https://splusq.github.io/css/print.css media=print><link type=text/css rel=stylesheet href=https://splusq.github.io/css/poole.css><link type=text/css rel=stylesheet href=https://splusq.github.io/css/syntax.css><link type=text/css rel=stylesheet href=https://splusq.github.io/css/hyde.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700"><link rel=apple-touch-icon-precomposed sizes=144x144 href=/apple-touch-icon-144-precomposed.png><link rel="shortcut icon" href=/favicon.png></head><body class=theme-base-08><aside class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><a href=https://splusq.github.io/><h1>salman</h1></a><p class=lead>Engineering Manager for Microsoft Azure Speech Services in Silicon Valley.</p></div><nav><ul class=sidebar-nav><li><a href=https://splusq.github.io/>Home</a></li><li><a href=/about/>About</a></li><li><a href=https://github.com/splusq/>Github</a></li><li><a href=https://www.linkedin.com/in/salmanquazi/>LinkedIn</a></li><li><a href=https://www.twitter.com/splusq>Twitter</a></li></ul></nav><p>&copy; 2019. All rights reserved.</p></div></aside><main class="content container"><div class=post><h1>Automatic Printing</h1><time datetime=2005-09-20T23:42:20Z class=post-date>Tue, Sep 20, 2005</time><p><strong>Summary:</strong> Learn about automatic printing in a Windows platform using WScript.</p><p>Automatic printing is a subject you will find a lot of content about on the internet &ndash; but most of it is useless. It's a massive collection of try-this-try-that. I was searching for some descent content on how to do scheduled automatic printing but spent far more time that I would like to. Finally I arrive at this code:</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-basic data-lang=basic>Option Explicit
+Private Const OLECMDID_PRINT <span style=color:#f92672>=</span> <span style=color:#ae81ff>6</span> 
+Private Const OLECMDEXECOPT_DONTPROMPTUSER <span style=color:#f92672>=</span> <span style=color:#ae81ff>2</span> 
+Private Const READYSTATE_COMPLETE <span style=color:#f92672>=</span> <span style=color:#ae81ff>4</span> 
+Private Const PRINT_DONTBOTHERUSER <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>
+Private Const PRINT_WAITFORCOMPLETION <span style=color:#f92672>=</span> <span style=color:#ae81ff>2</span>
+
+Dim pValIn, pValOut
+
+With CreateObject(<span style=color:#e6db74>&#34;InternetExplorer.Application&#34;</span>)
+	<span style=color:#75715e>&#39;.visible=true</span>
+	<span style=color:#f92672>.</span>Navigate <span style=color:#e6db74>&#34;http://yourpage/&#34;</span>
+	Do Until <span style=color:#f92672>.</span>ReadyState <span style=color:#f92672>=</span> READYSTATE_COMPLETE <span style=color:#f92672>AND</span> <span style=color:#f92672>NOT</span> <span style=color:#f92672>.</span>Busy
+	loop
+
+	pvalIn <span style=color:#f92672>=</span> PRINT_WAITFORCOMPLETION <span style=color:#f92672>XOR</span> PRINT_DONTBOTHERUSER
+	pvalOut <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;&#34;</span>
+	Call <span style=color:#f92672>.</span>ExecWB(OLECMDID_PRINT,OLECMDEXECOPT_DONTPROMPTUSER, pValIn, pValOut)
+	<span style=color:#f92672>.</span>Quit
+End With 
+</code></pre></div><p>There something important to note here. The following lines are necessary for Windows 2003 Enterprise server:</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-basic data-lang=basic>pvalIn <span style=color:#f92672>=</span> PRINT_WAITFORCOMPLETION <span style=color:#f92672>XOR</span> PRINT_DONTBOTHERUSER
+pvalOut <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;&#34;</span>
+Call <span style=color:#f92672>.</span>ExecWB(OLECMDID_PRINT,OLECMDEXECOPT_DONTPROMPTUSER, pValIn, pValOut) 
+</code></pre></div><p>On a regular Windows XP machine you could get by simply doing:</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-basic data-lang=basic>Call <span style=color:#f92672>.</span>ExecWB(OLECMDID_PRINT,OLECMDEXECOPT_DONTPROMPTUSER)
+</code></pre></div><p>This code works by opening a Internet Explorer window and loading a page and printing that page. Note that if that file loads a PDF file or an excel document then this won't work. This only works in plain HTML documents.</p></div></main></body></html>

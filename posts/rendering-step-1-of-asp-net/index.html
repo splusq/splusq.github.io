@@ -1,0 +1,54 @@
+<!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en-us lang=en-us><head><link href=https://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=generator content="Hugo 0.60.1"><meta name=viewport content="width=device-width,initial-scale=1"><title>Rendering Step 1 of … (ASP.NET) &#183; salman</title><meta name=description content><link type=text/css rel=stylesheet href=https://splusq.github.io/css/print.css media=print><link type=text/css rel=stylesheet href=https://splusq.github.io/css/poole.css><link type=text/css rel=stylesheet href=https://splusq.github.io/css/syntax.css><link type=text/css rel=stylesheet href=https://splusq.github.io/css/hyde.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700"><link rel=apple-touch-icon-precomposed sizes=144x144 href=/apple-touch-icon-144-precomposed.png><link rel="shortcut icon" href=/favicon.png></head><body class=theme-base-08><aside class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><a href=https://splusq.github.io/><h1>salman</h1></a><p class=lead>Engineering Manager for Microsoft Azure Speech Services in Silicon Valley.</p></div><nav><ul class=sidebar-nav><li><a href=https://splusq.github.io/>Home</a></li><li><a href=/about/>About</a></li><li><a href=https://github.com/splusq/>Github</a></li><li><a href=https://www.linkedin.com/in/salmanquazi/>LinkedIn</a></li><li><a href=https://www.twitter.com/splusq>Twitter</a></li></ul></nav><p>&copy; 2019. All rights reserved.</p></div></aside><main class="content container"><div class=post><h1>Rendering Step 1 of … (ASP.NET)</h1><time datetime=2007-09-27T01:01:29Z class=post-date>Thu, Sep 27, 2007</time><p>The MultiView control, Wizard control or even a custom panel-based control is very useful to collect large sets of data in wizard form; and it's often useful to give visual ques to the user as to which step he/she is in. Something similar to:</p><p><a href=/wp-content/uploads/2007/09/screenshot.jpg title=StepMaker-Screenshot><img src=/wp-content/uploads/2007/09/screenshot.jpg alt=StepMaker-Screenshot></a></p><p>The following ASP.NET code/C# allows us to build a dynamic step control which grows or shrinks automatically given the number of views you have in a MultiView control, or the number of steps in a wizard control.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html> &lt;<span style=color:#f92672>asp:Repeater</span> <span style=color:#a6e22e>ID</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;StepMarker&#34;</span> <span style=color:#a6e22e>runat</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;server&#34;</span>&gt;
+            &lt;<span style=color:#f92672>headerTemplate</span>&gt;
+                &lt;<span style=color:#f92672>div</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;steps&#34;</span>&gt;
+                    &lt;<span style=color:#f92672>h2</span>&gt;Step&lt;/<span style=color:#f92672>h2</span>&gt;
+                    &lt;<span style=color:#f92672>ol</span>&gt;
+            &lt;/<span style=color:#f92672>headerTemplate</span>&gt;
+            &lt;<span style=color:#f92672>itemTemplate</span>&gt;
+                &lt;<span style=color:#f92672>li</span><span style=color:#960050;background-color:#1e0010>&lt;</span><span style=color:#960050;background-color:#1e0010>%</span><span style=color:#960050;background-color:#1e0010>#</span><span style=color:#a6e22e>ReportingPanel</span><span style=color:#960050;background-color:#1e0010>.</span><span style=color:#a6e22e>ActiveViewIndex</span><span style=color:#f92672>=</span><span style=color:#e6db74>=Int16.Parse(DataBinder.Eval(Container,</span> <span style=color:#960050;background-color:#1e0010>&#34;</span><span style=color:#a6e22e>ItemIndex</span><span style=color:#960050;background-color:#1e0010>&#34;</span><span style=color:#960050;background-color:#1e0010>)</span><span style=color:#960050;background-color:#1e0010>.</span><span style=color:#a6e22e>ToString</span><span style=color:#960050;background-color:#1e0010>(</span><span style=color:#960050;background-color:#1e0010>)</span><span style=color:#960050;background-color:#1e0010>)</span><span style=color:#960050;background-color:#1e0010>?</span><span style=color:#960050;background-color:#1e0010>&#34;</span> <span style=color:#a6e22e>class</span><span style=color:#f92672>=</span><span style=color:#e6db74>\&#34;active\&#34;&#34;:&#34;&#34;%</span>&gt;&gt;<span style=color:#960050;background-color:#1e0010>&lt;</span>%#Int16.Parse(DataBinder.Eval(Container, &#34;ItemIndex&#34;).ToString())+1%&gt;&lt;/<span style=color:#f92672>li</span>&gt;
+            &lt;/<span style=color:#f92672>itemTemplate</span>&gt;
+            &lt;<span style=color:#f92672>footerTemplate</span>&gt;
+                &lt;/<span style=color:#f92672>ol</span>&gt;
+                &lt;/<span style=color:#f92672>div</span>&gt;
+                &lt;<span style=color:#f92672>br</span> <span style=color:#a6e22e>style</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;clear:both&#34;</span> /&gt;
+            &lt;/<span style=color:#f92672>footerTemplate</span>&gt;
+        &lt;/<span style=color:#f92672>asp:Repeater</span>&gt; 
+</code></pre></div><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-csharp data-lang=csharp> <span style=color:#75715e>/* if we have arrived at the last step we no longer need to display the step markers */</span>
+<span style=color:#66d9ef>if</span> (ReportingPanel.ActiveViewIndex + <span style=color:#ae81ff>1</span> == ReportingPanel.Views.Count) {
+	StepMarker.Visible = <span style=color:#66d9ef>false</span>;
+}
+<span style=color:#66d9ef>else</span> {
+	StepMarker.Visible = <span style=color:#66d9ef>true</span>;
+	<span style=color:#66d9ef>int</span>[] i = <span style=color:#66d9ef>new</span> <span style=color:#66d9ef>int</span>[ReportingPanel.Views.Count - <span style=color:#ae81ff>1</span>];
+	StepMarker.DataSource = i;
+	StepMarker.DataBind();
+} 
+</code></pre></div><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-css data-lang=css>.<span style=color:#a6e22e>steps</span> <span style=color:#f92672>ol</span> {
+	<span style=color:#66d9ef>margin</span>:<span style=color:#ae81ff>0</span><span style=color:#66d9ef>px</span>;
+	<span style=color:#66d9ef>padding</span>:<span style=color:#ae81ff>0</span><span style=color:#66d9ef>px</span>;
+	<span style=color:#66d9ef>font-family</span>:<span style=color:#e6db74>&#39;arial narrow&#39;</span>,<span style=color:#66d9ef>sans-serif</span>;
+}
+.<span style=color:#a6e22e>steps</span> <span style=color:#f92672>h2</span> {
+	<span style=color:#66d9ef>font-size</span>:<span style=color:#ae81ff>19</span><span style=color:#66d9ef>pt</span>;
+	<span style=color:#66d9ef>font-weight</span>:<span style=color:#66d9ef>normal</span>;
+	<span style=color:#66d9ef>color</span>:<span style=color:#ae81ff>#0066cc</span>;
+	<span style=color:#66d9ef>float</span>:<span style=color:#66d9ef>left</span>;
+	<span style=color:#66d9ef>padding-right</span>:<span style=color:#ae81ff>20</span><span style=color:#66d9ef>px</span>;
+}
+.<span style=color:#a6e22e>steps</span> <span style=color:#f92672>ol</span> <span style=color:#f92672>li</span> {
+	<span style=color:#66d9ef>float</span>:<span style=color:#66d9ef>left</span>;
+	<span style=color:#66d9ef>list-style-type</span>:<span style=color:#66d9ef>none</span>;
+	<span style=color:#66d9ef>font-size</span>:<span style=color:#ae81ff>19</span><span style=color:#66d9ef>pt</span>;
+	<span style=color:#66d9ef>color</span>:White;
+	<span style=color:#66d9ef>background</span>:url(<span style=color:#e6db74>../images/step-shadow.gif</span>);
+	<span style=color:#66d9ef>background-repeat</span>:<span style=color:#66d9ef>no-repeat</span>;
+	<span style=color:#66d9ef>background-position</span>:<span style=color:#66d9ef>left</span> <span style=color:#66d9ef>top</span>;
+	<span style=color:#66d9ef>padding</span>:<span style=color:#ae81ff>0</span><span style=color:#66d9ef>px</span> <span style=color:#ae81ff>0</span><span style=color:#66d9ef>px</span> <span style=color:#ae81ff>0</span><span style=color:#66d9ef>px</span> <span style=color:#ae81ff>10</span><span style=color:#66d9ef>px</span>;
+	<span style=color:#66d9ef>width</span>:<span style=color:#ae81ff>43</span><span style=color:#66d9ef>px</span>;
+	<span style=color:#66d9ef>height</span>:<span style=color:#ae81ff>40</span><span style=color:#66d9ef>px</span>;
+}
+.<span style=color:#a6e22e>steps</span> <span style=color:#f92672>ol</span> <span style=color:#f92672>li</span>.<span style=color:#a6e22e>active</span> {
+	<span style=color:#66d9ef>font-weight</span>:<span style=color:#66d9ef>bold</span>;
+	<span style=color:#66d9ef>background-image</span>:url(<span style=color:#e6db74>../images/step-glow.gif</span>);
+} 
+</code></pre></div><p><strong>Images</strong></p><ul><li><a href=/wp-content/uploads/2007/09/step-glow.gif title="StepMaker-Glow Background">StepMaker-Glow Background</a></li><li><a href=/wp-content/uploads/2007/09/step-shadow.gif title="StepMaker-Shadow Background">StepMaker-Shadow Background</a></li></ul></div></main></body></html>
