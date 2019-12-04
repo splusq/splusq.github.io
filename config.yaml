@@ -1,7 +1,8 @@
 baseURL: "https://splusq.github.io/"
 languageCode: "en-us"
-title: "salman"
-theme: "hyde"
+title: "Salman Quazi"
+theme: 
+  - hyde
 params:
   description: "Engineering Manager for Microsoft Azure Speech Services in Silicon Valley."
   themeColor: "theme-base-08"
