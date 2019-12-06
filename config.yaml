@@ -6,6 +6,8 @@ theme:
 params:
   description: "Engineering Manager for Microsoft Azure Speech Services in Silicon Valley."
   themeColor: "theme-base-08"
+permalinks:
+  blog: /blog/:title/:year/:month
 Menus:
   main:
     - Name: "Github"
