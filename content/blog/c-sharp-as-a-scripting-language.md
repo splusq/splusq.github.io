@@ -1,11 +1,11 @@
 ---
-title: 'C# as a scripting language'
+title: 'C-Sharp as a scripting language'
 date: Thu, 07 Mar 2013 04:49:07 +0000
 draft: false
 tags: ['Uncategorized']
 ---
 
-[![scriptcs.net logo](http://www.salmanq.com/wp-content/uploads/2013/03/scriptcs-logo.png)](http://scriptcs.net/) Here's a cool technology you might not have heard of: [scriptcs](http://scriptcs.net/). Gives you the ability to use C# as a scripting language. It does this using the [Rosyln compiler](http://msdn.microsoft.com/en-us/vstudio/roslyn.aspx). So here's an example below, taken directly from the scriptcs website:
+[![scriptcs.net logo](/2013/03/scriptcs-logo.png)](http://scriptcs.net/) Here's a cool technology you might not have heard of: [scriptcs](http://scriptcs.net/). Gives you the ability to use C# as a scripting language. It does this using the [Rosyln compiler](http://msdn.microsoft.com/en-us/vstudio/roslyn.aspx). So here's an example below, taken directly from the scriptcs website:
 
 ```csharp
 using System;

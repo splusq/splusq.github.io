@@ -11,11 +11,11 @@ For the past few weeks me and a team of three extremely bright computer science 
 
 The robot we are working on vacuums with intelligence. For instance, it minimizes the time it takes to vacuum a room by reducing repetitions. Repitions can occur when some areas of the room is vacuumed more than once. First example what does the robot do when it finds something is blocking it to go further? Roomba simply goes back and turns right and tries to vacuum. This is a serious problem! Consider this scenario for instance:
 
-![Possible path Roomba would take](/wp-content/uploads/2004/11/path-roomba.jpg)
+![Possible path Roomba would take](/2004/11/path-roomba.jpg)
 
 The red cells are blocked, the current position of the robot is at point R and it's moving in the direction as shown above. In the diagram above the typical path Roomba would take is shown (with arrows and blue shade). Now consider this diagram:
 
-![Possible path our robot would take](/wp-content/uploads/2004/11/path-ourrobot.jpg)
+![Possible path our robot would take](/2004/11/path-ourrobot.jpg)
 
 Once again the red cells are blocked, the current position of the robot is at point R and it's moving in the direction as shown above. In the diagram above the typical path our robot would take is shown (with arrows and yellow shade). You can clearly see Roomba's in-efficiency.
 

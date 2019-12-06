@@ -5,4 +5,4 @@ draft: false
 tags: ['Uncategorized']
 ---
 
-I found [this](/wp-content/uploads/2004/03/thinking_cpp.pdf) great book only it's called: Thinking in C++. It's a complete 1200+ pages book for FREE. [Download](/wp-content/uploads/2004/03/thinking_cpp.pdf) it !
+I found [this](/2004/03/thinking_cpp.pdf) great book only it's called: Thinking in C++. It's a complete 1200+ pages book for FREE. [Download](/2004/03/thinking_cpp.pdf) it!

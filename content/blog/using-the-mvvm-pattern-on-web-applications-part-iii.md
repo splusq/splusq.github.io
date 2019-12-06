@@ -48,7 +48,7 @@ Recall in part II, [we exposed a MVC Web API to create the ViewModel](/blog/usin
 }; 
 ```
 
-There you have it. Notice the getJSON call to have the server create the ViewModel for us, once that happens we use the websocket to communicate to the client and Knockout to apply the Binding. I hope you enjoyed this series and learned a few things. You can [download the full working source code](/wp-content/uploads/2013/03/HtmlMagic.zip) - you're welcome to modify this and use it as you see fit. One thing I do want to mention though - this was written pre .NET 4.5, when Websocket was not part of the .NET BCL - so this source code uses [SuperWebsocket](http://superwebsocket.codeplex.com/). However, now that there is native support for Websocket the code should be refactored.
+There you have it. Notice the getJSON call to have the server create the ViewModel for us, once that happens we use the websocket to communicate to the client and Knockout to apply the Binding. I hope you enjoyed this series and learned a few things. You can [download the full working source code](/2013/03/HtmlMagic.zip) - you're welcome to modify this and use it as you see fit. One thing I do want to mention though - this was written pre .NET 4.5, when Websocket was not part of the .NET BCL - so this source code uses [SuperWebsocket](http://superwebsocket.codeplex.com/). However, now that there is native support for Websocket the code should be refactored.
 
 *   [Using the MVVM pattern on web applications – Part I](/blog/using-the-mvvm-pattern-on-web-applications-part-i/2013/02/)
 *   [Using the MVVM pattern on web applications – Part II](/blog/using-the-mvvm-pattern-on-web-applications-part-ii/2013/03/)
