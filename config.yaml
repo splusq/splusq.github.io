@@ -4,7 +4,7 @@ title: "Salman Quazi"
 theme: 
   - hyde
 params:
-  description: "Engineering Manager for Microsoft Azure Speech Services in Silicon Valley."
+  description: "Engineering Manager for Microsoft Azure Speech in Silicon Valley, CA."
   themeColor: "theme-base-08"
 permalinks:
   blog: /blog/:title/:year/:month
@@ -16,5 +16,3 @@ Menus:
       URL: "https://www.linkedin.com/in/salmanquazi/"
     - Name: "Twitter"
       URL: "https://www.twitter.com/splusq"
-    - Name: "About"
-      URL: "/about/"

@@ -7,7 +7,7 @@ tags: ['Uncategorized']
 
 The MultiView control, Wizard control or even a custom panel-based control is very useful to collect large sets of data in wizard form; and it's often useful to give visual ques to the user as to which step he/she is in. Something similar to:
 
-[![StepMaker-Screenshot](/wp-content/uploads/2007/09/screenshot.jpg)](/wp-content/uploads/2007/09/screenshot.jpg "StepMaker-Screenshot")
+[![StepMaker-Screenshot](/2007/09/screenshot.jpg)](/2007/09/screenshot.jpg "StepMaker-Screenshot")
 
 The following ASP.NET code/C# allows us to build a dynamic step control which grows or shrinks automatically given the number of views you have in a MultiView control, or the number of steps in a wizard control.
 
@@ -75,5 +75,5 @@ else {
 
 **Images**
 
-*   [StepMaker-Glow Background](/wp-content/uploads/2007/09/step-glow.gif "StepMaker-Glow Background")
-*   [StepMaker-Shadow Background](/wp-content/uploads/2007/09/step-shadow.gif "StepMaker-Shadow Background")
+*   [StepMaker-Glow Background](/2007/09/step-glow.gif "StepMaker-Glow Background")
+*   [StepMaker-Shadow Background](/2007/09/step-shadow.gif "StepMaker-Shadow Background")
