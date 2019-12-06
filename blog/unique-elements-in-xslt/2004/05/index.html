@@ -1,0 +1,87 @@
+<!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en-us lang=en-us><head><link href=https://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=generator content="Hugo 0.60.1"><meta name=viewport content="width=device-width,initial-scale=1"><title>Unique Elements (in XSLT) &#183; Salman Quazi</title><meta name=description content><link type=text/css rel=stylesheet href=https://splusq.github.io/css/print.css media=print><link type=text/css rel=stylesheet href=https://splusq.github.io/css/poole.css><link type=text/css rel=stylesheet href=https://splusq.github.io/css/syntax.css><link type=text/css rel=stylesheet href=https://splusq.github.io/css/hyde.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700"><link rel=apple-touch-icon-precomposed sizes=144x144 href=/apple-touch-icon-144-precomposed.png><link rel="shortcut icon" href=/favicon.png><style type=text/css>.sidebar-about h1{font-size:1.95rem;font-weight:400}</style></head><body class=theme-base-08><aside class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><a href=https://splusq.github.io/><h1>Salman Quazi</h1></a><p class=lead>Engineering Manager for Microsoft Azure Speech Services in Silicon Valley.</p></div><nav><ul class=sidebar-nav><li><a href=https://splusq.github.io/>Home</a></li><li><a href=/about/>About</a></li><li><a href=https://github.com/splusq/>Github</a></li><li><a href=https://www.linkedin.com/in/salmanquazi/>LinkedIn</a></li><li><a href=https://www.twitter.com/splusq>Twitter</a></li></ul></nav><p>&copy; 2019. All rights reserved.</p></div></aside><main class="content container"><div class=post><h1>Unique Elements (in XSLT)</h1><time datetime=2004-05-05T23:58:32Z class=post-date>Wed, May 5, 2004</time><p>At work I have this XML document that lists all the employees along with their responsiblities. The general format looks something like this (staff.xml):</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-xml data-lang=xml> <span style=color:#f92672>&lt;ga-staff</span><span style=color:#f92672>&gt;</span>
+  <span style=color:#f92672>&lt;department</span> <span style=color:#a6e22e>title=</span><span style=color:#e6db74>&#34;Administration&#34;</span><span style=color:#f92672>&gt;</span>
+
+    <span style=color:#f92672>&lt;employee</span><span style=color:#f92672>&gt;</span>
+      <span style=color:#f92672>&lt;responsibility</span><span style=color:#f92672>&gt;</span>Director, Corporate Accounting<span style=color:#f92672>&lt;/responsibility&gt;</span> 
+      <span style=color:#f92672>&lt;name</span><span style=color:#f92672>&gt;</span>...<span style=color:#f92672>&lt;/name&gt;</span> 
+      <span style=color:#f92672>&lt;phone</span><span style=color:#f92672>&gt;</span>...<span style=color:#f92672>&lt;/phone&gt;</span> 
+      <span style=color:#f92672>&lt;email</span><span style=color:#f92672>&gt;</span>...<span style=color:#f92672>&lt;/email&gt;</span> 
+    <span style=color:#f92672>&lt;/employee&gt;</span>
+  
+    <span style=color:#f92672>&lt;employee</span><span style=color:#f92672>&gt;</span>
+      <span style=color:#f92672>&lt;responsibility</span><span style=color:#f92672>&gt;</span>Manager<span style=color:#f92672>&lt;/responsibility&gt;</span> 
+      <span style=color:#f92672>&lt;name</span><span style=color:#f92672>&gt;</span>...<span style=color:#f92672>&lt;/name&gt;</span> 
+      <span style=color:#f92672>&lt;phone</span><span style=color:#f92672>&gt;</span>...<span style=color:#f92672>&lt;/phone&gt;</span> 
+      <span style=color:#f92672>&lt;email</span><span style=color:#f92672>&gt;</span>...<span style=color:#f92672>&lt;/email&gt;</span> 
+    <span style=color:#f92672>&lt;/employee&gt;</span>
+  
+  <span style=color:#f92672>&lt;/department&gt;</span>
+  
+  <span style=color:#f92672>&lt;department</span> <span style=color:#a6e22e>title=</span><span style=color:#e6db74>&#34;&#34;</span><span style=color:#f92672>&gt;</span>
+    ...
+  <span style=color:#f92672>&lt;/department&gt;</span>
+<span style=color:#f92672>&lt;/ga-staff&gt;</span> 
+</code></pre></div><p>I was asked to generate a flat (meaning only their name, phone and e-mail) output (sorted by name) of all the staffs in our department. The only problem with using (existing) staff.xml is that there are certain employees who have multiple responsiblities, so their name appears more than once. Of course I cannot display their name more than once in the flat output. That makes no sense. The output would be something like this:</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>PersonA		1234	persona@finance.ucla.edu
+PersonA		1234	persona@finance.ucla.edu 
+</code></pre></div><p>To solve this problem I could have very well have used the Microsoft.DOMDocument, but I decided to use XSLT.</p><p>The first step was to generate an XML document (dynamically using XSLT) that would transform the staff.xml into an XML document that looked like this (sorted by name):</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-xml data-lang=xml><span style=color:#f92672>&lt;ga-staff</span><span style=color:#f92672>&gt;</span>
+  <span style=color:#f92672>&lt;employee</span><span style=color:#f92672>&gt;</span>
+    <span style=color:#f92672>&lt;name</span><span style=color:#f92672>&gt;</span> ... <span style=color:#f92672>&lt;/name&gt;</span>
+    <span style=color:#f92672>&lt;phone</span><span style=color:#f92672>&gt;</span> ... <span style=color:#f92672>&lt;/phone&gt;</span>
+    <span style=color:#f92672>&lt;email</span><span style=color:#f92672>&gt;</span> ... <span style=color:#f92672>&lt;/phone&gt;</span>
+  <span style=color:#f92672>&lt;/employee&gt;</span>
+<span style=color:#f92672>&lt;/ga-staff&gt;</span> 
+</code></pre></div><p>This is done using the following XSLT document (staff.xsl):</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-xslt data-lang=xslt>&lt;<span style=color:#f92672>xsl:stylesheet</span> <span style=color:#a6e22e>xmlns:xsl</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;http://www.w3.org/1999/XSL/Transform&#34;</span> <span style=color:#a6e22e>version</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;1.0&#34;</span>&gt;
+&lt;<span style=color:#f92672>xsl:template</span> <span style=color:#a6e22e>match</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;/&#34;</span>&gt;
+  &lt;<span style=color:#f92672>ga-staff</span>&gt;
+
+    &lt;<span style=color:#f92672>xsl:for-each</span> <span style=color:#a6e22e>select</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;//employee&#34;</span>&gt;
+      &lt;<span style=color:#f92672>xsl:sort</span> <span style=color:#a6e22e>select</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;name&#34;</span> <span style=color:#a6e22e>order</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;ascending&#34;</span> /&gt;
+        &lt;<span style=color:#f92672>employee</span>&gt;
+          &lt;<span style=color:#f92672>name</span>&gt;&lt;<span style=color:#f92672>xsl:value-of</span> <span style=color:#a6e22e>select</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;name&#34;</span> /&gt;&lt;/<span style=color:#f92672>name</span>&gt;
+          &lt;<span style=color:#f92672>phone</span>&gt;&lt;<span style=color:#f92672>xsl:value-of</span> <span style=color:#a6e22e>select</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;phone&#34;</span> /&gt;&lt;/<span style=color:#f92672>phone</span>&gt;
+          &lt;<span style=color:#f92672>email</span>&gt;&lt;<span style=color:#f92672>xsl:value-of</span> <span style=color:#a6e22e>select</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;email&#34;</span> /&gt;&lt;/<span style=color:#f92672>email</span>&gt;
+        &lt;/<span style=color:#f92672>employee</span>&gt;
+       &lt;/<span style=color:#f92672>xsl:for-each</span>&gt;
+  &lt;/<span style=color:#f92672>ga-staff</span>&gt;
+&lt;/<span style=color:#f92672>xsl:template</span>&gt;
+&lt;/<span style=color:#f92672>xsl:stylesheet</span>&gt; 
+</code></pre></div><p>Now that the data is sorted I can remove all the duplicate elements and generate a unique employee list. This is done using the following XSLT document (unique.xsl):</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-xslt data-lang=xslt>&lt;<span style=color:#f92672>xsl:stylesheet</span> <span style=color:#a6e22e>xmlns:xsl</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;http://www.w3.org/1999/XSL/Transform&#34;</span> <span style=color:#a6e22e>version</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;1.0&#34;</span> &gt;
+&lt;<span style=color:#f92672>xsl:template</span> <span style=color:#a6e22e>match</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;/&#34;</span>&gt;
+  &lt;<span style=color:#f92672>ga-staff</span>&gt;
+    &lt;<span style=color:#f92672>xsl:for-each</span> <span style=color:#a6e22e>select</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;//employee[not (name = preceding-sibling::employee/name)]&#34;</span>&gt;
+      &lt;<span style=color:#f92672>xsl:if</span> <span style=color:#a6e22e>test</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;not(contains(name,&#39;- Open -&#39;)) and not(contains(name,&#39;/&#39;))&#34;</span>&gt;
+        &lt;<span style=color:#f92672>xsl:copy-of</span> <span style=color:#a6e22e>select</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;.&#34;</span>/&gt;
+      &lt;/<span style=color:#f92672>xsl:if</span>&gt;
+    &lt;/<span style=color:#f92672>xsl:for-each</span>&gt;	
+  &lt;/<span style=color:#f92672>ga-staff</span>&gt;
+&lt;/<span style=color:#f92672>xsl:template</span>&gt;
+&lt;/<span style=color:#f92672>xsl:stylesheet</span>&gt; 
+</code></pre></div><p>That's it! Finally I used Microsoft.DOMDocument to apply these transformations to staff.xml. That is done using the following code:</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-basic data-lang=basic>Dim source, styles, unique, tmp, xdocument
+
+<span style=color:#75715e>&#39; ** Load source XML Data</span>
+set source <span style=color:#f92672>=</span>   CreateObject(<span style=color:#e6db74>&#34;MSXML2.DOMDocument&#34;</span>)
+source<span style=color:#f92672>.</span>async <span style=color:#f92672>=</span> false
+source<span style=color:#f92672>.</span>load(Server<span style=color:#f92672>.</span>MapPath(<span style=color:#e6db74>&#34;xml/staff.xml&#34;</span>))
+
+
+<span style=color:#75715e>&#39; ** Load styles</span>
+set styles <span style=color:#f92672>=</span> CreateObject(<span style=color:#e6db74>&#34;MSXML2.DOMDocument&#34;</span>)
+styles<span style=color:#f92672>.</span>async <span style=color:#f92672>=</span> false
+styles<span style=color:#f92672>.</span>load(Server<span style=color:#f92672>.</span>MapPath(<span style=color:#e6db74>&#34;xml/xslt/staff.xsl&#34;</span>))
+	
+set unique <span style=color:#f92672>=</span> CreateObject(<span style=color:#e6db74>&#34;MSXML2.DOMDocument&#34;</span>)
+unique<span style=color:#f92672>.</span>async <span style=color:#f92672>=</span> false
+unique<span style=color:#f92672>.</span>load(Server<span style=color:#f92672>.</span>MapPath(<span style=color:#e6db74>&#34;xml/xslt/unique.xsl&#34;</span>))
+
+<span style=color:#75715e>&#39; ** Resulting transformation</span>
+set tmp <span style=color:#f92672>=</span> CreateObject(<span style=color:#e6db74>&#34;MSXML2.DOMDocument&#34;</span>)
+tmp<span style=color:#f92672>.</span>async <span style=color:#f92672>=</span> false
+tmp<span style=color:#f92672>.</span>validateOnParse <span style=color:#f92672>=</span> true
+
+set xdocument <span style=color:#f92672>=</span> CreateObject(<span style=color:#e6db74>&#34;MSXML2.DOMDocument&#34;</span>)
+xdocument<span style=color:#f92672>.</span>async <span style=color:#f92672>=</span> false
+xdocument<span style=color:#f92672>.</span>validateOnParse <span style=color:#f92672>=</span> true
+
+source<span style=color:#f92672>.</span>transformNodeToObject styles, tmp
+tmp<span style=color:#f92672>.</span>transFormNodeToObject unique, xdocument 
+</code></pre></div></div></main></body></html>
