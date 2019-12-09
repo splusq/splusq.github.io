@@ -10,6 +10,8 @@ permalinks:
   blog: /blog/:title/:year/:month
 Menus:
   main:
+    - Name: "About"
+      URL: "/2014/08/resume.pdf"
     - Name: "Github"
       URL: "https://github.com/splusq/"
     - Name: "LinkedIn"
