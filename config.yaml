@@ -7,6 +7,8 @@ params:
   description: "Engineering Manager for Microsoft Azure Speech in Silicon Valley, CA."
   themeColor: "theme-base-08"
 googleAnalytics: UA-38742121-1
+permalinks:
+  blog: /:year/:month/:day/:title/
 Menus:
   main:
     - Name: "About"
