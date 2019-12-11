@@ -1,2 +1,0 @@
-# salmanq
-Personal blog
