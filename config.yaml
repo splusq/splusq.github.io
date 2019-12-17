@@ -1,13 +1,36 @@
 baseURL: "https://www.salmanq.com/"
 languageCode: "en-us"
-title: "Salman Quazi"
 theme: 
-  - hyde
+  - hello-friend
+Copyright:
+  Opinions are my own. | 2019 All Rights Reserved.
 params:
-  description: "Engineering Manager for Microsoft Azure Speech in Silicon Valley, CA."
-  copyright: "Opinions are my own, alone."
-  themeColor: "theme-base-08"
+  showReadingTime: true
+  contentTypeName: blog
+  defaultTheme: light
 googleAnalytics: UA-38742121-1
+languages:
+  en:
+    title: Salman Quazi
+    subtitle: Blog
+    params:
+      Cover: hello
+      logo:
+        logoText: salmanq.com
+    menu:
+      main:
+        - identifier: Posts
+          name: Posts
+          url: /blog
+        - identifier: Github
+          name: Github
+          url: https://github.com/splusq/
+        - identifier: LinkedIn
+          name: LinkedIn
+          url: https://www.linkedin.com/in/salmanquazi/
+        - identifier: Twitter
+          name: Twitter
+          url: https://www.twitter.com/splusq
 Menus:
   main:
     - Name: "Github"
