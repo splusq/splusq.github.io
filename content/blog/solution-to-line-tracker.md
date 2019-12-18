@@ -5,7 +5,7 @@ draft: false
 tags: ['Uncategorized']
 ---
 
-In my [previous post](/blog/line-tracker/2004/09/) I discussed an algorithm that it is much better than the _general_ line following algorithm that one might think of at first. Last night I implemented the algorithm with NQC with descent results. Here's the solution:
+In my [previous post](/blog/line-tracker/) I discussed an algorithm that it is much better than the _general_ line following algorithm that one might think of at first. Last night I implemented the algorithm with NQC with descent results. Here's the solution:
 
 ```c
 /***********************************************

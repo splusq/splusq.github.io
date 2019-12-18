@@ -5,7 +5,7 @@ draft: false
 tags: ['Uncategorized']
 ---
 
-_As I [discussed last week](/blog/javascript-performance-part-i/2004/10/) setInterval in general gives better performance compared to setTimeout._
+_As I [discussed last week](/blog/javascript-performance-part-i) setInterval in general gives better performance compared to setTimeout._
 
 Today I will discuss how in order to improve performance, one thread can be used to run multiple animations. Multiple animations come up in several scenarios. For instance, if you have a menu that does some animation onmouseover then although not clear at first this menu system could be running multiple animations at the same time. For example, let's say the animation takes 2 secs to run. Then in this 2 second time frame if the user highlights another menu item then the browser is actually running to threads one for each menu item. This is can bring down the performance of the system quite heavily.
 

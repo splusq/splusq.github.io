@@ -7,8 +7,8 @@ tags: ['Uncategorized']
 
 So far I have discussed the following topics:
 
-1.  [Introduction to our intelligent Roomba Vacuum cleaner.](/blog/vacuum-cleaner/2004/11/)
-2.  [How a torus (smart array) is used to maintain the state of the cleaning surface.](/blog/torus-smart-array-part-ii/2004/11/)
+1.  [Introduction to our intelligent Roomba Vacuum cleaner.](/blog/vacuum-cleaner/)
+2.  [How a torus (smart array) is used to maintain the state of the cleaning surface.](/blog/torus-smart-array-part-ii/)
 
 Today I will discuss how we managed to maintain the direction we are traveling in.
 

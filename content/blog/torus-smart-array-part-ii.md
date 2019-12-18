@@ -5,7 +5,7 @@ draft: false
 tags: ['Uncategorized']
 ---
 
-[As I was discussing](/blog/vacuum-cleaner/2004/11/) I am working on an intelligent vacuum cleaner. In this article I will discuss how we did our state management for the surface the robot is vacuuming.
+[As I was discussing](/blog/vacuum-cleaner/) I am working on an intelligent vacuum cleaner. In this article I will discuss how we did our state management for the surface the robot is vacuuming.
 
 In order to maintain the state information for the surface, one of things we had for our intelligent Roomba was a char array (VACUUMED, UNKNOWN, BLOCKED are the possible values for each cell). However a simple array wouldn't work because the robot could be physically placed anywhere on the floor, yet our starting position would always be (0,0). This was a problem. One of the solutions proposed and implemented by many others in my class was to _shift_ the array to accomodate the space in the room. We on the other hand took a different turn; in Microsoft lingo our array was a smart array. Our array acted like a torus which meant that it would wrap around the boundaries. If for instance, the array size is: 60x60 then a reference to the point (70,40) would translate to: (19,40); in this sample case the wrap occured in the x-direction. This took care of the problem of shifting the array. Read on to see the C code for the torus functions.
 
