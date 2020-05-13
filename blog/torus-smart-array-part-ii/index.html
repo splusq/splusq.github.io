@@ -1,20 +1,20 @@
-<!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en-us lang=en-us><head><link href=https://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=generator content="Hugo 0.60.1"><meta name=viewport content="width=device-width,initial-scale=1"><title>Torus: Smart Array - Part II &#183; Salman Quazi</title><meta name=description content><link type=text/css rel=stylesheet href=https://www.salmanq.com/css/print.css media=print><link type=text/css rel=stylesheet href=https://www.salmanq.com/css/poole.css><link type=text/css rel=stylesheet href=https://www.salmanq.com/css/syntax.css><link type=text/css rel=stylesheet href=https://www.salmanq.com/css/hyde.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700"><link rel=apple-touch-icon-precomposed sizes=144x144 href=/apple-touch-icon-144-precomposed.png><link rel="shortcut icon" href=/favicon.png><style type=text/css>.sidebar-about h1{font-size:1.95rem;font-weight:400}</style></head><body class=theme-base-08><aside class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><a href=https://www.salmanq.com/><h1>Salman Quazi</h1></a><p class=lead>Engineering Manager for Microsoft Azure Speech in Silicon Valley, CA.</p></div><nav><ul class=sidebar-nav><li><a href=https://www.salmanq.com/>Home</a></li><li><a href=/blog/>Blog</a></li><li><a href=https://github.com/splusq/>Github</a></li><li><a href=https://www.linkedin.com/in/salmanquazi/>LinkedIn</a></li><li><a href=https://www.twitter.com/splusq>Twitter</a></li></ul></nav><p>Opinions are my own.</p></div></aside><main class="content container"><div class=post><h1>Torus: Smart Array - Part II</h1><time datetime=2004-11-30T03:49:28Z class=post-date>Tue, Nov 30, 2004</time><p><a href=/blog/vacuum-cleaner/>As I was discussing</a> I am working on an intelligent vacuum cleaner. In this article I will discuss how we did our state management for the surface the robot is vacuuming.</p><p>In order to maintain the state information for the surface, one of things we had for our intelligent Roomba was a char array (VACUUMED, UNKNOWN, BLOCKED are the possible values for each cell). However a simple array wouldn't work because the robot could be physically placed anywhere on the floor, yet our starting position would always be (0,0). This was a problem. One of the solutions proposed and implemented by many others in my class was to <em>shift</em> the array to accomodate the space in the room. We on the other hand took a different turn; in Microsoft lingo our array was a smart array. Our array acted like a torus which meant that it would wrap around the boundaries. If for instance, the array size is: 60x60 then a reference to the point (70,40) would translate to: (19,40); in this sample case the wrap occured in the x-direction. This took care of the problem of shifting the array. Read on to see the C code for the torus functions.</p><p><em>Next time I will discuss how we managed to maintain the direction we were travelling in.</em></p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-c data-lang=c><span style=color:#75715e>#</span><span style=color:#75715e>define GRID_SIZE 10 </span><span style=color:#75715e>// The size of the grid
+<!doctype html><html xmlns=http://www.w3.org/1999/xhtml xml:lang=en-us lang=en-us><head><link href=https://gmpg.org/xfn/11 rel=profile><meta charset=utf-8><meta name=generator content="Hugo 0.70.0"><meta name=viewport content="width=device-width,initial-scale=1"><title>Torus: Smart Array - Part II &#183; Salman Quazi</title><meta name=description content><link type=text/css rel=stylesheet href=https://www.salmanq.com/css/print.css media=print><link type=text/css rel=stylesheet href=https://www.salmanq.com/css/poole.css><link type=text/css rel=stylesheet href=https://www.salmanq.com/css/syntax.css><link type=text/css rel=stylesheet href=https://www.salmanq.com/css/hyde.css><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700"><link rel=apple-touch-icon-precomposed sizes=144x144 href=/apple-touch-icon-144-precomposed.png><link rel="shortcut icon" href=/favicon.png><style type=text/css>.sidebar-about h1{font-size:1.95rem;font-weight:400}</style></head><body class=theme-base-08><aside class=sidebar><div class="container sidebar-sticky"><div class=sidebar-about><a href=https://www.salmanq.com/><h1>Salman Quazi</h1></a><p class=lead>Engineering Manager for Microsoft Azure Speech in Silicon Valley, CA.</p></div><nav><ul class=sidebar-nav><li><a href=https://www.salmanq.com/>Home</a></li><li><a href=/blog/>Blog</a></li><li><a href=https://github.com/splusq/>Github</a></li><li><a href=https://www.linkedin.com/in/salmanquazi/>LinkedIn</a></li><li><a href=https://www.twitter.com/splusq>Twitter</a></li></ul></nav><p>Opinions are my own.</p></div></aside><main class="content container"><div class=post><h1>Torus: Smart Array - Part II</h1><time datetime=2004-11-30T03:49:28Z class=post-date>Tue, Nov 30, 2004</time><p><a href=/blog/vacuum-cleaner/>As I was discussing</a> I am working on an intelligent vacuum cleaner. In this article I will discuss how we did our state management for the surface the robot is vacuuming.</p><p>In order to maintain the state information for the surface, one of things we had for our intelligent Roomba was a char array (VACUUMED, UNKNOWN, BLOCKED are the possible values for each cell). However a simple array wouldn&rsquo;t work because the robot could be physically placed anywhere on the floor, yet our starting position would always be (0,0). This was a problem. One of the solutions proposed and implemented by many others in my class was to <em>shift</em> the array to accomodate the space in the room. We on the other hand took a different turn; in Microsoft lingo our array was a smart array. Our array acted like a torus which meant that it would wrap around the boundaries. If for instance, the array size is: 60x60 then a reference to the point (70,40) would translate to: (19,40); in this sample case the wrap occured in the x-direction. This took care of the problem of shifting the array. Read on to see the C code for the torus functions.</p><p><em>Next time I will discuss how we managed to maintain the direction we were travelling in.</em></p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-c data-lang=c><span style=color:#75715e>#define GRID_SIZE 10 </span><span style=color:#75715e>// The size of the grid
 </span><span style=color:#75715e></span>
 <span style=color:#75715e>// Possible states a cell can be in
-</span><span style=color:#75715e></span><span style=color:#75715e>#</span><span style=color:#75715e>define UNKNOWN  0x0 </span><span style=color:#75715e>// State is not known by the system
-</span><span style=color:#75715e></span><span style=color:#75715e>#</span><span style=color:#75715e>define VACUUMED 0x1 </span><span style=color:#75715e>// It was already vacuumed
-</span><span style=color:#75715e></span><span style=color:#75715e>#</span><span style=color:#75715e>define BLOCKED  0x2 </span><span style=color:#75715e>// It was found blocked
-</span><span style=color:#75715e></span><span style=color:#75715e>#</span><span style=color:#75715e>define BUFFER_SIZE 512 </span><span style=color:#75715e>// buffer size of the direction (fffrr..) string
+</span><span style=color:#75715e></span><span style=color:#75715e>#define UNKNOWN  0x0 </span><span style=color:#75715e>// State is not known by the system
+</span><span style=color:#75715e></span><span style=color:#75715e>#define VACUUMED 0x1 </span><span style=color:#75715e>// It was already vacuumed
+</span><span style=color:#75715e></span><span style=color:#75715e>#define BLOCKED  0x2 </span><span style=color:#75715e>// It was found blocked
+</span><span style=color:#75715e></span><span style=color:#75715e>#define BUFFER_SIZE 512 </span><span style=color:#75715e>// buffer size of the direction (fffrr..) string
 </span><span style=color:#75715e></span>
 <span style=color:#75715e>// Possible directions
-</span><span style=color:#75715e></span><span style=color:#75715e>#</span><span style=color:#75715e>define XPOS 0x0</span><span style=color:#75715e>
-</span><span style=color:#75715e></span><span style=color:#75715e>#</span><span style=color:#75715e>define XNEG 0x1</span><span style=color:#75715e>
-</span><span style=color:#75715e></span><span style=color:#75715e>#</span><span style=color:#75715e>define YPOS 0x2</span><span style=color:#75715e>
-</span><span style=color:#75715e></span><span style=color:#75715e>#</span><span style=color:#75715e>define YNEG 0x3</span><span style=color:#75715e>
+</span><span style=color:#75715e></span><span style=color:#75715e>#define XPOS 0x0
+</span><span style=color:#75715e>#define XNEG 0x1
+</span><span style=color:#75715e>#define YPOS 0x2
+</span><span style=color:#75715e>#define YNEG 0x3
 </span><span style=color:#75715e></span>
 <span style=color:#75715e>// The memory where the state information will be stored
 </span><span style=color:#75715e></span><span style=color:#66d9ef>char</span> grid[GRID_SIZE][GRID_SIZE]; <span style=color:#75715e>// square matrix
-</span><span style=color:#75715e></span><span style=color:#75715e>//The current X position of the torus updated whenever moved
+</span><span style=color:#75715e>//The current X position of the torus updated whenever moved
 </span><span style=color:#75715e></span><span style=color:#66d9ef>short</span> <span style=color:#66d9ef>int</span> torus_currentx <span style=color:#f92672>=</span> GRID_SIZE<span style=color:#f92672>/</span><span style=color:#ae81ff>2</span>; 
 <span style=color:#75715e>// The current Y position of the torus updated whenever moved
 </span><span style=color:#75715e></span><span style=color:#66d9ef>short</span> <span style=color:#66d9ef>int</span> torus_currenty <span style=color:#f92672>=</span> GRID_SIZE<span style=color:#f92672>/</span><span style=color:#ae81ff>2</span>; 
@@ -30,14 +30,14 @@
 <span style=color:#75715e>/***  Begin Torus code ***/</span>
 <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>torus_init</span>() {
         <span style=color:#66d9ef>short</span> i,j;
-        <span style=color:#66d9ef>for</span>(i<span style=color:#f92672>=</span><span style=color:#ae81ff>0</span>;i<span style=color:#f92672>&lt;</span>grid_SIZE;i<span style=color:#f92672>+</span><span style=color:#f92672>+</span>) {
-                <span style=color:#66d9ef>for</span>(j<span style=color:#f92672>=</span><span style=color:#ae81ff>0</span>;j<span style=color:#f92672>&lt;</span>grid_SIZE;j<span style=color:#f92672>+</span><span style=color:#f92672>+</span>) {
+        <span style=color:#66d9ef>for</span>(i<span style=color:#f92672>=</span><span style=color:#ae81ff>0</span>;i<span style=color:#f92672>&lt;</span>grid_SIZE;i<span style=color:#f92672>++</span>) {
+                <span style=color:#66d9ef>for</span>(j<span style=color:#f92672>=</span><span style=color:#ae81ff>0</span>;j<span style=color:#f92672>&lt;</span>grid_SIZE;j<span style=color:#f92672>++</span>) {
                         grid[i][j]<span style=color:#f92672>=</span>UNKNOWN;
                 }
         }
 }
 <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>torus_setcurrentstate</span>(<span style=color:#66d9ef>char</span> state) {
-        <span style=color:#66d9ef>if</span>(torus_currentx <span style=color:#f92672>&lt;</span> GRID_SIZE <span style=color:#f92672>&amp;</span><span style=color:#f92672>&amp;</span> torus_currenty <span style=color:#f92672>&lt;</span> GRID_SIZE) {
+        <span style=color:#66d9ef>if</span>(torus_currentx <span style=color:#f92672>&lt;</span> GRID_SIZE <span style=color:#f92672>&amp;&amp;</span> torus_currenty <span style=color:#f92672>&lt;</span> GRID_SIZE) {
                 grid[torus_currenty][torus_currentx]<span style=color:#f92672>=</span>state;
         }
 }
@@ -46,16 +46,16 @@
         <span style=color:#66d9ef>if</span> (fwd<span style=color:#f92672>&gt;</span><span style=color:#ae81ff>0</span>){
                 <span style=color:#66d9ef>switch</span>(torus_currentDir){
                 <span style=color:#66d9ef>case</span> XPOS:
-                        torus_currentx<span style=color:#f92672>+</span><span style=color:#f92672>+</span>;
+                        torus_currentx<span style=color:#f92672>++</span>;
                         <span style=color:#66d9ef>break</span>;
                 <span style=color:#66d9ef>case</span> XNEG:
-                        torus_currentx<span style=color:#f92672>-</span><span style=color:#f92672>-</span>;
+                        torus_currentx<span style=color:#f92672>--</span>;
                         <span style=color:#66d9ef>break</span>;
                 <span style=color:#66d9ef>case</span> YPOS:
-                        torus_currenty<span style=color:#f92672>+</span><span style=color:#f92672>+</span>;
+                        torus_currenty<span style=color:#f92672>++</span>;
                         <span style=color:#66d9ef>break</span>;
                 <span style=color:#66d9ef>case</span> YNEG:
-                        torus_currenty<span style=color:#f92672>-</span><span style=color:#f92672>-</span>;
+                        torus_currenty<span style=color:#f92672>--</span>;
                         <span style=color:#66d9ef>break</span>;
                 }
         }
@@ -94,22 +94,22 @@
         <span style=color:#66d9ef>if</span> (fwd<span style=color:#f92672>&lt;</span><span style=color:#ae81ff>0</span>){
                 <span style=color:#66d9ef>switch</span>(torus_currentDir){
                 <span style=color:#66d9ef>case</span> XPOS:
-                        torus_currentx<span style=color:#f92672>-</span><span style=color:#f92672>-</span>;
+                        torus_currentx<span style=color:#f92672>--</span>;
                         <span style=color:#66d9ef>break</span>;
                 <span style=color:#66d9ef>case</span> XNEG:
-                        torus_currentx<span style=color:#f92672>+</span><span style=color:#f92672>+</span>;
+                        torus_currentx<span style=color:#f92672>++</span>;
                         <span style=color:#66d9ef>break</span>;
                 <span style=color:#66d9ef>case</span> YPOS:
-                        torus_currenty<span style=color:#f92672>-</span><span style=color:#f92672>-</span>;
+                        torus_currenty<span style=color:#f92672>--</span>;
                         <span style=color:#66d9ef>break</span>;
                 <span style=color:#66d9ef>case</span> YNEG:
-                        torus_currenty<span style=color:#f92672>+</span><span style=color:#f92672>+</span>;
+                        torus_currenty<span style=color:#f92672>++</span>;
                         <span style=color:#66d9ef>break</span>;
                 }
         }
 }
 <span style=color:#75715e>// uses a shortest path algorithm to find the closest unknown position
-</span><span style=color:#75715e></span><span style=color:#75715e>// and makes directions
+</span><span style=color:#75715e>// and makes directions
 </span><span style=color:#75715e></span><span style=color:#66d9ef>void</span> <span style=color:#a6e22e>torus_findnextcell</span>(<span style=color:#66d9ef>char</span><span style=color:#f92672>*</span> buffer){
         <span style=color:#66d9ef>int</span> tArr[GRID_SIZE][GRID_SIZE] <span style=color:#f92672>=</span> {{<span style=color:#ae81ff>0</span>}};
         <span style=color:#66d9ef>int</span> pos<span style=color:#f92672>=</span><span style=color:#ae81ff>0</span>,j,len <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>;
@@ -123,14 +123,14 @@
 </span><span style=color:#75715e></span>        tArr[x][y] <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>;
         q[qEnd][<span style=color:#ae81ff>0</span>] <span style=color:#f92672>=</span> x;
         q[qEnd][<span style=color:#ae81ff>1</span>] <span style=color:#f92672>=</span> y;
-        q[qEnd<span style=color:#f92672>+</span><span style=color:#f92672>+</span>][<span style=color:#ae81ff>2</span>] <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>;
+        q[qEnd<span style=color:#f92672>++</span>][<span style=color:#ae81ff>2</span>] <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>;
 
         <span style=color:#75715e>// perform a bredth-first search marking the positions with distance
 </span><span style=color:#75715e></span>        <span style=color:#66d9ef>while</span>(loop){
 
                 <span style=color:#75715e>// if we have exhausted the q by this point, we are done vacuuming
-</span><span style=color:#75715e></span>                <span style=color:#66d9ef>if</span>(qFront <span style=color:#f92672>=</span><span style=color:#f92672>=</span> qEnd){
-                        buffer[<span style=color:#ae81ff>0</span>]<span style=color:#f92672>=</span><span style=color:#e6db74></span><span style=color:#e6db74>&#39;</span><span style=color:#e6db74>\0</span><span style=color:#e6db74>&#39;</span>;
+</span><span style=color:#75715e></span>                <span style=color:#66d9ef>if</span>(qFront <span style=color:#f92672>==</span> qEnd){
+                        buffer[<span style=color:#ae81ff>0</span>]<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;\0&#39;</span>;
                         <span style=color:#66d9ef>return</span>;
                 }
 
@@ -140,11 +140,11 @@
                 len <span style=color:#f92672>=</span> q[qFront][<span style=color:#ae81ff>2</span>] <span style=color:#f92672>+</span> <span style=color:#ae81ff>1</span>;
                 qFront <span style=color:#f92672>=</span> (qFront<span style=color:#f92672>+</span><span style=color:#ae81ff>1</span>)<span style=color:#f92672>%</span>qSize;
 
-                <span style=color:#66d9ef>if</span>(x<span style=color:#f92672>+</span><span style=color:#ae81ff>1</span><span style=color:#f92672>&lt;</span>grid_SIZE <span style=color:#f92672>&amp;</span><span style=color:#f92672>&amp;</span> grid[x<span style=color:#f92672>+</span><span style=color:#ae81ff>1</span>][y]<span style=color:#f92672>!</span><span style=color:#f92672>=</span>BLOCKED){
-                        <span style=color:#66d9ef>if</span>(tArr[x<span style=color:#f92672>+</span><span style=color:#ae81ff>1</span>][y] <span style=color:#f92672>=</span><span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>){
+                <span style=color:#66d9ef>if</span>(x<span style=color:#f92672>+</span><span style=color:#ae81ff>1</span><span style=color:#f92672>&lt;</span>grid_SIZE <span style=color:#f92672>&amp;&amp;</span> grid[x<span style=color:#f92672>+</span><span style=color:#ae81ff>1</span>][y]<span style=color:#f92672>!=</span>BLOCKED){
+                        <span style=color:#66d9ef>if</span>(tArr[x<span style=color:#f92672>+</span><span style=color:#ae81ff>1</span>][y] <span style=color:#f92672>==</span> <span style=color:#ae81ff>0</span>){
                                 tArr[x<span style=color:#f92672>+</span><span style=color:#ae81ff>1</span>][y] <span style=color:#f92672>=</span> len;
-                                <span style=color:#66d9ef>if</span>(grid[x<span style=color:#f92672>+</span><span style=color:#ae81ff>1</span>][y]<span style=color:#f92672>=</span><span style=color:#f92672>=</span>UNKNOWN){
-                                        x<span style=color:#f92672>+</span><span style=color:#f92672>+</span>;
+                                <span style=color:#66d9ef>if</span>(grid[x<span style=color:#f92672>+</span><span style=color:#ae81ff>1</span>][y]<span style=color:#f92672>==</span>UNKNOWN){
+                                        x<span style=color:#f92672>++</span>;
                                         loop <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>;
                                 }
                                 q[qEnd][<span style=color:#ae81ff>0</span>] <span style=color:#f92672>=</span> x<span style=color:#f92672>+</span><span style=color:#ae81ff>1</span>;
@@ -153,11 +153,11 @@
                                 qEnd <span style=color:#f92672>=</span> (qEnd<span style=color:#f92672>+</span><span style=color:#ae81ff>1</span>)<span style=color:#f92672>%</span>(qSize);
                         }
                 }
-                <span style=color:#66d9ef>if</span>(loop <span style=color:#f92672>&amp;</span><span style=color:#f92672>&amp;</span> x<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span><span style=color:#f92672>&gt;</span><span style=color:#f92672>=</span><span style=color:#ae81ff>0</span> <span style=color:#f92672>&amp;</span><span style=color:#f92672>&amp;</span> grid[x<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>][y]<span style=color:#f92672>!</span><span style=color:#f92672>=</span>BLOCKED){
-                        <span style=color:#66d9ef>if</span>(tArr[x<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>][y] <span style=color:#f92672>=</span><span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>){
+                <span style=color:#66d9ef>if</span>(loop <span style=color:#f92672>&amp;&amp;</span> x<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span><span style=color:#f92672>&gt;=</span><span style=color:#ae81ff>0</span> <span style=color:#f92672>&amp;&amp;</span> grid[x<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>][y]<span style=color:#f92672>!=</span>BLOCKED){
+                        <span style=color:#66d9ef>if</span>(tArr[x<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>][y] <span style=color:#f92672>==</span> <span style=color:#ae81ff>0</span>){
                                 tArr[x<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>][y] <span style=color:#f92672>=</span> len;
-                                <span style=color:#66d9ef>if</span>(grid[x<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>][y]<span style=color:#f92672>=</span><span style=color:#f92672>=</span>UNKNOWN){
-                                        x<span style=color:#f92672>-</span><span style=color:#f92672>-</span>;
+                                <span style=color:#66d9ef>if</span>(grid[x<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>][y]<span style=color:#f92672>==</span>UNKNOWN){
+                                        x<span style=color:#f92672>--</span>;
                                         loop <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>;
                                 }
                                 q[qEnd][<span style=color:#ae81ff>0</span>] <span style=color:#f92672>=</span> x<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>;
@@ -166,11 +166,11 @@
                                 qEnd <span style=color:#f92672>=</span> (qEnd<span style=color:#f92672>+</span><span style=color:#ae81ff>1</span>)<span style=color:#f92672>%</span>(qSize);
                         }
                 }
-                <span style=color:#66d9ef>if</span>(loop <span style=color:#f92672>&amp;</span><span style=color:#f92672>&amp;</span> y<span style=color:#f92672>+</span><span style=color:#ae81ff>1</span><span style=color:#f92672>&lt;</span>grid_SIZE <span style=color:#f92672>&amp;</span><span style=color:#f92672>&amp;</span> grid[x][y<span style=color:#f92672>+</span><span style=color:#ae81ff>1</span>]<span style=color:#f92672>!</span><span style=color:#f92672>=</span>BLOCKED){
-                        <span style=color:#66d9ef>if</span>(tArr[x][y<span style=color:#f92672>+</span><span style=color:#ae81ff>1</span>] <span style=color:#f92672>=</span><span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>){
+                <span style=color:#66d9ef>if</span>(loop <span style=color:#f92672>&amp;&amp;</span> y<span style=color:#f92672>+</span><span style=color:#ae81ff>1</span><span style=color:#f92672>&lt;</span>grid_SIZE <span style=color:#f92672>&amp;&amp;</span> grid[x][y<span style=color:#f92672>+</span><span style=color:#ae81ff>1</span>]<span style=color:#f92672>!=</span>BLOCKED){
+                        <span style=color:#66d9ef>if</span>(tArr[x][y<span style=color:#f92672>+</span><span style=color:#ae81ff>1</span>] <span style=color:#f92672>==</span> <span style=color:#ae81ff>0</span>){
                                 tArr[x][y<span style=color:#f92672>+</span><span style=color:#ae81ff>1</span>] <span style=color:#f92672>=</span> len;
-                                <span style=color:#66d9ef>if</span>(grid[x][y<span style=color:#f92672>+</span><span style=color:#ae81ff>1</span>]<span style=color:#f92672>=</span><span style=color:#f92672>=</span>UNKNOWN){
-                                        y<span style=color:#f92672>+</span><span style=color:#f92672>+</span>;
+                                <span style=color:#66d9ef>if</span>(grid[x][y<span style=color:#f92672>+</span><span style=color:#ae81ff>1</span>]<span style=color:#f92672>==</span>UNKNOWN){
+                                        y<span style=color:#f92672>++</span>;
                                         loop <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>;
                                 }
                                 q[qEnd][<span style=color:#ae81ff>0</span>] <span style=color:#f92672>=</span> x;
@@ -179,11 +179,11 @@
                                 qEnd <span style=color:#f92672>=</span> (qEnd<span style=color:#f92672>+</span><span style=color:#ae81ff>1</span>)<span style=color:#f92672>%</span>(qSize);
                         }
                 }
-                <span style=color:#66d9ef>if</span>(loop <span style=color:#f92672>&amp;</span><span style=color:#f92672>&amp;</span> y<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span><span style=color:#f92672>&gt;</span><span style=color:#f92672>=</span><span style=color:#ae81ff>0</span> <span style=color:#f92672>&amp;</span><span style=color:#f92672>&amp;</span> grid[x][y<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>]<span style=color:#f92672>!</span><span style=color:#f92672>=</span>BLOCKED){
-                        <span style=color:#66d9ef>if</span>(tArr[x][y<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>] <span style=color:#f92672>=</span><span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>){
+                <span style=color:#66d9ef>if</span>(loop <span style=color:#f92672>&amp;&amp;</span> y<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span><span style=color:#f92672>&gt;=</span><span style=color:#ae81ff>0</span> <span style=color:#f92672>&amp;&amp;</span> grid[x][y<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>]<span style=color:#f92672>!=</span>BLOCKED){
+                        <span style=color:#66d9ef>if</span>(tArr[x][y<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>] <span style=color:#f92672>==</span> <span style=color:#ae81ff>0</span>){
                                 tArr[x][y<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>] <span style=color:#f92672>=</span> len;
-                                <span style=color:#66d9ef>if</span>(grid[x][y<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>]<span style=color:#f92672>=</span><span style=color:#f92672>=</span>UNKNOWN){
-                                        y<span style=color:#f92672>-</span><span style=color:#f92672>-</span>;
+                                <span style=color:#66d9ef>if</span>(grid[x][y<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>]<span style=color:#f92672>==</span>UNKNOWN){
+                                        y<span style=color:#f92672>--</span>;
                                         loop <span style=color:#f92672>=</span> <span style=color:#ae81ff>0</span>;
                                 }
                                 q[qEnd][<span style=color:#ae81ff>0</span>] <span style=color:#f92672>=</span> x;
@@ -199,114 +199,114 @@
 </span><span style=color:#75715e></span>        <span style=color:#75715e>// you have to think kinda backwards, at the end we will
 </span><span style=color:#75715e></span>        <span style=color:#75715e>// reverse the string
 </span><span style=color:#75715e></span>        loop <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>;
-        buffer[pos<span style=color:#f92672>+</span><span style=color:#f92672>+</span>] <span style=color:#f92672>=</span> <span style=color:#e6db74></span><span style=color:#e6db74>&#39;</span><span style=color:#e6db74>f</span><span style=color:#e6db74>&#39;</span>;
-        len<span style=color:#f92672>-</span><span style=color:#f92672>-</span>;
-        <span style=color:#66d9ef>if</span>(x<span style=color:#f92672>+</span><span style=color:#ae81ff>1</span><span style=color:#f92672>&lt;</span>grid_SIZE <span style=color:#f92672>&amp;</span><span style=color:#f92672>&amp;</span> tArr[x<span style=color:#f92672>+</span><span style=color:#ae81ff>1</span>][y] <span style=color:#f92672>=</span><span style=color:#f92672>=</span> len){
+        buffer[pos<span style=color:#f92672>++</span>] <span style=color:#f92672>=</span> <span style=color:#e6db74>&#39;f&#39;</span>;
+        len<span style=color:#f92672>--</span>;
+        <span style=color:#66d9ef>if</span>(x<span style=color:#f92672>+</span><span style=color:#ae81ff>1</span><span style=color:#f92672>&lt;</span>grid_SIZE <span style=color:#f92672>&amp;&amp;</span> tArr[x<span style=color:#f92672>+</span><span style=color:#ae81ff>1</span>][y] <span style=color:#f92672>==</span> len){
                 oDir <span style=color:#f92672>=</span> XNEG;
-                x<span style=color:#f92672>+</span><span style=color:#f92672>+</span>;
+                x<span style=color:#f92672>++</span>;
         }
-        <span style=color:#66d9ef>else</span> <span style=color:#66d9ef>if</span>(x<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span><span style=color:#f92672>&gt;</span><span style=color:#f92672>=</span><span style=color:#ae81ff>0</span> <span style=color:#f92672>&amp;</span><span style=color:#f92672>&amp;</span> tArr[x<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>][y] <span style=color:#f92672>=</span><span style=color:#f92672>=</span> len){
+        <span style=color:#66d9ef>else</span> <span style=color:#66d9ef>if</span>(x<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span><span style=color:#f92672>&gt;=</span><span style=color:#ae81ff>0</span> <span style=color:#f92672>&amp;&amp;</span> tArr[x<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>][y] <span style=color:#f92672>==</span> len){
                 oDir <span style=color:#f92672>=</span> XPOS;
-                x<span style=color:#f92672>-</span><span style=color:#f92672>-</span>;
+                x<span style=color:#f92672>--</span>;
         }
-        <span style=color:#66d9ef>else</span> <span style=color:#66d9ef>if</span>(y<span style=color:#f92672>+</span><span style=color:#ae81ff>1</span><span style=color:#f92672>&lt;</span>grid_SIZE <span style=color:#f92672>&amp;</span><span style=color:#f92672>&amp;</span> tArr[x][y<span style=color:#f92672>+</span><span style=color:#ae81ff>1</span>] <span style=color:#f92672>=</span><span style=color:#f92672>=</span> len){
+        <span style=color:#66d9ef>else</span> <span style=color:#66d9ef>if</span>(y<span style=color:#f92672>+</span><span style=color:#ae81ff>1</span><span style=color:#f92672>&lt;</span>grid_SIZE <span style=color:#f92672>&amp;&amp;</span> tArr[x][y<span style=color:#f92672>+</span><span style=color:#ae81ff>1</span>] <span style=color:#f92672>==</span> len){
                 oDir <span style=color:#f92672>=</span> YNEG;
-                y<span style=color:#f92672>+</span><span style=color:#f92672>+</span>;
+                y<span style=color:#f92672>++</span>;
         }
-        <span style=color:#66d9ef>else</span> <span style=color:#66d9ef>if</span>(y<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span><span style=color:#f92672>&gt;</span><span style=color:#f92672>=</span><span style=color:#ae81ff>0</span> <span style=color:#f92672>&amp;</span><span style=color:#f92672>&amp;</span> tArr[x][y<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>] <span style=color:#f92672>=</span><span style=color:#f92672>=</span> len){
+        <span style=color:#66d9ef>else</span> <span style=color:#66d9ef>if</span>(y<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span><span style=color:#f92672>&gt;=</span><span style=color:#ae81ff>0</span> <span style=color:#f92672>&amp;&amp;</span> tArr[x][y<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>] <span style=color:#f92672>==</span> len){
                 oDir <span style=color:#f92672>=</span> YPOS;
-                y<span style=color:#f92672>-</span><span style=color:#f92672>-</span>;
+                y<span style=color:#f92672>--</span>;
         }
 
         tempDir <span style=color:#f92672>=</span> torus_currentDir;
 
-        <span style=color:#66d9ef>for</span>(i<span style=color:#f92672>=</span>len<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>;i<span style=color:#f92672>&gt;</span><span style=color:#ae81ff>0</span>;i<span style=color:#f92672>-</span><span style=color:#f92672>-</span>){
-                <span style=color:#66d9ef>if</span>(x<span style=color:#f92672>+</span><span style=color:#ae81ff>1</span><span style=color:#f92672>&lt;</span>grid_SIZE <span style=color:#f92672>&amp;</span><span style=color:#f92672>&amp;</span> tArr[x<span style=color:#f92672>+</span><span style=color:#ae81ff>1</span>][y] <span style=color:#f92672>=</span><span style=color:#f92672>=</span> i){
-                        <span style=color:#66d9ef>if</span>(tempDir <span style=color:#f92672>=</span><span style=color:#f92672>=</span> YPOS)
-                                buffer[pos<span style=color:#f92672>+</span><span style=color:#f92672>+</span>]<span style=color:#f92672>=</span><span style=color:#e6db74></span><span style=color:#e6db74>&#39;</span><span style=color:#e6db74>r</span><span style=color:#e6db74>&#39;</span>;
-                        <span style=color:#66d9ef>if</span>(tempDir <span style=color:#f92672>=</span><span style=color:#f92672>=</span> YNEG)
-                                buffer[pos<span style=color:#f92672>+</span><span style=color:#f92672>+</span>]<span style=color:#f92672>=</span><span style=color:#e6db74></span><span style=color:#e6db74>&#39;</span><span style=color:#e6db74>l</span><span style=color:#e6db74>&#39;</span>;
+        <span style=color:#66d9ef>for</span>(i<span style=color:#f92672>=</span>len<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>;i<span style=color:#f92672>&gt;</span><span style=color:#ae81ff>0</span>;i<span style=color:#f92672>--</span>){
+                <span style=color:#66d9ef>if</span>(x<span style=color:#f92672>+</span><span style=color:#ae81ff>1</span><span style=color:#f92672>&lt;</span>grid_SIZE <span style=color:#f92672>&amp;&amp;</span> tArr[x<span style=color:#f92672>+</span><span style=color:#ae81ff>1</span>][y] <span style=color:#f92672>==</span> i){
+                        <span style=color:#66d9ef>if</span>(tempDir <span style=color:#f92672>==</span> YPOS)
+                                buffer[pos<span style=color:#f92672>++</span>]<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;r&#39;</span>;
+                        <span style=color:#66d9ef>if</span>(tempDir <span style=color:#f92672>==</span> YNEG)
+                                buffer[pos<span style=color:#f92672>++</span>]<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;l&#39;</span>;
                         tempDir <span style=color:#f92672>=</span> XNEG;
-                        x<span style=color:#f92672>+</span><span style=color:#f92672>+</span>;
+                        x<span style=color:#f92672>++</span>;
                 }
-                <span style=color:#66d9ef>else</span> <span style=color:#66d9ef>if</span>(x<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span><span style=color:#f92672>&gt;</span><span style=color:#f92672>=</span><span style=color:#ae81ff>0</span> <span style=color:#f92672>&amp;</span><span style=color:#f92672>&amp;</span> tArr[x<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>][y] <span style=color:#f92672>=</span><span style=color:#f92672>=</span> i){
-                        <span style=color:#66d9ef>if</span>(tempDir <span style=color:#f92672>=</span><span style=color:#f92672>=</span> YPOS)
-                                buffer[pos<span style=color:#f92672>+</span><span style=color:#f92672>+</span>]<span style=color:#f92672>=</span><span style=color:#e6db74></span><span style=color:#e6db74>&#39;</span><span style=color:#e6db74>l</span><span style=color:#e6db74>&#39;</span>;
-                        <span style=color:#66d9ef>if</span>(tempDir <span style=color:#f92672>=</span><span style=color:#f92672>=</span> YNEG)
-                                buffer[pos<span style=color:#f92672>+</span><span style=color:#f92672>+</span>]<span style=color:#f92672>=</span><span style=color:#e6db74></span><span style=color:#e6db74>&#39;</span><span style=color:#e6db74>r</span><span style=color:#e6db74>&#39;</span>;
+                <span style=color:#66d9ef>else</span> <span style=color:#66d9ef>if</span>(x<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span><span style=color:#f92672>&gt;=</span><span style=color:#ae81ff>0</span> <span style=color:#f92672>&amp;&amp;</span> tArr[x<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>][y] <span style=color:#f92672>==</span> i){
+                        <span style=color:#66d9ef>if</span>(tempDir <span style=color:#f92672>==</span> YPOS)
+                                buffer[pos<span style=color:#f92672>++</span>]<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;l&#39;</span>;
+                        <span style=color:#66d9ef>if</span>(tempDir <span style=color:#f92672>==</span> YNEG)
+                                buffer[pos<span style=color:#f92672>++</span>]<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;r&#39;</span>;
                         tempDir <span style=color:#f92672>=</span> XPOS;
-                        x<span style=color:#f92672>-</span><span style=color:#f92672>-</span>;
+                        x<span style=color:#f92672>--</span>;
                 }
-                <span style=color:#66d9ef>else</span> <span style=color:#66d9ef>if</span>(y<span style=color:#f92672>+</span><span style=color:#ae81ff>1</span><span style=color:#f92672>&lt;</span>grid_SIZE <span style=color:#f92672>&amp;</span><span style=color:#f92672>&amp;</span> tArr[x][y<span style=color:#f92672>+</span><span style=color:#ae81ff>1</span>] <span style=color:#f92672>=</span><span style=color:#f92672>=</span> i){
-                        <span style=color:#66d9ef>if</span>(tempDir <span style=color:#f92672>=</span><span style=color:#f92672>=</span> XPOS)
-                                buffer[pos<span style=color:#f92672>+</span><span style=color:#f92672>+</span>]<span style=color:#f92672>=</span><span style=color:#e6db74></span><span style=color:#e6db74>&#39;</span><span style=color:#e6db74>l</span><span style=color:#e6db74>&#39;</span>;
-                        <span style=color:#66d9ef>if</span>(tempDir <span style=color:#f92672>=</span><span style=color:#f92672>=</span> XNEG)
-                                buffer[pos<span style=color:#f92672>+</span><span style=color:#f92672>+</span>]<span style=color:#f92672>=</span><span style=color:#e6db74></span><span style=color:#e6db74>&#39;</span><span style=color:#e6db74>r</span><span style=color:#e6db74>&#39;</span>;
+                <span style=color:#66d9ef>else</span> <span style=color:#66d9ef>if</span>(y<span style=color:#f92672>+</span><span style=color:#ae81ff>1</span><span style=color:#f92672>&lt;</span>grid_SIZE <span style=color:#f92672>&amp;&amp;</span> tArr[x][y<span style=color:#f92672>+</span><span style=color:#ae81ff>1</span>] <span style=color:#f92672>==</span> i){
+                        <span style=color:#66d9ef>if</span>(tempDir <span style=color:#f92672>==</span> XPOS)
+                                buffer[pos<span style=color:#f92672>++</span>]<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;l&#39;</span>;
+                        <span style=color:#66d9ef>if</span>(tempDir <span style=color:#f92672>==</span> XNEG)
+                                buffer[pos<span style=color:#f92672>++</span>]<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;r&#39;</span>;
                         tempDir <span style=color:#f92672>=</span> YNEG;
-                        y<span style=color:#f92672>+</span><span style=color:#f92672>+</span>;
+                        y<span style=color:#f92672>++</span>;
                 }
-                <span style=color:#66d9ef>else</span> <span style=color:#66d9ef>if</span>(y<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span><span style=color:#f92672>&gt;</span><span style=color:#f92672>=</span><span style=color:#ae81ff>0</span> <span style=color:#f92672>&amp;</span><span style=color:#f92672>&amp;</span> tArr[x][y<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>] <span style=color:#f92672>=</span><span style=color:#f92672>=</span> i){
-                        <span style=color:#66d9ef>if</span>(tempDir <span style=color:#f92672>=</span><span style=color:#f92672>=</span> XPOS)
-                                buffer[pos<span style=color:#f92672>+</span><span style=color:#f92672>+</span>]<span style=color:#f92672>=</span><span style=color:#e6db74></span><span style=color:#e6db74>&#39;</span><span style=color:#e6db74>r</span><span style=color:#e6db74>&#39;</span>;
-                        <span style=color:#66d9ef>if</span>(tempDir <span style=color:#f92672>=</span><span style=color:#f92672>=</span> XNEG)
-                                buffer[pos<span style=color:#f92672>+</span><span style=color:#f92672>+</span>]<span style=color:#f92672>=</span><span style=color:#e6db74></span><span style=color:#e6db74>&#39;</span><span style=color:#e6db74>l</span><span style=color:#e6db74>&#39;</span>;
+                <span style=color:#66d9ef>else</span> <span style=color:#66d9ef>if</span>(y<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span><span style=color:#f92672>&gt;=</span><span style=color:#ae81ff>0</span> <span style=color:#f92672>&amp;&amp;</span> tArr[x][y<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>] <span style=color:#f92672>==</span> i){
+                        <span style=color:#66d9ef>if</span>(tempDir <span style=color:#f92672>==</span> XPOS)
+                                buffer[pos<span style=color:#f92672>++</span>]<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;r&#39;</span>;
+                        <span style=color:#66d9ef>if</span>(tempDir <span style=color:#f92672>==</span> XNEG)
+                                buffer[pos<span style=color:#f92672>++</span>]<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;l&#39;</span>;
                         tempDir <span style=color:#f92672>=</span> YPOS;
-                        y<span style=color:#f92672>-</span><span style=color:#f92672>-</span>;
+                        y<span style=color:#f92672>--</span>;
                 }
-                buffer[pos<span style=color:#f92672>+</span><span style=color:#f92672>+</span>]<span style=color:#f92672>=</span><span style=color:#e6db74></span><span style=color:#e6db74>&#39;</span><span style=color:#e6db74>f</span><span style=color:#e6db74>&#39;</span>;
+                buffer[pos<span style=color:#f92672>++</span>]<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;f&#39;</span>;
         }
 
         <span style=color:#75715e>// using the last known direction of the robot, we need to
 </span><span style=color:#75715e></span>        <span style=color:#75715e>// find out how much to turn to start on the path
-</span><span style=color:#75715e></span>        <span style=color:#66d9ef>if</span>(torus_currentDir <span style=color:#f92672>=</span><span style=color:#f92672>=</span> XPOS){
-                <span style=color:#66d9ef>if</span>(tempDir <span style=color:#f92672>=</span><span style=color:#f92672>=</span> YPOS)
-                        buffer[pos<span style=color:#f92672>+</span><span style=color:#f92672>+</span>]<span style=color:#f92672>=</span><span style=color:#e6db74></span><span style=color:#e6db74>&#39;</span><span style=color:#e6db74>l</span><span style=color:#e6db74>&#39;</span>;
-                <span style=color:#66d9ef>else</span> <span style=color:#66d9ef>if</span>(tempDir <span style=color:#f92672>=</span><span style=color:#f92672>=</span> YNEG)
-                        buffer[pos<span style=color:#f92672>+</span><span style=color:#f92672>+</span>]<span style=color:#f92672>=</span><span style=color:#e6db74></span><span style=color:#e6db74>&#39;</span><span style=color:#e6db74>r</span><span style=color:#e6db74>&#39;</span>;
-                <span style=color:#66d9ef>else</span> <span style=color:#66d9ef>if</span>(tempDir <span style=color:#f92672>=</span><span style=color:#f92672>=</span> XNEG){
-                        buffer[pos<span style=color:#f92672>+</span><span style=color:#f92672>+</span>]<span style=color:#f92672>=</span><span style=color:#e6db74></span><span style=color:#e6db74>&#39;</span><span style=color:#e6db74>r</span><span style=color:#e6db74>&#39;</span>;
-                        buffer[pos<span style=color:#f92672>+</span><span style=color:#f92672>+</span>]<span style=color:#f92672>=</span><span style=color:#e6db74></span><span style=color:#e6db74>&#39;</span><span style=color:#e6db74>r</span><span style=color:#e6db74>&#39;</span>;
+</span><span style=color:#75715e></span>        <span style=color:#66d9ef>if</span>(torus_currentDir <span style=color:#f92672>==</span> XPOS){
+                <span style=color:#66d9ef>if</span>(tempDir <span style=color:#f92672>==</span> YPOS)
+                        buffer[pos<span style=color:#f92672>++</span>]<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;l&#39;</span>;
+                <span style=color:#66d9ef>else</span> <span style=color:#66d9ef>if</span>(tempDir <span style=color:#f92672>==</span> YNEG)
+                        buffer[pos<span style=color:#f92672>++</span>]<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;r&#39;</span>;
+                <span style=color:#66d9ef>else</span> <span style=color:#66d9ef>if</span>(tempDir <span style=color:#f92672>==</span> XNEG){
+                        buffer[pos<span style=color:#f92672>++</span>]<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;r&#39;</span>;
+                        buffer[pos<span style=color:#f92672>++</span>]<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;r&#39;</span>;
                 }
         }
-        <span style=color:#66d9ef>else</span> <span style=color:#66d9ef>if</span>(torus_currentDir <span style=color:#f92672>=</span><span style=color:#f92672>=</span> XNEG){
-                <span style=color:#66d9ef>if</span>(tempDir <span style=color:#f92672>=</span><span style=color:#f92672>=</span> YPOS)
-                        buffer[pos<span style=color:#f92672>+</span><span style=color:#f92672>+</span>]<span style=color:#f92672>=</span><span style=color:#e6db74></span><span style=color:#e6db74>&#39;</span><span style=color:#e6db74>r</span><span style=color:#e6db74>&#39;</span>;
-                <span style=color:#66d9ef>else</span> <span style=color:#66d9ef>if</span>(tempDir <span style=color:#f92672>=</span><span style=color:#f92672>=</span> YNEG)
-                        buffer[pos<span style=color:#f92672>+</span><span style=color:#f92672>+</span>]<span style=color:#f92672>=</span><span style=color:#e6db74></span><span style=color:#e6db74>&#39;</span><span style=color:#e6db74>l</span><span style=color:#e6db74>&#39;</span>;
-                <span style=color:#66d9ef>else</span> <span style=color:#66d9ef>if</span>(tempDir <span style=color:#f92672>=</span><span style=color:#f92672>=</span> XPOS){
-                        buffer[pos<span style=color:#f92672>+</span><span style=color:#f92672>+</span>]<span style=color:#f92672>=</span><span style=color:#e6db74></span><span style=color:#e6db74>&#39;</span><span style=color:#e6db74>r</span><span style=color:#e6db74>&#39;</span>;
-                        buffer[pos<span style=color:#f92672>+</span><span style=color:#f92672>+</span>]<span style=color:#f92672>=</span><span style=color:#e6db74></span><span style=color:#e6db74>&#39;</span><span style=color:#e6db74>r</span><span style=color:#e6db74>&#39;</span>;
+        <span style=color:#66d9ef>else</span> <span style=color:#66d9ef>if</span>(torus_currentDir <span style=color:#f92672>==</span> XNEG){
+                <span style=color:#66d9ef>if</span>(tempDir <span style=color:#f92672>==</span> YPOS)
+                        buffer[pos<span style=color:#f92672>++</span>]<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;r&#39;</span>;
+                <span style=color:#66d9ef>else</span> <span style=color:#66d9ef>if</span>(tempDir <span style=color:#f92672>==</span> YNEG)
+                        buffer[pos<span style=color:#f92672>++</span>]<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;l&#39;</span>;
+                <span style=color:#66d9ef>else</span> <span style=color:#66d9ef>if</span>(tempDir <span style=color:#f92672>==</span> XPOS){
+                        buffer[pos<span style=color:#f92672>++</span>]<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;r&#39;</span>;
+                        buffer[pos<span style=color:#f92672>++</span>]<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;r&#39;</span>;
                 }
         }
-        <span style=color:#66d9ef>else</span> <span style=color:#66d9ef>if</span>(torus_currentDir <span style=color:#f92672>=</span><span style=color:#f92672>=</span> YPOS){
-                <span style=color:#66d9ef>if</span>(tempDir <span style=color:#f92672>=</span><span style=color:#f92672>=</span> XPOS)
-                        buffer[pos<span style=color:#f92672>+</span><span style=color:#f92672>+</span>]<span style=color:#f92672>=</span><span style=color:#e6db74></span><span style=color:#e6db74>&#39;</span><span style=color:#e6db74>r</span><span style=color:#e6db74>&#39;</span>;
-                <span style=color:#66d9ef>else</span> <span style=color:#66d9ef>if</span>(tempDir <span style=color:#f92672>=</span><span style=color:#f92672>=</span> XNEG)
-                        buffer[pos<span style=color:#f92672>+</span><span style=color:#f92672>+</span>]<span style=color:#f92672>=</span><span style=color:#e6db74></span><span style=color:#e6db74>&#39;</span><span style=color:#e6db74>l</span><span style=color:#e6db74>&#39;</span>;
-                <span style=color:#66d9ef>else</span> <span style=color:#66d9ef>if</span>(tempDir <span style=color:#f92672>=</span><span style=color:#f92672>=</span> YNEG){
-                        buffer[pos<span style=color:#f92672>+</span><span style=color:#f92672>+</span>]<span style=color:#f92672>=</span><span style=color:#e6db74></span><span style=color:#e6db74>&#39;</span><span style=color:#e6db74>r</span><span style=color:#e6db74>&#39;</span>;
-                        buffer[pos<span style=color:#f92672>+</span><span style=color:#f92672>+</span>]<span style=color:#f92672>=</span><span style=color:#e6db74></span><span style=color:#e6db74>&#39;</span><span style=color:#e6db74>r</span><span style=color:#e6db74>&#39;</span>;
+        <span style=color:#66d9ef>else</span> <span style=color:#66d9ef>if</span>(torus_currentDir <span style=color:#f92672>==</span> YPOS){
+                <span style=color:#66d9ef>if</span>(tempDir <span style=color:#f92672>==</span> XPOS)
+                        buffer[pos<span style=color:#f92672>++</span>]<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;r&#39;</span>;
+                <span style=color:#66d9ef>else</span> <span style=color:#66d9ef>if</span>(tempDir <span style=color:#f92672>==</span> XNEG)
+                        buffer[pos<span style=color:#f92672>++</span>]<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;l&#39;</span>;
+                <span style=color:#66d9ef>else</span> <span style=color:#66d9ef>if</span>(tempDir <span style=color:#f92672>==</span> YNEG){
+                        buffer[pos<span style=color:#f92672>++</span>]<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;r&#39;</span>;
+                        buffer[pos<span style=color:#f92672>++</span>]<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;r&#39;</span>;
                 }
         }
-        <span style=color:#66d9ef>if</span>(torus_currentDir <span style=color:#f92672>=</span><span style=color:#f92672>=</span> YNEG){
-                <span style=color:#66d9ef>if</span>(tempDir <span style=color:#f92672>=</span><span style=color:#f92672>=</span> XPOS)
-                        buffer[pos<span style=color:#f92672>+</span><span style=color:#f92672>+</span>]<span style=color:#f92672>=</span><span style=color:#e6db74></span><span style=color:#e6db74>&#39;</span><span style=color:#e6db74>l</span><span style=color:#e6db74>&#39;</span>;
-                <span style=color:#66d9ef>else</span> <span style=color:#66d9ef>if</span>(tempDir <span style=color:#f92672>=</span><span style=color:#f92672>=</span> XNEG)
-                        buffer[pos<span style=color:#f92672>+</span><span style=color:#f92672>+</span>]<span style=color:#f92672>=</span><span style=color:#e6db74></span><span style=color:#e6db74>&#39;</span><span style=color:#e6db74>r</span><span style=color:#e6db74>&#39;</span>;
-                <span style=color:#66d9ef>else</span> <span style=color:#66d9ef>if</span>(tempDir <span style=color:#f92672>=</span><span style=color:#f92672>=</span> YPOS){
-                        buffer[pos<span style=color:#f92672>+</span><span style=color:#f92672>+</span>]<span style=color:#f92672>=</span><span style=color:#e6db74></span><span style=color:#e6db74>&#39;</span><span style=color:#e6db74>r</span><span style=color:#e6db74>&#39;</span>;
-                        buffer[pos<span style=color:#f92672>+</span><span style=color:#f92672>+</span>]<span style=color:#f92672>=</span><span style=color:#e6db74></span><span style=color:#e6db74>&#39;</span><span style=color:#e6db74>r</span><span style=color:#e6db74>&#39;</span>;
+        <span style=color:#66d9ef>if</span>(torus_currentDir <span style=color:#f92672>==</span> YNEG){
+                <span style=color:#66d9ef>if</span>(tempDir <span style=color:#f92672>==</span> XPOS)
+                        buffer[pos<span style=color:#f92672>++</span>]<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;l&#39;</span>;
+                <span style=color:#66d9ef>else</span> <span style=color:#66d9ef>if</span>(tempDir <span style=color:#f92672>==</span> XNEG)
+                        buffer[pos<span style=color:#f92672>++</span>]<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;r&#39;</span>;
+                <span style=color:#66d9ef>else</span> <span style=color:#66d9ef>if</span>(tempDir <span style=color:#f92672>==</span> YPOS){
+                        buffer[pos<span style=color:#f92672>++</span>]<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;r&#39;</span>;
+                        buffer[pos<span style=color:#f92672>++</span>]<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;r&#39;</span>;
                 }
         }
 
         <span style=color:#75715e>// now reverse the string and end it and wee are done
-</span><span style=color:#75715e></span>        <span style=color:#66d9ef>for</span>(i<span style=color:#f92672>=</span><span style=color:#ae81ff>0</span>,j<span style=color:#f92672>=</span>pos<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>;j<span style=color:#f92672>&gt;</span>i;i<span style=color:#f92672>+</span><span style=color:#f92672>+</span>,j<span style=color:#f92672>-</span><span style=color:#f92672>-</span>){
+</span><span style=color:#75715e></span>        <span style=color:#66d9ef>for</span>(i<span style=color:#f92672>=</span><span style=color:#ae81ff>0</span>,j<span style=color:#f92672>=</span>pos<span style=color:#f92672>-</span><span style=color:#ae81ff>1</span>;j<span style=color:#f92672>&gt;</span>i;i<span style=color:#f92672>++</span>,j<span style=color:#f92672>--</span>){
                 tempDir <span style=color:#f92672>=</span> buffer[i];
                 buffer[i]<span style=color:#f92672>=</span> buffer[j];
                 buffer[j]<span style=color:#f92672>=</span>tempDir;
         }
 
-        buffer[pos]<span style=color:#f92672>=</span><span style=color:#e6db74></span><span style=color:#e6db74>&#39;</span><span style=color:#e6db74>\0</span><span style=color:#e6db74>&#39;</span>;
+        buffer[pos]<span style=color:#f92672>=</span><span style=color:#e6db74>&#39;\0&#39;</span>;
 }
 <span style=color:#75715e>/*** End Torus Code ***/</span> 
 </code></pre></div></div><h2>Comments</h2><script src=https://utteranc.es/client.js repo=splusq/splusq.github.io issue-term=title theme=github-light crossorigin=anonymous async></script></main><script type=application/javascript>var doNotTrack=false;if(!doNotTrack){window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;ga('create','UA-38742121-1','auto');ga('send','pageview');}</script><script async src=https://www.google-analytics.com/analytics.js></script></body></html>
