@@ -6,7 +6,6 @@ theme:
 params:
   description: "Engineering Manager for Microsoft Azure Speech in Silicon Valley, CA."
   copyright: "Opinions are my own."
-  themeColor: "theme-base-08"
 Menus:
   main:
     - Name: "Blog"
