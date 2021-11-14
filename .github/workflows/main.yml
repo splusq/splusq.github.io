@@ -4,6 +4,9 @@ on:
   push:
     branches:
     - release
+  schedule:
+    # Runs at midnight every Sunday (see https://crontab.guru)
+    - cron: '0 0 * * 0'
 
 jobs:
   build-deploy:
