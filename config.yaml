@@ -6,7 +6,8 @@ theme:
 params:
   description: "Engineering Manager for Microsoft Azure Cognitive Services in Mountain View, CA."
   copyright: "Opinions are my own."
-  themeColor: "theme-base-08"
+  themeColor: "theme-base-09"
+  layoutReverse: true  
 Menus:
   main:
     - Name: "Blog"
