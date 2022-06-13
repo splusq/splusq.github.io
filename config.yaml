@@ -1,10 +1,10 @@
 baseURL: "https://www.salmanq.com/"
 languageCode: "en-us"
-title: "salman"
+title: "Salman Quazi"
 theme: 
   - hyde
 params:
-  description: "Salman Quazi is an Engineering Manager for Microsoft Azure Cognitive Services in Mountain View, CA."
+  description: "Engineering Manager for Microsoft Azure Cognitive Services in Mountain View, CA."
   copyright: "Opinions are my own."
   themeColor: "theme-base-08"
 Menus:
