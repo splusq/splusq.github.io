@@ -1,16 +1,17 @@
 baseURL: "https://www.salmanq.com/"
 languageCode: "en-us"
 title: "Salman Quazi"
-theme: 
-  - hyde
+theme:
+  - papermod
 params:
-  description: "Engineering Manager for Microsoft Azure Cognitive Services in Mountain View, CA."
-  copyright: "Opinions are my own."
-  themeColor: "theme-base-08"
+  defaultTheme: dark
+  ShowReadingTime: true
+
+googleAnalytics: UA-38742121-1
 Menus:
   main:
     - Name: "Blog"
-      URL: "/blog/"    
+      URL: "/blog/"
     - Name: "Github"
       URL: "https://github.com/splusq/"
     - Name: "LinkedIn"
