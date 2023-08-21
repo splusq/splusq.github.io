@@ -1,13 +1,30 @@
 baseURL: "https://www.salmanq.com/"
-languageCode: "en-us"
-title: "Salman Quazi"
-theme:
-  - papermod
-params:
-  defaultTheme: dark
-  ShowReadingTime: true
+title: Salman Quazi
+theme: PaperMod
+
+enableRobotsTXT: true
+buildDrafts: false
+buildFuture: false
+buildExpired: false
 
 googleAnalytics: UA-38742121-1
+
+minify:
+  disableXML: true
+  minifyOutput: true
+
+params:
+  env: production # to enable google analytics, opengraph, twitter-cards and schema.
+  defaultTheme: dark
+  title: Salman Quazi
+  description: Hi! I am an engineering manager for Azure Cognitive Services at Microsoft in Silicon Valley, CA.
+  author: Me
+  ShowReadingTime: true
+  ShowShareButtons: true
+  ShowPostNavLinks: true
+  ShowBreadCrumbs: true
+
+
 Menus:
   main:
     - Name: "Blog"
