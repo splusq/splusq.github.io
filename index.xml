@@ -1,51 +1,862 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Salman Quazi</title><link>https://www.salmanq.com/</link><description>Recent content on Salman Quazi</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Wed, 11 Dec 2019 21:53:00 +0000</lastBuildDate><atom:link href="https://www.salmanq.com/index.xml" rel="self" type="application/rss+xml"/><item><title>Switched to Hugo from Wordpress</title><link>https://www.salmanq.com/blog/switched-to-hugo-from-wordpress/</link><pubDate>Wed, 11 Dec 2019 21:53:00 +0000</pubDate><guid>https://www.salmanq.com/blog/switched-to-hugo-from-wordpress/</guid><description>It&amp;rsquo;s been a relief to move away from the bloat of WordPress. I decided to use Hugo and host all of the content in Github. I am even able to use Github Actions to manage the continuous integration/delivery of the source to Github Pages all entirely for free. While Github Pages, and Hugo both generate static html pages, I was able to enable comments, via utteranc.es which stores the comments in Github as issues.</description></item><item><title>5 things you probably didn't know about .NET WebSockets</title><link>https://www.salmanq.com/blog/5-things-you-probably-didnt-know-about-net-websockets/</link><pubDate>Sat, 13 Apr 2013 23:45:28 +0000</pubDate><guid>https://www.salmanq.com/blog/5-things-you-probably-didnt-know-about-net-websockets/</guid><description>As most of you probably already know WebSocket provides full-duplex communication over a single TCP connection. .NET 4.5 added support for WebSockets as part of the BCL. In this article I am going to talk about few of the subtleties that you need to think about.
-Connection upgrade is somewhat expensive WebSocket connections are initiated as traditional HTTP connections. The client then usually requests an &amp;ldquo;upgrade&amp;rdquo; to a WebSocket session, this upgrade process is relatively expensive.</description></item><item><title>Building a service execution pipeline</title><link>https://www.salmanq.com/blog/building-a-service-execution-pipeline/</link><pubDate>Mon, 08 Apr 2013 05:19:13 +0000</pubDate><guid>https://www.salmanq.com/blog/building-a-service-execution-pipeline/</guid><description>Most software built today have a notion of a client and a service. This is even more true with mobile/web applications because you want your client apps to do as little as possible, and your service to do most of the heavy lifting. This allows you to improve your service without requiring constant client updates. Also since you have a single service that serves potentially various native clients (iOS, Android, or Windows Phone), being able to update it independently of your users gives you a clear competitive edge.</description></item><item><title>Self-Awareness</title><link>https://www.salmanq.com/blog/self-awareness/</link><pubDate>Sun, 07 Apr 2013 05:37:43 +0000</pubDate><guid>https://www.salmanq.com/blog/self-awareness/</guid><description>Sebastian Junger (pronounced Younger) was on Bill Maher last night. Junger is an award winning Afghanistan war correspondent, and director, and his latest documentary Which way is the front line from here? has been proclaimed a success at the Sundance Film Festival this year. During the interview Bill asked why war felt like an addiction to some soldiers. In particular, what psychology drove this behavior? To that Sebastian responded: &amp;ldquo;The consequences in war are huge.</description></item><item><title>Introduction to Machine Learning</title><link>https://www.salmanq.com/blog/introduction-to-machine-learning-2/</link><pubDate>Mon, 01 Apr 2013 07:39:37 +0000</pubDate><guid>https://www.salmanq.com/blog/introduction-to-machine-learning-2/</guid><description>In most computer science programs, machine learning is usually a graduate level course. It&amp;rsquo;s a specialization within the field of artificial intelligence, which is often thought of as a theoretical study than practical applications. But yet, machine learning today is used heavily to solve problems. Our team for instance, uses it to build acoustic models for speech recognition. It&amp;rsquo;s no longer a theory, it&amp;rsquo;s applied science. But if you wanted to start in this field, which I suspect is going to play a major role in software in the future, where do you start?</description></item><item><title>.NET and Node.JS - Performance Comparison (Updated)</title><link>https://www.salmanq.com/blog/net-and-node-js-performance-comparison/</link><pubDate>Tue, 26 Mar 2013 08:57:39 +0000</pubDate><guid>https://www.salmanq.com/blog/net-and-node-js-performance-comparison/</guid><description>Update (3/31/2013 - 11:41 PM PST):
-This article has been updated! As most readers have commented the node.js async package is not asynchronous, which is what the original article was based on. I made an assumption I should not have. I have since rerun the tests taking this into account, as well as some of the changes recommended by Guillaume Lecomte. I have decided to update this existing post so that there&amp;rsquo;s no confusion in the future with the data.</description></item><item><title>Improving Wordpress site speed on IIS</title><link>https://www.salmanq.com/blog/improving-wordpress-site-speed-on-iis/</link><pubDate>Sun, 24 Mar 2013 19:03:14 +0000</pubDate><guid>https://www.salmanq.com/blog/improving-wordpress-site-speed-on-iis/</guid><description>One of the first things I did when I started this blog was to change the way static files are cached by IIS to improve site speed. Static files are things that aren&amp;rsquo;t going to change, things like CSS, JavaScript, images, documents, and so on. With IIS this is actually quite easy to achieve, you can start by making the following change to your web.config:
-&amp;lt;system.webServer&amp;gt; &amp;lt;staticContent&amp;gt; &amp;lt;clientCache cacheControlMode=&amp;#34;UseMaxAge&amp;#34; cacheControlMaxAge=&amp;#34;7.00:00:00&amp;#34; /&amp;gt; &amp;lt;/staticContent&amp;gt; &amp;lt;/system.</description></item><item><title>Ads</title><link>https://www.salmanq.com/blog/ads/</link><pubDate>Wed, 20 Mar 2013 17:34:58 +0000</pubDate><guid>https://www.salmanq.com/blog/ads/</guid><description>Came across this wonderful quote from Jeff Hammerbacher: &amp;ldquo;The best minds of my generation are thinking about how to make people click ads&amp;rdquo;. I won&amp;rsquo;t get into the details of what the implications of this are - but I think you can figure it out.</description></item><item><title>Composition over Inheritance</title><link>https://www.salmanq.com/blog/composition-over-inheritance/</link><pubDate>Sat, 09 Mar 2013 01:37:44 +0000</pubDate><guid>https://www.salmanq.com/blog/composition-over-inheritance/</guid><description>There are several ways to extend the behavior of a class. One of my preferred approach to extending behaviors is composition, and that is what we are going to talk about today. Let&amp;rsquo;s start with a simple example of inheritance:
-public class Search : ISearch { IEnumerable&amp;lt;SearchResults&amp;gt; Search(Query q); } public class Related : Search { IEnumerable&amp;lt;RelatedEntities&amp;gt; Related(Query q); } So in this simple example, we extend Search and create Related - which provides some additional functionality.</description></item><item><title>Azure service monitoring</title><link>https://www.salmanq.com/blog/azure-service-monitoring/</link><pubDate>Fri, 08 Mar 2013 01:09:37 +0000</pubDate><guid>https://www.salmanq.com/blog/azure-service-monitoring/</guid><description>Monitoring your Azure services couldn&amp;rsquo;t get easier. Windows Azure recently released a capability to test connectivity of your service (REST or website) from over three continents. It&amp;rsquo;s super simple to setup. Login to your azure management console, add your website URL to monitor and select up to three locations to monitor from: With that you can start getting response time, and uptime reports (my uptime was 100% so I didn&amp;rsquo;t show it here): In this case, Violet is Chicago, Blue is Hong Kong, and Green is Amsterdam.</description></item><item><title>C-Sharp as a scripting language</title><link>https://www.salmanq.com/blog/c-sharp-as-a-scripting-language/</link><pubDate>Thu, 07 Mar 2013 04:49:07 +0000</pubDate><guid>https://www.salmanq.com/blog/c-sharp-as-a-scripting-language/</guid><description>Here&amp;rsquo;s a cool technology you might not have heard of: scriptcs. Gives you the ability to use C# as a scripting language. It does this using the Rosyln compiler. So here&amp;rsquo;s an example below, taken directly from the scriptcs website:
-using System; using System.IO; using System.Web.Http; using System.Web.Http.SelfHost; var address = &amp;#34;http://localhost:8080&amp;#34;; var conf = new HttpSelfHostConfiguration(new Uri(address)); conf.Routes.MapHttpRoute( name: &amp;#34;DefaultApi&amp;#34;, routeTemplate: &amp;#34;api/{controller}/{id}&amp;#34;, defaults: new { id = RouteParameter.Optional } ); var server = new HttpSelfHostServer(conf); server.</description></item><item><title>Using the MVVM pattern on web applications – Part III</title><link>https://www.salmanq.com/blog/using-the-mvvm-pattern-on-web-applications-part-iii/</link><pubDate>Wed, 06 Mar 2013 06:39:59 +0000</pubDate><guid>https://www.salmanq.com/blog/using-the-mvvm-pattern-on-web-applications-part-iii/</guid><description>We are at the finale of this three part series. In part I we discussed the MVVM design pattern, in part II we looked at the overall architecture and how the server side fits into the picture. In this article we are going to look at the client side of this and close with some final thoughts. The best place to start with the client is the HTML - so here&amp;rsquo;s the part of the HTML that&amp;rsquo;s interesting:</description></item><item><title>IE Compatibility and W3C Validation</title><link>https://www.salmanq.com/blog/ie-compatibility-and-w3c-validation/</link><pubDate>Mon, 04 Mar 2013 08:17:23 +0000</pubDate><guid>https://www.salmanq.com/blog/ie-compatibility-and-w3c-validation/</guid><description>I&amp;rsquo;ve always been a junkie when it comes to markup validation. It&amp;rsquo;s important to me that my sites are 100% XHTML/strict compatible. But recently I came across a situation that I thought I simply couldn&amp;rsquo;t get around. In this article I am going to show you how you can add the X-UA-Compatible attribute and at the same time validate your pages through W3C validation. My website had the following tag:</description></item><item><title>Using the MVVM pattern on web applications – Part II</title><link>https://www.salmanq.com/blog/using-the-mvvm-pattern-on-web-applications-part-ii/</link><pubDate>Sun, 03 Mar 2013 04:23:51 +0000</pubDate><guid>https://www.salmanq.com/blog/using-the-mvvm-pattern-on-web-applications-part-ii/</guid><description>Last time we looked at what the MVVM pattern was, and how it is used today in XAML-based applications. Today we are going to take a step further and build a mechanism to use the MVVM pattern on traditional web applications. Imagine how powerful it would be if your UI could evolve independently. We are going to build a simple web application that will display top 5 &amp;ldquo;memory intensive&amp;rdquo; processes on the server side, and here&amp;rsquo;s our basic architecture: Recall, with MVVM we need the ability for our ViewModels to somehow send messages to the UI.</description></item><item><title>Microsoft on{x} - Automate your life</title><link>https://www.salmanq.com/blog/microsoft-onx-automate-your-life/</link><pubDate>Sat, 02 Mar 2013 19:12:00 +0000</pubDate><guid>https://www.salmanq.com/blog/microsoft-onx-automate-your-life/</guid><description>Microsoft on{x} is a set of services built by the team I work for. On{x} allows you to configure arbitrary actions during specific circumstances. For instance, on{x} provides an API called modeOfTransport. This API gives the developer the current mode of transportation - whether you are walking, running or driving. You can subscribe to a change in this event and build cool scenarios like when someone is going from driving to walking (imagine parking a car), your phone can automatically remember your parking location.</description></item><item><title>How do you test your software?</title><link>https://www.salmanq.com/blog/how-do-you-test-your-software/</link><pubDate>Fri, 01 Mar 2013 15:09:40 +0000</pubDate><guid>https://www.salmanq.com/blog/how-do-you-test-your-software/</guid><description>There seems to be two types of developers out there. One that believes in integration tests, and the other that believes in both unit and integration tests. Integration tests are tests that execute everything as if they were real &amp;ldquo;transactions&amp;rdquo; only to verify the expected results. For instance, if you were building a web application that managed a list of employees and their supervisors. Your integration test would probably add an employee to the database (actually add it), and then read it back from that database, and so on (from a test database of course).</description></item><item><title>Using the MVVM pattern on web applications – Part I</title><link>https://www.salmanq.com/blog/using-the-mvvm-pattern-on-web-applications-part-i/</link><pubDate>Thu, 28 Feb 2013 09:01:15 +0000</pubDate><guid>https://www.salmanq.com/blog/using-the-mvvm-pattern-on-web-applications-part-i/</guid><description>In this series I will be discussing how the MVVM pattern can be used for almost any type of web application. MVVM (a variant on the MVP pattern) - is a really powerful pattern that can be used in UI applications. Traditionally these UI applications has been WPF and Silverlight. In this article I will show you how you can use the same principles to build web applications. With MVVM you have the following three ideas:</description></item><item><title>Learning to program</title><link>https://www.salmanq.com/blog/learning-to-program/</link><pubDate>Wed, 27 Feb 2013 04:42:28 +0000</pubDate><guid>https://www.salmanq.com/blog/learning-to-program/</guid><description>If you or your kids want to learn how to program - you can start here: http://www.code.org/. For instance, just see this example. You have a great editor, where you can type and see results immediately on the right. On top of that, you have a video, with someone talking you through basic ideas like functions, and parameters. The site has support from top names like Bill Gates and Mark Zuckerberg.</description></item><item><title>Asynchronous Anonymous Methods</title><link>https://www.salmanq.com/blog/asynchronous-anonymous-methods/</link><pubDate>Wed, 27 Feb 2013 04:04:42 +0000</pubDate><guid>https://www.salmanq.com/blog/asynchronous-anonymous-methods/</guid><description>So a cool new feature in .NET 4.5 is the ability to create anonymous methods that are asynchronous (async).
-Task.Run(async () =&amp;gt; await Task.Yield()); That&amp;rsquo;s just a cool way of saying do nothing!</description></item><item><title>Task Timeouts</title><link>https://www.salmanq.com/blog/task-timeouts/</link><pubDate>Tue, 26 Feb 2013 03:25:30 +0000</pubDate><guid>https://www.salmanq.com/blog/task-timeouts/</guid><description>When dealing with .NET tasks – we often want to timeout the operation if it does not complete within a certain period of time. For instance, if you make an asynchronous WebRequest call – you may want to timeout this asynchronous operation within 3 seconds if you don’t get a response back. In the past, we had to create Timers to monitor the Task (or the Thread) for completion in the callback of the timer, and then do other crazy gymnastics to make it all play well together.</description></item><item><title>Brief introduction to PRISM</title><link>https://www.salmanq.com/blog/brief-introduction-to-prism/</link><pubDate>Tue, 08 Mar 2011 14:55:10 +0000</pubDate><guid>https://www.salmanq.com/blog/brief-introduction-to-prism/</guid><description>Before I go into the technical details of this article. I want to provide some context for this discussion. So we are using PRISM to develop a user-interface (UI) platform in the context of a Silverlight (but they apply to WPF also). The idea behind the UI platform is we will provide the basic functional look and feel and various plumbing (such as security, service encapsulation, messaging and exception handling, among others) and allow others to develop modules/components on top.</description></item><item><title>How to check if Integrated Windows Authentication is available?</title><link>https://www.salmanq.com/blog/how-to-check-if-integrated-windows-authentication-is-available/</link><pubDate>Mon, 07 Mar 2011 13:13:32 +0000</pubDate><guid>https://www.salmanq.com/blog/how-to-check-if-integrated-windows-authentication-is-available/</guid><description>If you&amp;rsquo;ve ever worked on an intranet site, you often want to know, programmatically, if a client that&amp;rsquo;s accessing your website has the ability to automatically login to your site (Integrated Windows Authentication). With Integration Windows Authentication, Windows can basically send (as a HTTP header) the currently &amp;ldquo;logged on&amp;rdquo; username. So your application can access this LOGON_USER HTTP header and go from there. I won&amp;rsquo;t get into the details of how to setup integrated windows authentication, but basically the idea is you go into IIS and for a given resource (a folder or a file) on your site you change the directory security to Integrated Windows Authentication.</description></item><item><title>Better Presentations</title><link>https://www.salmanq.com/blog/better-presentations/</link><pubDate>Fri, 04 Mar 2011 13:19:16 +0000</pubDate><guid>https://www.salmanq.com/blog/better-presentations/</guid><description>You can drastically improve your PowerPoint presentations by simply leveraging pptPlex! It’s a add-on for PowerPoint to build dynamic, contextual presentations. Contextual presentations allows your viewers to see the global context of your discussion, which in turn helps them to follow your line of thought. Watch some of the videos on the pptPlex website to see what’s possible.</description></item><item><title>Rendering Step 1 of … (ASP.NET)</title><link>https://www.salmanq.com/blog/rendering-step-1-of-asp-net/</link><pubDate>Thu, 27 Sep 2007 01:01:29 +0000</pubDate><guid>https://www.salmanq.com/blog/rendering-step-1-of-asp-net/</guid><description>The MultiView control, Wizard control or even a custom panel-based control is very useful to collect large sets of data in wizard form; and it&amp;rsquo;s often useful to give visual ques to the user as to which step he/she is in. Something similar to:
-The following ASP.NET code/C# allows us to build a dynamic step control which grows or shrinks automatically given the number of views you have in a MultiView control, or the number of steps in a wizard control.</description></item><item><title>Presentation on jQuery</title><link>https://www.salmanq.com/blog/presentation-on-jquery/</link><pubDate>Tue, 19 Jun 2007 02:32:23 +0000</pubDate><guid>https://www.salmanq.com/blog/presentation-on-jquery/</guid><description>I presented a topic on jQuery at our campus web publishers meeting. Here are the sample pages and the PowerPoint presentation. I will talk more discussions on jQuery and how it has helped us to build a powerful web-application next week.</description></item><item><title>Automatic Documentation</title><link>https://www.salmanq.com/blog/automatic-documentation/</link><pubDate>Thu, 31 May 2007 19:16:21 +0000</pubDate><guid>https://www.salmanq.com/blog/automatic-documentation/</guid><description>Generally all programmers are lazy&amp;ndash;and specially when it comes to documentation because it takes so much time and doesn&amp;rsquo;t necessarily produce any material benefit. GhostDoc1, designed by Roland Weigelt, is a plugin for Visual Studio 2005 that automates the generation of XML comments. For example if you have the following C#1 function:
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Salman Quazi</title>
+    <link>https://www.salmanq.com/</link>
+    <description>Recent content on Salman Quazi</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 11 Dec 2019 21:53:00 +0000</lastBuildDate><atom:link href="https://www.salmanq.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Switched to Hugo from Wordpress</title>
+      <link>https://www.salmanq.com/blog/switched-to-hugo-from-wordpress/</link>
+      <pubDate>Wed, 11 Dec 2019 21:53:00 +0000</pubDate>
+      
+      <guid>https://www.salmanq.com/blog/switched-to-hugo-from-wordpress/</guid>
+      <description>It&amp;rsquo;s been a relief to move away from the bloat of WordPress. I decided to use Hugo and host all of the content in Github. I am even able to use Github Actions to manage the continuous integration/delivery of the source to Github Pages all entirely for free. While Github Pages, and Hugo both generate static html pages, I was able to enable comments, via utteranc.es which stores the comments in Github as issues.</description>
+    </item>
+    
+    <item>
+      <title>5 things you probably didn&#39;t know about .NET WebSockets</title>
+      <link>https://www.salmanq.com/blog/5-things-you-probably-didnt-know-about-net-websockets/</link>
+      <pubDate>Sat, 13 Apr 2013 23:45:28 +0000</pubDate>
+      
+      <guid>https://www.salmanq.com/blog/5-things-you-probably-didnt-know-about-net-websockets/</guid>
+      <description>As most of you probably already know WebSocket provides full-duplex communication over a single TCP connection. .NET 4.5 added support for WebSockets as part of the BCL. In this article I am going to talk about few of the subtleties that you need to think about.
+Connection upgrade is somewhat expensive WebSocket connections are initiated as traditional HTTP connections. The client then usually requests an &amp;ldquo;upgrade&amp;rdquo; to a WebSocket session, this upgrade process is relatively expensive.</description>
+    </item>
+    
+    <item>
+      <title>Building a service execution pipeline</title>
+      <link>https://www.salmanq.com/blog/building-a-service-execution-pipeline/</link>
+      <pubDate>Mon, 08 Apr 2013 05:19:13 +0000</pubDate>
+      
+      <guid>https://www.salmanq.com/blog/building-a-service-execution-pipeline/</guid>
+      <description>Most software built today have a notion of a client and a service. This is even more true with mobile/web applications because you want your client apps to do as little as possible, and your service to do most of the heavy lifting. This allows you to improve your service without requiring constant client updates. Also since you have a single service that serves potentially various native clients (iOS, Android, or Windows Phone), being able to update it independently of your users gives you a clear competitive edge.</description>
+    </item>
+    
+    <item>
+      <title>Self-Awareness</title>
+      <link>https://www.salmanq.com/blog/self-awareness/</link>
+      <pubDate>Sun, 07 Apr 2013 05:37:43 +0000</pubDate>
+      
+      <guid>https://www.salmanq.com/blog/self-awareness/</guid>
+      <description>Sebastian Junger (pronounced Younger) was on Bill Maher last night. Junger is an award winning Afghanistan war correspondent, and director, and his latest documentary Which way is the front line from here? has been proclaimed a success at the Sundance Film Festival this year. During the interview Bill asked why war felt like an addiction to some soldiers. In particular, what psychology drove this behavior? To that Sebastian responded: &amp;ldquo;The consequences in war are huge.</description>
+    </item>
+    
+    <item>
+      <title>Introduction to Machine Learning</title>
+      <link>https://www.salmanq.com/blog/introduction-to-machine-learning-2/</link>
+      <pubDate>Mon, 01 Apr 2013 07:39:37 +0000</pubDate>
+      
+      <guid>https://www.salmanq.com/blog/introduction-to-machine-learning-2/</guid>
+      <description>In most computer science programs, machine learning is usually a graduate level course. It&amp;rsquo;s a specialization within the field of artificial intelligence, which is often thought of as a theoretical study than practical applications. But yet, machine learning today is used heavily to solve problems. Our team for instance, uses it to build acoustic models for speech recognition. It&amp;rsquo;s no longer a theory, it&amp;rsquo;s applied science. But if you wanted to start in this field, which I suspect is going to play a major role in software in the future, where do you start?</description>
+    </item>
+    
+    <item>
+      <title>.NET and Node.JS - Performance Comparison (Updated)</title>
+      <link>https://www.salmanq.com/blog/net-and-node-js-performance-comparison/</link>
+      <pubDate>Tue, 26 Mar 2013 08:57:39 +0000</pubDate>
+      
+      <guid>https://www.salmanq.com/blog/net-and-node-js-performance-comparison/</guid>
+      <description>Update (3/31/2013 - 11:41 PM PST):
+This article has been updated! As most readers have commented the node.js async package is not asynchronous, which is what the original article was based on. I made an assumption I should not have. I have since rerun the tests taking this into account, as well as some of the changes recommended by Guillaume Lecomte. I have decided to update this existing post so that there&amp;rsquo;s no confusion in the future with the data.</description>
+    </item>
+    
+    <item>
+      <title>Improving Wordpress site speed on IIS</title>
+      <link>https://www.salmanq.com/blog/improving-wordpress-site-speed-on-iis/</link>
+      <pubDate>Sun, 24 Mar 2013 19:03:14 +0000</pubDate>
+      
+      <guid>https://www.salmanq.com/blog/improving-wordpress-site-speed-on-iis/</guid>
+      <description>One of the first things I did when I started this blog was to change the way static files are cached by IIS to improve site speed. Static files are things that aren&amp;rsquo;t going to change, things like CSS, JavaScript, images, documents, and so on. With IIS this is actually quite easy to achieve, you can start by making the following change to your web.config:
+&amp;lt;system.webServer&amp;gt; &amp;lt;staticContent&amp;gt; &amp;lt;clientCache cacheControlMode=&amp;#34;UseMaxAge&amp;#34; cacheControlMaxAge=&amp;#34;7.00:00:00&amp;#34; /&amp;gt; &amp;lt;/staticContent&amp;gt; &amp;lt;/system.</description>
+    </item>
+    
+    <item>
+      <title>Ads</title>
+      <link>https://www.salmanq.com/blog/ads/</link>
+      <pubDate>Wed, 20 Mar 2013 17:34:58 +0000</pubDate>
+      
+      <guid>https://www.salmanq.com/blog/ads/</guid>
+      <description>Came across this wonderful quote from Jeff Hammerbacher: &amp;ldquo;The best minds of my generation are thinking about how to make people click ads&amp;rdquo;. I won&amp;rsquo;t get into the details of what the implications of this are - but I think you can figure it out.</description>
+    </item>
+    
+    <item>
+      <title>Composition over Inheritance</title>
+      <link>https://www.salmanq.com/blog/composition-over-inheritance/</link>
+      <pubDate>Sat, 09 Mar 2013 01:37:44 +0000</pubDate>
+      
+      <guid>https://www.salmanq.com/blog/composition-over-inheritance/</guid>
+      <description>There are several ways to extend the behavior of a class. One of my preferred approach to extending behaviors is composition, and that is what we are going to talk about today. Let&amp;rsquo;s start with a simple example of inheritance:
+public class Search : ISearch { IEnumerable&amp;lt;SearchResults&amp;gt; Search(Query q); } public class Related : Search { IEnumerable&amp;lt;RelatedEntities&amp;gt; Related(Query q); } So in this simple example, we extend Search and create Related - which provides some additional functionality.</description>
+    </item>
+    
+    <item>
+      <title>Azure service monitoring</title>
+      <link>https://www.salmanq.com/blog/azure-service-monitoring/</link>
+      <pubDate>Fri, 08 Mar 2013 01:09:37 +0000</pubDate>
+      
+      <guid>https://www.salmanq.com/blog/azure-service-monitoring/</guid>
+      <description>Monitoring your Azure services couldn&amp;rsquo;t get easier. Windows Azure recently released a capability to test connectivity of your service (REST or website) from over three continents. It&amp;rsquo;s super simple to setup. Login to your azure management console, add your website URL to monitor and select up to three locations to monitor from: With that you can start getting response time, and uptime reports (my uptime was 100% so I didn&amp;rsquo;t show it here): In this case, Violet is Chicago, Blue is Hong Kong, and Green is Amsterdam.</description>
+    </item>
+    
+    <item>
+      <title>C-Sharp as a scripting language</title>
+      <link>https://www.salmanq.com/blog/c-sharp-as-a-scripting-language/</link>
+      <pubDate>Thu, 07 Mar 2013 04:49:07 +0000</pubDate>
+      
+      <guid>https://www.salmanq.com/blog/c-sharp-as-a-scripting-language/</guid>
+      <description>Here&amp;rsquo;s a cool technology you might not have heard of: scriptcs. Gives you the ability to use C# as a scripting language. It does this using the Rosyln compiler. So here&amp;rsquo;s an example below, taken directly from the scriptcs website:
+using System; using System.IO; using System.Web.Http; using System.Web.Http.SelfHost; var address = &amp;#34;http://localhost:8080&amp;#34;; var conf = new HttpSelfHostConfiguration(new Uri(address)); conf.Routes.MapHttpRoute( name: &amp;#34;DefaultApi&amp;#34;, routeTemplate: &amp;#34;api/{controller}/{id}&amp;#34;, defaults: new { id = RouteParameter.Optional } ); var server = new HttpSelfHostServer(conf); server.</description>
+    </item>
+    
+    <item>
+      <title>Using the MVVM pattern on web applications – Part III</title>
+      <link>https://www.salmanq.com/blog/using-the-mvvm-pattern-on-web-applications-part-iii/</link>
+      <pubDate>Wed, 06 Mar 2013 06:39:59 +0000</pubDate>
+      
+      <guid>https://www.salmanq.com/blog/using-the-mvvm-pattern-on-web-applications-part-iii/</guid>
+      <description>We are at the finale of this three part series. In part I we discussed the MVVM design pattern, in part II we looked at the overall architecture and how the server side fits into the picture. In this article we are going to look at the client side of this and close with some final thoughts. The best place to start with the client is the HTML - so here&amp;rsquo;s the part of the HTML that&amp;rsquo;s interesting:</description>
+    </item>
+    
+    <item>
+      <title>IE Compatibility and W3C Validation</title>
+      <link>https://www.salmanq.com/blog/ie-compatibility-and-w3c-validation/</link>
+      <pubDate>Mon, 04 Mar 2013 08:17:23 +0000</pubDate>
+      
+      <guid>https://www.salmanq.com/blog/ie-compatibility-and-w3c-validation/</guid>
+      <description>I&amp;rsquo;ve always been a junkie when it comes to markup validation. It&amp;rsquo;s important to me that my sites are 100% XHTML/strict compatible. But recently I came across a situation that I thought I simply couldn&amp;rsquo;t get around. In this article I am going to show you how you can add the X-UA-Compatible attribute and at the same time validate your pages through W3C validation. My website had the following tag:</description>
+    </item>
+    
+    <item>
+      <title>Using the MVVM pattern on web applications – Part II</title>
+      <link>https://www.salmanq.com/blog/using-the-mvvm-pattern-on-web-applications-part-ii/</link>
+      <pubDate>Sun, 03 Mar 2013 04:23:51 +0000</pubDate>
+      
+      <guid>https://www.salmanq.com/blog/using-the-mvvm-pattern-on-web-applications-part-ii/</guid>
+      <description>Last time we looked at what the MVVM pattern was, and how it is used today in XAML-based applications. Today we are going to take a step further and build a mechanism to use the MVVM pattern on traditional web applications. Imagine how powerful it would be if your UI could evolve independently. We are going to build a simple web application that will display top 5 &amp;ldquo;memory intensive&amp;rdquo; processes on the server side, and here&amp;rsquo;s our basic architecture: Recall, with MVVM we need the ability for our ViewModels to somehow send messages to the UI.</description>
+    </item>
+    
+    <item>
+      <title>Microsoft on{x} - Automate your life</title>
+      <link>https://www.salmanq.com/blog/microsoft-onx-automate-your-life/</link>
+      <pubDate>Sat, 02 Mar 2013 19:12:00 +0000</pubDate>
+      
+      <guid>https://www.salmanq.com/blog/microsoft-onx-automate-your-life/</guid>
+      <description>Microsoft on{x} is a set of services built by the team I work for. On{x} allows you to configure arbitrary actions during specific circumstances. For instance, on{x} provides an API called modeOfTransport. This API gives the developer the current mode of transportation - whether you are walking, running or driving. You can subscribe to a change in this event and build cool scenarios like when someone is going from driving to walking (imagine parking a car), your phone can automatically remember your parking location.</description>
+    </item>
+    
+    <item>
+      <title>How do you test your software?</title>
+      <link>https://www.salmanq.com/blog/how-do-you-test-your-software/</link>
+      <pubDate>Fri, 01 Mar 2013 15:09:40 +0000</pubDate>
+      
+      <guid>https://www.salmanq.com/blog/how-do-you-test-your-software/</guid>
+      <description>There seems to be two types of developers out there. One that believes in integration tests, and the other that believes in both unit and integration tests. Integration tests are tests that execute everything as if they were real &amp;ldquo;transactions&amp;rdquo; only to verify the expected results. For instance, if you were building a web application that managed a list of employees and their supervisors. Your integration test would probably add an employee to the database (actually add it), and then read it back from that database, and so on (from a test database of course).</description>
+    </item>
+    
+    <item>
+      <title>Using the MVVM pattern on web applications – Part I</title>
+      <link>https://www.salmanq.com/blog/using-the-mvvm-pattern-on-web-applications-part-i/</link>
+      <pubDate>Thu, 28 Feb 2013 09:01:15 +0000</pubDate>
+      
+      <guid>https://www.salmanq.com/blog/using-the-mvvm-pattern-on-web-applications-part-i/</guid>
+      <description>In this series I will be discussing how the MVVM pattern can be used for almost any type of web application. MVVM (a variant on the MVP pattern) - is a really powerful pattern that can be used in UI applications. Traditionally these UI applications has been WPF and Silverlight. In this article I will show you how you can use the same principles to build web applications. With MVVM you have the following three ideas:</description>
+    </item>
+    
+    <item>
+      <title>Learning to program</title>
+      <link>https://www.salmanq.com/blog/learning-to-program/</link>
+      <pubDate>Wed, 27 Feb 2013 04:42:28 +0000</pubDate>
+      
+      <guid>https://www.salmanq.com/blog/learning-to-program/</guid>
+      <description>If you or your kids want to learn how to program - you can start here: http://www.code.org/. For instance, just see this example. You have a great editor, where you can type and see results immediately on the right. On top of that, you have a video, with someone talking you through basic ideas like functions, and parameters. The site has support from top names like Bill Gates and Mark Zuckerberg.</description>
+    </item>
+    
+    <item>
+      <title>Asynchronous Anonymous Methods</title>
+      <link>https://www.salmanq.com/blog/asynchronous-anonymous-methods/</link>
+      <pubDate>Wed, 27 Feb 2013 04:04:42 +0000</pubDate>
+      
+      <guid>https://www.salmanq.com/blog/asynchronous-anonymous-methods/</guid>
+      <description>So a cool new feature in .NET 4.5 is the ability to create anonymous methods that are asynchronous (async).
+Task.Run(async () =&amp;gt; await Task.Yield()); That&amp;rsquo;s just a cool way of saying do nothing!</description>
+    </item>
+    
+    <item>
+      <title>Task Timeouts</title>
+      <link>https://www.salmanq.com/blog/task-timeouts/</link>
+      <pubDate>Tue, 26 Feb 2013 03:25:30 +0000</pubDate>
+      
+      <guid>https://www.salmanq.com/blog/task-timeouts/</guid>
+      <description>When dealing with .NET tasks – we often want to timeout the operation if it does not complete within a certain period of time. For instance, if you make an asynchronous WebRequest call – you may want to timeout this asynchronous operation within 3 seconds if you don’t get a response back. In the past, we had to create Timers to monitor the Task (or the Thread) for completion in the callback of the timer, and then do other crazy gymnastics to make it all play well together.</description>
+    </item>
+    
+    <item>
+      <title>Brief introduction to PRISM</title>
+      <link>https://www.salmanq.com/blog/brief-introduction-to-prism/</link>
+      <pubDate>Tue, 08 Mar 2011 14:55:10 +0000</pubDate>
+      
+      <guid>https://www.salmanq.com/blog/brief-introduction-to-prism/</guid>
+      <description>Before I go into the technical details of this article. I want to provide some context for this discussion. So we are using PRISM to develop a user-interface (UI) platform in the context of a Silverlight (but they apply to WPF also). The idea behind the UI platform is we will provide the basic functional look and feel and various plumbing (such as security, service encapsulation, messaging and exception handling, among others) and allow others to develop modules/components on top.</description>
+    </item>
+    
+    <item>
+      <title>How to check if Integrated Windows Authentication is available?</title>
+      <link>https://www.salmanq.com/blog/how-to-check-if-integrated-windows-authentication-is-available/</link>
+      <pubDate>Mon, 07 Mar 2011 13:13:32 +0000</pubDate>
+      
+      <guid>https://www.salmanq.com/blog/how-to-check-if-integrated-windows-authentication-is-available/</guid>
+      <description>If you&amp;rsquo;ve ever worked on an intranet site, you often want to know, programmatically, if a client that&amp;rsquo;s accessing your website has the ability to automatically login to your site (Integrated Windows Authentication). With Integration Windows Authentication, Windows can basically send (as a HTTP header) the currently &amp;ldquo;logged on&amp;rdquo; username. So your application can access this LOGON_USER HTTP header and go from there. I won&amp;rsquo;t get into the details of how to setup integrated windows authentication, but basically the idea is you go into IIS and for a given resource (a folder or a file) on your site you change the directory security to Integrated Windows Authentication.</description>
+    </item>
+    
+    <item>
+      <title>Better Presentations</title>
+      <link>https://www.salmanq.com/blog/better-presentations/</link>
+      <pubDate>Fri, 04 Mar 2011 13:19:16 +0000</pubDate>
+      
+      <guid>https://www.salmanq.com/blog/better-presentations/</guid>
+      <description>You can drastically improve your PowerPoint presentations by simply leveraging pptPlex! It’s a add-on for PowerPoint to build dynamic, contextual presentations. Contextual presentations allows your viewers to see the global context of your discussion, which in turn helps them to follow your line of thought. Watch some of the videos on the pptPlex website to see what’s possible.</description>
+    </item>
+    
+    <item>
+      <title>Rendering Step 1 of … (ASP.NET)</title>
+      <link>https://www.salmanq.com/blog/rendering-step-1-of-asp-net/</link>
+      <pubDate>Thu, 27 Sep 2007 01:01:29 +0000</pubDate>
+      
+      <guid>https://www.salmanq.com/blog/rendering-step-1-of-asp-net/</guid>
+      <description>The MultiView control, Wizard control or even a custom panel-based control is very useful to collect large sets of data in wizard form; and it&amp;rsquo;s often useful to give visual ques to the user as to which step he/she is in. Something similar to:
+The following ASP.NET code/C# allows us to build a dynamic step control which grows or shrinks automatically given the number of views you have in a MultiView control, or the number of steps in a wizard control.</description>
+    </item>
+    
+    <item>
+      <title>Presentation on jQuery</title>
+      <link>https://www.salmanq.com/blog/presentation-on-jquery/</link>
+      <pubDate>Tue, 19 Jun 2007 02:32:23 +0000</pubDate>
+      
+      <guid>https://www.salmanq.com/blog/presentation-on-jquery/</guid>
+      <description>I presented a topic on jQuery at our campus web publishers meeting. Here are the sample pages and the PowerPoint presentation. I will talk more discussions on jQuery and how it has helped us to build a powerful web-application next week.</description>
+    </item>
+    
+    <item>
+      <title>Automatic Documentation</title>
+      <link>https://www.salmanq.com/blog/automatic-documentation/</link>
+      <pubDate>Thu, 31 May 2007 19:16:21 +0000</pubDate>
+      
+      <guid>https://www.salmanq.com/blog/automatic-documentation/</guid>
+      <description>Generally all programmers are lazy&amp;ndash;and specially when it comes to documentation because it takes so much time and doesn&amp;rsquo;t necessarily produce any material benefit. GhostDoc1, designed by Roland Weigelt, is a plugin for Visual Studio 2005 that automates the generation of XML comments. For example if you have the following C#1 function:
 public User GetByUserName(string userName); GhostDoc will automatically generate:
-/// &amp;lt;summary&amp;gt; /// Gets the name of the by user. /// &amp;lt;/summary&amp;gt; /// &amp;lt;param name=&amp;#34;userName&amp;#34;&amp;gt;Name of the user.</description></item><item><title>Using SSIS to Access Network Resources</title><link>https://www.salmanq.com/blog/using-ssis-to-access-network-resources/</link><pubDate>Sat, 26 May 2007 01:38:29 +0000</pubDate><guid>https://www.salmanq.com/blog/using-ssis-to-access-network-resources/</guid><description>SSIS (SQL Server Integration Services) is the replacement for DTS in SQL 2005. One of the more deceitful concepts in SSIS is it&amp;rsquo;s security context. When you run a SSIS package form your Visual Studio Environment, it obviously runs under a different security context (most possibly as you&amp;ndash;the developer) than it would run if it was run as a scheduled service on the SQL server itself. So let&amp;rsquo;s say you&amp;rsquo;ve developed a SSIS package that uses resources within your domain, such as accessing a network drive.</description></item><item><title>Script Task reading/returning data</title><link>https://www.salmanq.com/blog/script-task-readingreturning-data/</link><pubDate>Fri, 25 May 2007 23:58:45 +0000</pubDate><guid>https://www.salmanq.com/blog/script-task-readingreturning-data/</guid><description>When you are using the Script Task in SSIS it&amp;rsquo;s often useful to have the script task return data, and also at times useful to have access to external data. Once you drop a Script Task onto the designer and go to it&amp;rsquo;s editor, under the script tab you&amp;rsquo;ll find two attributes: ReadOnlyVariables, ReadWriteVariables. The first allows the script to access external user variables for reading, while the latter allows write access.</description></item><item><title>Reverse a linked list recursively</title><link>https://www.salmanq.com/blog/reverse-a-linked-list-recursively/</link><pubDate>Wed, 23 May 2007 23:26:12 +0000</pubDate><guid>https://www.salmanq.com/blog/reverse-a-linked-list-recursively/</guid><description>A question came up the other day while I was helping a friend of mine about recursively reversing a singly linked list. The moment I heard about it I came up with a solution, but turns out the solution requires the function to accept the following signature:
-List* reverseList(List *l); This actually poses a problem because there&amp;rsquo;s no way to keep track of the head, or maintain any back pointers which could&amp;rsquo;ve been done if the function accepted a second parameter.</description></item><item><title>Legacy code</title><link>https://www.salmanq.com/blog/legacy-code/</link><pubDate>Thu, 17 May 2007 00:52:11 +0000</pubDate><guid>https://www.salmanq.com/blog/legacy-code/</guid><description>I manage a good portion of legacy code, written by so called consultants, and I can&amp;rsquo;t believe how many places I have seen code like this:
+/// &amp;lt;summary&amp;gt; /// Gets the name of the by user. /// &amp;lt;/summary&amp;gt; /// &amp;lt;param name=&amp;#34;userName&amp;#34;&amp;gt;Name of the user.</description>
+    </item>
+    
+    <item>
+      <title>Using SSIS to Access Network Resources</title>
+      <link>https://www.salmanq.com/blog/using-ssis-to-access-network-resources/</link>
+      <pubDate>Sat, 26 May 2007 01:38:29 +0000</pubDate>
+      
+      <guid>https://www.salmanq.com/blog/using-ssis-to-access-network-resources/</guid>
+      <description>SSIS (SQL Server Integration Services) is the replacement for DTS in SQL 2005. One of the more deceitful concepts in SSIS is it&amp;rsquo;s security context. When you run a SSIS package form your Visual Studio Environment, it obviously runs under a different security context (most possibly as you&amp;ndash;the developer) than it would run if it was run as a scheduled service on the SQL server itself. So let&amp;rsquo;s say you&amp;rsquo;ve developed a SSIS package that uses resources within your domain, such as accessing a network drive.</description>
+    </item>
+    
+    <item>
+      <title>Script Task reading/returning data</title>
+      <link>https://www.salmanq.com/blog/script-task-readingreturning-data/</link>
+      <pubDate>Fri, 25 May 2007 23:58:45 +0000</pubDate>
+      
+      <guid>https://www.salmanq.com/blog/script-task-readingreturning-data/</guid>
+      <description>When you are using the Script Task in SSIS it&amp;rsquo;s often useful to have the script task return data, and also at times useful to have access to external data. Once you drop a Script Task onto the designer and go to it&amp;rsquo;s editor, under the script tab you&amp;rsquo;ll find two attributes: ReadOnlyVariables, ReadWriteVariables. The first allows the script to access external user variables for reading, while the latter allows write access.</description>
+    </item>
+    
+    <item>
+      <title>Reverse a linked list recursively</title>
+      <link>https://www.salmanq.com/blog/reverse-a-linked-list-recursively/</link>
+      <pubDate>Wed, 23 May 2007 23:26:12 +0000</pubDate>
+      
+      <guid>https://www.salmanq.com/blog/reverse-a-linked-list-recursively/</guid>
+      <description>A question came up the other day while I was helping a friend of mine about recursively reversing a singly linked list. The moment I heard about it I came up with a solution, but turns out the solution requires the function to accept the following signature:
+List* reverseList(List *l); This actually poses a problem because there&amp;rsquo;s no way to keep track of the head, or maintain any back pointers which could&amp;rsquo;ve been done if the function accepted a second parameter.</description>
+    </item>
+    
+    <item>
+      <title>Legacy code</title>
+      <link>https://www.salmanq.com/blog/legacy-code/</link>
+      <pubDate>Thu, 17 May 2007 00:52:11 +0000</pubDate>
+      
+      <guid>https://www.salmanq.com/blog/legacy-code/</guid>
+      <description>I manage a good portion of legacy code, written by so called consultants, and I can&amp;rsquo;t believe how many places I have seen code like this:
 bool flag; if(x==y) { flag=true; } else { flag=false; } Or a variation of this
 bool flag=false; if(x==y) { flag=true; } Although the latter is better, you can write an equivalent statement as follows:
-bool flag = (x==y); How much easier is that to read?</description></item><item><title>Using Control Adapters</title><link>https://www.salmanq.com/blog/using-control-adapters/</link><pubDate>Tue, 15 May 2007 04:55:43 +0000</pubDate><guid>https://www.salmanq.com/blog/using-control-adapters/</guid><description>ASP.NET 2.0 introduced a new way of modifying how ASP.NET renders a control. For example, when you say:
-&amp;lt;asp:textbox id=&amp;#34;FirstName&amp;#34; runat=&amp;#34;server&amp;#34; /&amp;gt; You have very limited control over how the control actually renders. You can specify a cssclass to modify the look and feel, but the actual HTML rendering is limited to what&amp;rsquo;s available from the ASP.NET server attributes. For example you cannot add client-side onfocus or onblur statements. This is where Control Adapters comes in.</description></item><item><title>Automatic Printing</title><link>https://www.salmanq.com/blog/automatic-printing/</link><pubDate>Tue, 20 Sep 2005 23:42:20 +0000</pubDate><guid>https://www.salmanq.com/blog/automatic-printing/</guid><description>Summary: Learn about automatic printing in a Windows platform using WScript.
-Automatic printing is a subject you will find a lot of content about on the internet &amp;ndash; but most of it is useless. It&amp;rsquo;s a massive collection of try-this-try-that. I was searching for some descent content on how to do scheduled automatic printing but spent far more time that I would like to. Finally I arrive at this code:</description></item><item><title>Four Part Naming Convention in SQL Server</title><link>https://www.salmanq.com/blog/four-part-naming-convention-in-sql-server/</link><pubDate>Tue, 20 Sep 2005 05:41:16 +0000</pubDate><guid>https://www.salmanq.com/blog/four-part-naming-convention-in-sql-server/</guid><description>In SQL server if you want to reference a table using four-part naming convention and you receive the error message: Server &amp;lsquo;xxxx&amp;rsquo; is not configured for DATA ACCESS. Then you need to execute this statement against the target server:
-EXEC sp_serveroption &amp;#39;xxxx&amp;#39;,&amp;#39;DATA ACCESS&amp;#39;,TRUE &amp;hellip; that should fix the problem. An obvious point here is to replace xxxx with the target server.</description></item><item><title>CTRL+ALT+DEL Twice?</title><link>https://www.salmanq.com/blog/ctrlaltdel-twice/</link><pubDate>Mon, 19 Sep 2005 04:21:46 +0000</pubDate><guid>https://www.salmanq.com/blog/ctrlaltdel-twice/</guid><description>In Windows XP pressing CTRL+ALT+DEL twice in the login screen will take you to the classic login screen where you can manually type in the username and password to authenticate yourself. According to a Microsoft employee this feature maybe removed in future releases of Windows or worst yet it might be removed in future service packs. This would have caused serious problems for me because non-of the users I have on the intial list are administrators to the system.</description></item><item><title>Using ASP.NET to authenticate against AD</title><link>https://www.salmanq.com/blog/using-asp-net-to-authenticate-against-ad/</link><pubDate>Sun, 18 Sep 2005 02:58:44 +0000</pubDate><guid>https://www.salmanq.com/blog/using-asp-net-to-authenticate-against-ad/</guid><description>The company I work for reliies heavily on active-directory to organize, authenticate and integrate. In order to login to the intranet from our site, we currently request the integrated windows authentication box and ask the user to login. For some people this was a little flattering because it didn&amp;rsquo;t really say why the login was taking place &amp;ndash; where are they loging into and so on. So to remedy this issue, I am working on a ASP.</description></item><item><title>Finding Content in your files</title><link>https://www.salmanq.com/blog/finding-content-in-your-files/</link><pubDate>Sat, 17 Sep 2005 00:57:23 +0000</pubDate><guid>https://www.salmanq.com/blog/finding-content-in-your-files/</guid><description>If you want to search text files in your computer for a specific string you can do this easily using the following code:
-for /f &amp;#34;tokens=*&amp;#34; %i IN (&amp;#39;dir /s /b *.asp&amp;#39;) DO find /I &amp;#34;depthomepages&amp;#34; %i &amp;gt;&amp;gt; output.txt You can replace dir /s /b *.asp to something more appropriate. You can alternatively search only specific folders also, by simply modifying the dir arguments.</description></item><item><title>Recursion in SQL</title><link>https://www.salmanq.com/blog/recursion-in-sql/</link><pubDate>Sun, 11 Sep 2005 15:21:31 +0000</pubDate><guid>https://www.salmanq.com/blog/recursion-in-sql/</guid><description>Oracle database supports a very strange construct called: start with, and connect by. For instance if you have a table which has two columns one that defines the parent of the other column such as:
-Parent Child 0 1 1 9 9 7 7 2 The parent of 2 is 7 and 7&amp;rsquo;s parent is nine and 9&amp;rsquo;s parent is one and so on until finally 1 who parent is 0 signifying no parent.</description></item><item><title>Typed ToArray() from ArrayList</title><link>https://www.salmanq.com/blog/typed-toarray-from-arraylist/</link><pubDate>Fri, 09 Sep 2005 07:47:12 +0000</pubDate><guid>https://www.salmanq.com/blog/typed-toarray-from-arraylist/</guid><description>To get a typed Array of type int [] from an ArrayList you can do the following:
-(int [])TestArray.ToArray(typeof(int)); First the ToArray() function accepts a System.Type argument which is what it uses to convert the Array to type int. However, the return type of ToArray() is still object so we will need to cast that as well which can be done using the (int []).</description></item><item><title>FTP &amp; Microsoft ISA Server 2004</title><link>https://www.salmanq.com/blog/ftp-microsoft-isa-server-2004/</link><pubDate>Thu, 08 Sep 2005 13:31:57 +0000</pubDate><guid>https://www.salmanq.com/blog/ftp-microsoft-isa-server-2004/</guid><description>Microsoft ISA (Internet Security and Acceleration Server) 2004 is a tool to secure and accelerate (as the name suggests) networks running on Windows platforms. It&amp;rsquo;s a very powerful tool and is one of the most flexible firewalls I have seen in the market. Where I work, Microsoft ISA actually replaced several CISCO firewalls. Not only were we able to migrate all the access lists rules we were able to do far more than that.</description></item><item><title>Recursive Fun (C#)</title><link>https://www.salmanq.com/blog/recursive-fun-c/</link><pubDate>Thu, 14 Jul 2005 02:17:47 +0000</pubDate><guid>https://www.salmanq.com/blog/recursive-fun-c/</guid><description>Recursive functions can be a lot of fun! I was playing around with a collegue of mine at work about solving recursive problems. And we both worked on a problem of deciding weather a number is the median in a list of numbers. Here&amp;rsquo;s my solution:
-using System; public class MedianRecursive { private delegate bool Function(int A, int B); private static bool GreaterThan(int A, int B) { return A&amp;gt;B; } private static bool LessThan(int A, int B) { return A&amp;lt;b; } private static string Partition(int[] List, int M, int Position, Function Compare) { if(Position&amp;gt;=List.</description></item><item><title>Partial Classes</title><link>https://www.salmanq.com/blog/partial-classes/</link><pubDate>Fri, 24 Jun 2005 23:48:19 +0000</pubDate><guid>https://www.salmanq.com/blog/partial-classes/</guid><description>Out of several enchancements available in .NET 2.0 partial classes is one of them. Partial classes simply means that you can break your class and write them separately (as if they were separate entities). This becomes a useful feature when you have a large class that does more than one thing. If you open a software engineering book, you are likely to find statements like: &amp;ldquo;&amp;hellip;your function/classes should do one thing and do it well&amp;rdquo;.</description></item><item><title>XMLHttp</title><link>https://www.salmanq.com/blog/xmlhttp/</link><pubDate>Sat, 11 Jun 2005 02:11:40 +0000</pubDate><guid>https://www.salmanq.com/blog/xmlhttp/</guid><description>XMLHttp is the future of web application development. It allows threaded communication between the client and the server without ever leaving the page. If more advanced JavaScript features are standardized this might mean that a web application will act and feel very much like a regular windows application. Up until now, one of the major differences between a windows application and a web application was statelessness. However, with XMLHttp this is reduced much further because a state will no longer be round-trip from the server, it will be when the user enters a page does several thousand things and leaves the page (when they leave the page the state is lost) however during those thousand events all the state will be maintainted &amp;ndash; this can be done using XMLHttp.</description></item><item><title>The trailing slash</title><link>https://www.salmanq.com/blog/the-trailing-slash/</link><pubDate>Thu, 28 Apr 2005 00:47:36 +0000</pubDate><guid>https://www.salmanq.com/blog/the-trailing-slash/</guid><description>Sometimes a simple change as adding a slash may improve the performance of your web-applications. Consider this: the link www.salmanq.com is slower than www.salmanq.com/ (the only difference being the trailing slash). They will both work but the latter is faster. When this link: www.onupol.com is followed the web-server returns a 301 (Moved Permanently) pointing to www.salmanq.com/ that&amp;rsquo;s one extra round trip to and from the server per link. If you have a site that&amp;rsquo;s running without the trailing slash and you have 10K+ visitors you will certainly start to feel the consequence.</description></item><item><title>Old bugs are harder to catch</title><link>https://www.salmanq.com/blog/old-bugs-are-harder-to-catch/</link><pubDate>Wed, 20 Apr 2005 03:18:49 +0000</pubDate><guid>https://www.salmanq.com/blog/old-bugs-are-harder-to-catch/</guid><description>About three years ago I worked on an application that in-part had to blend in with several other applications. Among many features one of them was to automatically generate something known as deadlines. The actual details are far to complicated to explain in details here, so I will use a simpler example.
-Assume that you have four types of documents each have their own specific way of computing deadline. One of them follows a rule like:</description></item><item><title>MySQL version information</title><link>https://www.salmanq.com/blog/mysql-version-information/</link><pubDate>Thu, 31 Mar 2005 07:32:22 +0000</pubDate><guid>https://www.salmanq.com/blog/mysql-version-information/</guid><description>You can use this simple command to find the MySQL version you are running:
-select Version() as Version; Hope that helps.</description></item><item><title>ValueType Boxing</title><link>https://www.salmanq.com/blog/valuetype-boxing/</link><pubDate>Tue, 08 Mar 2005 00:49:21 +0000</pubDate><guid>https://www.salmanq.com/blog/valuetype-boxing/</guid><description>In .NET an interesting phehomenon occurs known as &amp;ldquo;boxing&amp;rdquo;. Let me illustrate the problem and then we will look at the possible solutions:
-using System; using System.Collections; class Test { struct BankAccount { /* A simple BankAccount structure */ public float Balance; /* Balance in the account */ public BankAccount(float _Balance) { /* overloaded-contructor */ Balance = _Balance; } /* A method to charge the account */ public void ChargeAccount(float Fee) { Balance-=Fee; } } public static void Main() { ArrayList Accounts = new ArrayList(); /* An array */ Accounts.</description></item><item><title>Uncertaintly Principal and Software Engineering</title><link>https://www.salmanq.com/blog/uncertaintly-principal-and-software-engineering/</link><pubDate>Mon, 28 Feb 2005 23:06:14 +0000</pubDate><guid>https://www.salmanq.com/blog/uncertaintly-principal-and-software-engineering/</guid><description>Uncertainty Principal is a principle of quantum mechanics postulated by Nobel laureate Werner Heisenberg in the 1920s which states that it is not possible to determine both the position and the momentum of a particle at the same instant. The reason he argued, was that the act of &amp;ldquo;observing&amp;rdquo; the particle changes its behavior with respect to what is being measured. He was one of the first scientists to bring in probability into the predictable science of physics.</description></item><item><title>Form posts and CacheControl</title><link>https://www.salmanq.com/blog/form-posts-and-cachecontrol/</link><pubDate>Fri, 25 Feb 2005 23:56:02 +0000</pubDate><guid>https://www.salmanq.com/blog/form-posts-and-cachecontrol/</guid><description>Let&amp;rsquo;s say you have an HTML form which posts to another page, and that page in turn posts to other page(s) (maybe even to itself). Consider what happens in a very common scenario such as this:
-User visits page 1 Types in username and password Posts to page 2 (valid user) User sorts a column in page 2 which posts the column name and the order to page 2. Page 2 reloads.</description></item><item><title>Option Groups</title><link>https://www.salmanq.com/blog/option-groups/</link><pubDate>Fri, 25 Feb 2005 01:50:47 +0000</pubDate><guid>https://www.salmanq.com/blog/option-groups/</guid><description>Not many people know about this. In a HTML dropdown (select) there is a option group tag that groups your options together. For instance:
-&amp;lt;select name=&amp;#34;cars&amp;#34;&amp;gt; &amp;lt;optgroup label=&amp;#34;Honda&amp;#34;&amp;gt; &amp;lt;option&amp;gt;Honda Accord DX&amp;lt;/option&amp;gt; &amp;lt;option&amp;gt;Honda Accord LX&amp;lt;/option&amp;gt; &amp;lt;option&amp;gt;Honda Accord EX&amp;lt;/option&amp;gt; &amp;lt;/optgroup&amp;gt; &amp;lt;optgroup label=&amp;#34;BMW&amp;#34;&amp;gt; &amp;lt;option&amp;gt;BMW 530iL&amp;lt;/option&amp;gt; &amp;lt;option&amp;gt;BMW 640iL&amp;lt;/option&amp;gt; &amp;lt;option&amp;gt;BMW 740i&amp;lt;/option&amp;gt; &amp;lt;/optgroup&amp;gt; &amp;lt;/select&amp;gt; If you run the code above you will notice users can&amp;rsquo;t even select the option group (which is perfectly valid). And the automatic indendation within the sub-groups is very useful also.</description></item><item><title>Why run as doesn’t work on explorer.exe?</title><link>https://www.salmanq.com/blog/why-run-as-doesnt-work-on-explorer-exe/</link><pubDate>Wed, 23 Feb 2005 20:54:39 +0000</pubDate><guid>https://www.salmanq.com/blog/why-run-as-doesnt-work-on-explorer-exe/</guid><description>You will notice in windows no matter how you want to &amp;ldquo;Run as&amp;rdquo; explorer.exe it will not work. Almost all programs you can right-click or hold CTRL and right click to get the run as option but with explorer this doesn&amp;rsquo;t seem work. You cannot even use the command line tool runas /u:administrator to run explorer.
-Explorer.exe is a special task. It actually runs all the time and is responsible for the taskbar and other features on the Windows desktop, press CTRL+ALT+DEL right now and you will see explorer.</description></item><item><title>Can UIs produce bugs?</title><link>https://www.salmanq.com/blog/can-uis-produce-bugs/</link><pubDate>Tue, 22 Feb 2005 18:10:30 +0000</pubDate><guid>https://www.salmanq.com/blog/can-uis-produce-bugs/</guid><description>All developers are aware how programming errors such as logic error, exception error or incorrect input data can produce bugs. But can UIs produce bugs or at least attract the user towards a bug? The answer yes! And these bugs tend to be quite difficult to catch because each user react to the UI in a different way. And the fact that programmers are so used to the behaviors of the default controls in a GUI environment it&amp;rsquo;s hard for them to test the application for UI confusions.</description></item><item><title>Optimizing Regular Expressions</title><link>https://www.salmanq.com/blog/optimizing-regular-expressions/</link><pubDate>Wed, 16 Feb 2005 16:23:02 +0000</pubDate><guid>https://www.salmanq.com/blog/optimizing-regular-expressions/</guid><description>Optimizing regular expressions is an exceptionally complex field. A vast majority of the problems within this field is NP or NP-COMPLETE. Meaning that their solutions cannot be bound (time/space) under any definite polynomial.
-All APIs (such as: .NET, PHP, ASP (classic VB really), JavaScript) that support regular expressions performs some form of equivalence reduction meaning it tries to reduce the given regular expression into a reduced YET equivalent regular expression. Of course there is no full-proof way of doing this for couple of reasons: (1) There is no way to guarantee that a reduced regular expression is the most efficient regular expression possible.</description></item><item><title>Faster table rendering</title><link>https://www.salmanq.com/blog/faster-table-rendering/</link><pubDate>Fri, 11 Feb 2005 23:55:26 +0000</pubDate><guid>https://www.salmanq.com/blog/faster-table-rendering/</guid><description>Unlike FireFox, Internet Explorer does not display a table until the complete table data has arrived. This can be looked at both positvely and negatively. The positives are, once the table is rendered it is not modified (width, height, positioning) because all the data has already arrived and IE can properly compute the width and height of the cells and rendered it top-down, right-to-left without making any other adjustments to the cells already displayed.</description></item><item><title>Re-Useable Images</title><link>https://www.salmanq.com/blog/re-useable-images/</link><pubDate>Thu, 27 Jan 2005 06:03:22 +0000</pubDate><guid>https://www.salmanq.com/blog/re-useable-images/</guid><description>I was working on a project last week and part of the work was to create sort of like a template / menu / footer with an opening image. Initally I was positioning the title of the page as a regular h3 but then I thought of something great (I find it to be). Take a look at this page &amp;ndash; if you notice carefully you will see &amp;ldquo;Salman&amp;rsquo;s Blog&amp;rdquo; is just a text.</description></item><item><title>Logos in Photoshop</title><link>https://www.salmanq.com/blog/logos-in-photoshop/</link><pubDate>Wed, 19 Jan 2005 14:43:44 +0000</pubDate><guid>https://www.salmanq.com/blog/logos-in-photoshop/</guid><description>Inspired by Macintosh Panther logo, I designed this logo. I started with the letter X of course, then I manually marked the black marks. The second step was to add lighting. I used dodge and burning to do the lighting (while being careful about the nature of light). Then I marked the X layer to Bevel-and-Emboss blending. To give the letter a texture I added a little bit of monochrome gaussian noise.</description></item><item><title>Roomba: Maintaining Direction Part III</title><link>https://www.salmanq.com/blog/roomba-maintaining-direction-part-iii/</link><pubDate>Sat, 11 Dec 2004 00:56:27 +0000</pubDate><guid>https://www.salmanq.com/blog/roomba-maintaining-direction-part-iii/</guid><description>So far I have discussed the following topics:
+bool flag = (x==y); How much easier is that to read?</description>
+    </item>
+    
+    <item>
+      <title>Using Control Adapters</title>
+      <link>https://www.salmanq.com/blog/using-control-adapters/</link>
+      <pubDate>Tue, 15 May 2007 04:55:43 +0000</pubDate>
+      
+      <guid>https://www.salmanq.com/blog/using-control-adapters/</guid>
+      <description>ASP.NET 2.0 introduced a new way of modifying how ASP.NET renders a control. For example, when you say:
+&amp;lt;asp:textbox id=&amp;#34;FirstName&amp;#34; runat=&amp;#34;server&amp;#34; /&amp;gt; You have very limited control over how the control actually renders. You can specify a cssclass to modify the look and feel, but the actual HTML rendering is limited to what&amp;rsquo;s available from the ASP.NET server attributes. For example you cannot add client-side onfocus or onblur statements. This is where Control Adapters comes in.</description>
+    </item>
+    
+    <item>
+      <title>Automatic Printing</title>
+      <link>https://www.salmanq.com/blog/automatic-printing/</link>
+      <pubDate>Tue, 20 Sep 2005 23:42:20 +0000</pubDate>
+      
+      <guid>https://www.salmanq.com/blog/automatic-printing/</guid>
+      <description>Summary: Learn about automatic printing in a Windows platform using WScript.
+Automatic printing is a subject you will find a lot of content about on the internet &amp;ndash; but most of it is useless. It&amp;rsquo;s a massive collection of try-this-try-that. I was searching for some descent content on how to do scheduled automatic printing but spent far more time that I would like to. Finally I arrive at this code:</description>
+    </item>
+    
+    <item>
+      <title>Four Part Naming Convention in SQL Server</title>
+      <link>https://www.salmanq.com/blog/four-part-naming-convention-in-sql-server/</link>
+      <pubDate>Tue, 20 Sep 2005 05:41:16 +0000</pubDate>
+      
+      <guid>https://www.salmanq.com/blog/four-part-naming-convention-in-sql-server/</guid>
+      <description>In SQL server if you want to reference a table using four-part naming convention and you receive the error message: Server &amp;lsquo;xxxx&amp;rsquo; is not configured for DATA ACCESS. Then you need to execute this statement against the target server:
+EXEC sp_serveroption &amp;#39;xxxx&amp;#39;,&amp;#39;DATA ACCESS&amp;#39;,TRUE &amp;hellip; that should fix the problem. An obvious point here is to replace xxxx with the target server.</description>
+    </item>
+    
+    <item>
+      <title>CTRL&#43;ALT&#43;DEL Twice?</title>
+      <link>https://www.salmanq.com/blog/ctrlaltdel-twice/</link>
+      <pubDate>Mon, 19 Sep 2005 04:21:46 +0000</pubDate>
+      
+      <guid>https://www.salmanq.com/blog/ctrlaltdel-twice/</guid>
+      <description>In Windows XP pressing CTRL+ALT+DEL twice in the login screen will take you to the classic login screen where you can manually type in the username and password to authenticate yourself. According to a Microsoft employee this feature maybe removed in future releases of Windows or worst yet it might be removed in future service packs. This would have caused serious problems for me because non-of the users I have on the intial list are administrators to the system.</description>
+    </item>
+    
+    <item>
+      <title>Using ASP.NET to authenticate against AD</title>
+      <link>https://www.salmanq.com/blog/using-asp-net-to-authenticate-against-ad/</link>
+      <pubDate>Sun, 18 Sep 2005 02:58:44 +0000</pubDate>
+      
+      <guid>https://www.salmanq.com/blog/using-asp-net-to-authenticate-against-ad/</guid>
+      <description>The company I work for reliies heavily on active-directory to organize, authenticate and integrate. In order to login to the intranet from our site, we currently request the integrated windows authentication box and ask the user to login. For some people this was a little flattering because it didn&amp;rsquo;t really say why the login was taking place &amp;ndash; where are they loging into and so on. So to remedy this issue, I am working on a ASP.</description>
+    </item>
+    
+    <item>
+      <title>Finding Content in your files</title>
+      <link>https://www.salmanq.com/blog/finding-content-in-your-files/</link>
+      <pubDate>Sat, 17 Sep 2005 00:57:23 +0000</pubDate>
+      
+      <guid>https://www.salmanq.com/blog/finding-content-in-your-files/</guid>
+      <description>If you want to search text files in your computer for a specific string you can do this easily using the following code:
+for /f &amp;#34;tokens=*&amp;#34; %i IN (&amp;#39;dir /s /b *.asp&amp;#39;) DO find /I &amp;#34;depthomepages&amp;#34; %i &amp;gt;&amp;gt; output.txt You can replace dir /s /b *.asp to something more appropriate. You can alternatively search only specific folders also, by simply modifying the dir arguments.</description>
+    </item>
+    
+    <item>
+      <title>Recursion in SQL</title>
+      <link>https://www.salmanq.com/blog/recursion-in-sql/</link>
+      <pubDate>Sun, 11 Sep 2005 15:21:31 +0000</pubDate>
+      
+      <guid>https://www.salmanq.com/blog/recursion-in-sql/</guid>
+      <description>Oracle database supports a very strange construct called: start with, and connect by. For instance if you have a table which has two columns one that defines the parent of the other column such as:
+Parent	Child 0 1 1 9 9 7 7 2 The parent of 2 is 7 and 7&amp;rsquo;s parent is nine and 9&amp;rsquo;s parent is one and so on until finally 1 who parent is 0 signifying no parent.</description>
+    </item>
+    
+    <item>
+      <title>Typed ToArray() from ArrayList</title>
+      <link>https://www.salmanq.com/blog/typed-toarray-from-arraylist/</link>
+      <pubDate>Fri, 09 Sep 2005 07:47:12 +0000</pubDate>
+      
+      <guid>https://www.salmanq.com/blog/typed-toarray-from-arraylist/</guid>
+      <description>To get a typed Array of type int [] from an ArrayList you can do the following:
+(int [])TestArray.ToArray(typeof(int)); First the ToArray() function accepts a System.Type argument which is what it uses to convert the Array to type int. However, the return type of ToArray() is still object so we will need to cast that as well which can be done using the (int []).</description>
+    </item>
+    
+    <item>
+      <title>FTP &amp; Microsoft ISA Server 2004</title>
+      <link>https://www.salmanq.com/blog/ftp-microsoft-isa-server-2004/</link>
+      <pubDate>Thu, 08 Sep 2005 13:31:57 +0000</pubDate>
+      
+      <guid>https://www.salmanq.com/blog/ftp-microsoft-isa-server-2004/</guid>
+      <description>Microsoft ISA (Internet Security and Acceleration Server) 2004 is a tool to secure and accelerate (as the name suggests) networks running on Windows platforms. It&amp;rsquo;s a very powerful tool and is one of the most flexible firewalls I have seen in the market. Where I work, Microsoft ISA actually replaced several CISCO firewalls. Not only were we able to migrate all the access lists rules we were able to do far more than that.</description>
+    </item>
+    
+    <item>
+      <title>Recursive Fun (C#)</title>
+      <link>https://www.salmanq.com/blog/recursive-fun-c/</link>
+      <pubDate>Thu, 14 Jul 2005 02:17:47 +0000</pubDate>
+      
+      <guid>https://www.salmanq.com/blog/recursive-fun-c/</guid>
+      <description>Recursive functions can be a lot of fun! I was playing around with a collegue of mine at work about solving recursive problems. And we both worked on a problem of deciding weather a number is the median in a list of numbers. Here&amp;rsquo;s my solution:
+using System; public class MedianRecursive { private delegate bool Function(int A, int B); private static bool GreaterThan(int A, int B) { return A&amp;gt;B; } private static bool LessThan(int A, int B) { return A&amp;lt;b; } private static string Partition(int[] List, int M, int Position, Function Compare) { if(Position&amp;gt;=List.</description>
+    </item>
+    
+    <item>
+      <title>Partial Classes</title>
+      <link>https://www.salmanq.com/blog/partial-classes/</link>
+      <pubDate>Fri, 24 Jun 2005 23:48:19 +0000</pubDate>
+      
+      <guid>https://www.salmanq.com/blog/partial-classes/</guid>
+      <description>Out of several enchancements available in .NET 2.0 partial classes is one of them. Partial classes simply means that you can break your class and write them separately (as if they were separate entities). This becomes a useful feature when you have a large class that does more than one thing. If you open a software engineering book, you are likely to find statements like: &amp;ldquo;&amp;hellip;your function/classes should do one thing and do it well&amp;rdquo;.</description>
+    </item>
+    
+    <item>
+      <title>XMLHttp</title>
+      <link>https://www.salmanq.com/blog/xmlhttp/</link>
+      <pubDate>Sat, 11 Jun 2005 02:11:40 +0000</pubDate>
+      
+      <guid>https://www.salmanq.com/blog/xmlhttp/</guid>
+      <description>XMLHttp is the future of web application development. It allows threaded communication between the client and the server without ever leaving the page. If more advanced JavaScript features are standardized this might mean that a web application will act and feel very much like a regular windows application. Up until now, one of the major differences between a windows application and a web application was statelessness. However, with XMLHttp this is reduced much further because a state will no longer be round-trip from the server, it will be when the user enters a page does several thousand things and leaves the page (when they leave the page the state is lost) however during those thousand events all the state will be maintainted &amp;ndash; this can be done using XMLHttp.</description>
+    </item>
+    
+    <item>
+      <title>The trailing slash</title>
+      <link>https://www.salmanq.com/blog/the-trailing-slash/</link>
+      <pubDate>Thu, 28 Apr 2005 00:47:36 +0000</pubDate>
+      
+      <guid>https://www.salmanq.com/blog/the-trailing-slash/</guid>
+      <description>Sometimes a simple change as adding a slash may improve the performance of your web-applications. Consider this: the link www.salmanq.com is slower than www.salmanq.com/ (the only difference being the trailing slash). They will both work but the latter is faster. When this link: www.onupol.com is followed the web-server returns a 301 (Moved Permanently) pointing to www.salmanq.com/ that&amp;rsquo;s one extra round trip to and from the server per link. If you have a site that&amp;rsquo;s running without the trailing slash and you have 10K+ visitors you will certainly start to feel the consequence.</description>
+    </item>
+    
+    <item>
+      <title>Old bugs are harder to catch</title>
+      <link>https://www.salmanq.com/blog/old-bugs-are-harder-to-catch/</link>
+      <pubDate>Wed, 20 Apr 2005 03:18:49 +0000</pubDate>
+      
+      <guid>https://www.salmanq.com/blog/old-bugs-are-harder-to-catch/</guid>
+      <description>About three years ago I worked on an application that in-part had to blend in with several other applications. Among many features one of them was to automatically generate something known as deadlines. The actual details are far to complicated to explain in details here, so I will use a simpler example.
+Assume that you have four types of documents each have their own specific way of computing deadline. One of them follows a rule like:</description>
+    </item>
+    
+    <item>
+      <title>MySQL version information</title>
+      <link>https://www.salmanq.com/blog/mysql-version-information/</link>
+      <pubDate>Thu, 31 Mar 2005 07:32:22 +0000</pubDate>
+      
+      <guid>https://www.salmanq.com/blog/mysql-version-information/</guid>
+      <description>You can use this simple command to find the MySQL version you are running:
+select Version() as Version; Hope that helps.</description>
+    </item>
+    
+    <item>
+      <title>ValueType Boxing</title>
+      <link>https://www.salmanq.com/blog/valuetype-boxing/</link>
+      <pubDate>Tue, 08 Mar 2005 00:49:21 +0000</pubDate>
+      
+      <guid>https://www.salmanq.com/blog/valuetype-boxing/</guid>
+      <description>In .NET an interesting phehomenon occurs known as &amp;ldquo;boxing&amp;rdquo;. Let me illustrate the problem and then we will look at the possible solutions:
+using System; using System.Collections; class Test { struct BankAccount { /* A simple BankAccount structure */ public float Balance; /* Balance in the account */ public BankAccount(float _Balance) { /* overloaded-contructor */ Balance = _Balance; } /* A method to charge the account */ public void ChargeAccount(float Fee) { Balance-=Fee; } } public static void Main() { ArrayList Accounts = new ArrayList(); /* An array */ Accounts.</description>
+    </item>
+    
+    <item>
+      <title>Uncertaintly Principal and Software Engineering</title>
+      <link>https://www.salmanq.com/blog/uncertaintly-principal-and-software-engineering/</link>
+      <pubDate>Mon, 28 Feb 2005 23:06:14 +0000</pubDate>
+      
+      <guid>https://www.salmanq.com/blog/uncertaintly-principal-and-software-engineering/</guid>
+      <description>Uncertainty Principal is a principle of quantum mechanics postulated by Nobel laureate Werner Heisenberg in the 1920s which states that it is not possible to determine both the position and the momentum of a particle at the same instant. The reason he argued, was that the act of &amp;ldquo;observing&amp;rdquo; the particle changes its behavior with respect to what is being measured. He was one of the first scientists to bring in probability into the predictable science of physics.</description>
+    </item>
+    
+    <item>
+      <title>Form posts and CacheControl</title>
+      <link>https://www.salmanq.com/blog/form-posts-and-cachecontrol/</link>
+      <pubDate>Fri, 25 Feb 2005 23:56:02 +0000</pubDate>
+      
+      <guid>https://www.salmanq.com/blog/form-posts-and-cachecontrol/</guid>
+      <description>Let&amp;rsquo;s say you have an HTML form which posts to another page, and that page in turn posts to other page(s) (maybe even to itself). Consider what happens in a very common scenario such as this:
+User visits page 1 Types in username and password Posts to page 2 (valid user) User sorts a column in page 2 which posts the column name and the order to page 2. Page 2 reloads.</description>
+    </item>
+    
+    <item>
+      <title>Option Groups</title>
+      <link>https://www.salmanq.com/blog/option-groups/</link>
+      <pubDate>Fri, 25 Feb 2005 01:50:47 +0000</pubDate>
+      
+      <guid>https://www.salmanq.com/blog/option-groups/</guid>
+      <description>Not many people know about this. In a HTML dropdown (select) there is a option group tag that groups your options together. For instance:
+&amp;lt;select name=&amp;#34;cars&amp;#34;&amp;gt; &amp;lt;optgroup label=&amp;#34;Honda&amp;#34;&amp;gt; &amp;lt;option&amp;gt;Honda Accord DX&amp;lt;/option&amp;gt; &amp;lt;option&amp;gt;Honda Accord LX&amp;lt;/option&amp;gt; &amp;lt;option&amp;gt;Honda Accord EX&amp;lt;/option&amp;gt; &amp;lt;/optgroup&amp;gt; &amp;lt;optgroup label=&amp;#34;BMW&amp;#34;&amp;gt; &amp;lt;option&amp;gt;BMW 530iL&amp;lt;/option&amp;gt; &amp;lt;option&amp;gt;BMW 640iL&amp;lt;/option&amp;gt; &amp;lt;option&amp;gt;BMW 740i&amp;lt;/option&amp;gt; &amp;lt;/optgroup&amp;gt; &amp;lt;/select&amp;gt; If you run the code above you will notice users can&amp;rsquo;t even select the option group (which is perfectly valid). And the automatic indendation within the sub-groups is very useful also.</description>
+    </item>
+    
+    <item>
+      <title>Why run as doesn’t work on explorer.exe?</title>
+      <link>https://www.salmanq.com/blog/why-run-as-doesnt-work-on-explorer-exe/</link>
+      <pubDate>Wed, 23 Feb 2005 20:54:39 +0000</pubDate>
+      
+      <guid>https://www.salmanq.com/blog/why-run-as-doesnt-work-on-explorer-exe/</guid>
+      <description>You will notice in windows no matter how you want to &amp;ldquo;Run as&amp;rdquo; explorer.exe it will not work. Almost all programs you can right-click or hold CTRL and right click to get the run as option but with explorer this doesn&amp;rsquo;t seem work. You cannot even use the command line tool runas /u:administrator to run explorer.
+Explorer.exe is a special task. It actually runs all the time and is responsible for the taskbar and other features on the Windows desktop, press CTRL+ALT+DEL right now and you will see explorer.</description>
+    </item>
+    
+    <item>
+      <title>Can UIs produce bugs?</title>
+      <link>https://www.salmanq.com/blog/can-uis-produce-bugs/</link>
+      <pubDate>Tue, 22 Feb 2005 18:10:30 +0000</pubDate>
+      
+      <guid>https://www.salmanq.com/blog/can-uis-produce-bugs/</guid>
+      <description>All developers are aware how programming errors such as logic error, exception error or incorrect input data can produce bugs. But can UIs produce bugs or at least attract the user towards a bug? The answer yes! And these bugs tend to be quite difficult to catch because each user react to the UI in a different way. And the fact that programmers are so used to the behaviors of the default controls in a GUI environment it&amp;rsquo;s hard for them to test the application for UI confusions.</description>
+    </item>
+    
+    <item>
+      <title>Optimizing Regular Expressions</title>
+      <link>https://www.salmanq.com/blog/optimizing-regular-expressions/</link>
+      <pubDate>Wed, 16 Feb 2005 16:23:02 +0000</pubDate>
+      
+      <guid>https://www.salmanq.com/blog/optimizing-regular-expressions/</guid>
+      <description>Optimizing regular expressions is an exceptionally complex field. A vast majority of the problems within this field is NP or NP-COMPLETE. Meaning that their solutions cannot be bound (time/space) under any definite polynomial.
+All APIs (such as: .NET, PHP, ASP (classic VB really), JavaScript) that support regular expressions performs some form of equivalence reduction meaning it tries to reduce the given regular expression into a reduced YET equivalent regular expression. Of course there is no full-proof way of doing this for couple of reasons: (1) There is no way to guarantee that a reduced regular expression is the most efficient regular expression possible.</description>
+    </item>
+    
+    <item>
+      <title>Faster table rendering</title>
+      <link>https://www.salmanq.com/blog/faster-table-rendering/</link>
+      <pubDate>Fri, 11 Feb 2005 23:55:26 +0000</pubDate>
+      
+      <guid>https://www.salmanq.com/blog/faster-table-rendering/</guid>
+      <description>Unlike FireFox, Internet Explorer does not display a table until the complete table data has arrived. This can be looked at both positvely and negatively. The positives are, once the table is rendered it is not modified (width, height, positioning) because all the data has already arrived and IE can properly compute the width and height of the cells and rendered it top-down, right-to-left without making any other adjustments to the cells already displayed.</description>
+    </item>
+    
+    <item>
+      <title>Re-Useable Images</title>
+      <link>https://www.salmanq.com/blog/re-useable-images/</link>
+      <pubDate>Thu, 27 Jan 2005 06:03:22 +0000</pubDate>
+      
+      <guid>https://www.salmanq.com/blog/re-useable-images/</guid>
+      <description>I was working on a project last week and part of the work was to create sort of like a template / menu / footer with an opening image. Initally I was positioning the title of the page as a regular h3 but then I thought of something great (I find it to be). Take a look at this page &amp;ndash; if you notice carefully you will see &amp;ldquo;Salman&amp;rsquo;s Blog&amp;rdquo; is just a text.</description>
+    </item>
+    
+    <item>
+      <title>Logos in Photoshop</title>
+      <link>https://www.salmanq.com/blog/logos-in-photoshop/</link>
+      <pubDate>Wed, 19 Jan 2005 14:43:44 +0000</pubDate>
+      
+      <guid>https://www.salmanq.com/blog/logos-in-photoshop/</guid>
+      <description>Inspired by Macintosh Panther logo, I designed this logo. I started with the letter X of course, then I manually marked the black marks. The second step was to add lighting. I used dodge and burning to do the lighting (while being careful about the nature of light). Then I marked the X layer to Bevel-and-Emboss blending. To give the letter a texture I added a little bit of monochrome gaussian noise.</description>
+    </item>
+    
+    <item>
+      <title>Roomba: Maintaining Direction Part III</title>
+      <link>https://www.salmanq.com/blog/roomba-maintaining-direction-part-iii/</link>
+      <pubDate>Sat, 11 Dec 2004 00:56:27 +0000</pubDate>
+      
+      <guid>https://www.salmanq.com/blog/roomba-maintaining-direction-part-iii/</guid>
+      <description>So far I have discussed the following topics:
 Introduction to our intelligent Roomba Vacuum cleaner. How a torus (smart array) is used to maintain the state of the cleaning surface. Today I will discuss how we managed to maintain the direction we are traveling in.
-What we did was to connect two light sensors on both sides of the robot. Then we attached a pinwheel (printed on a paper; see diagram below) attached to the motor using gears, right in front of the sensor.</description></item><item><title>Outlook’s vCalender using ASP</title><link>https://www.salmanq.com/blog/outlooks-vcalender-using-asp/</link><pubDate>Tue, 07 Dec 2004 03:47:28 +0000</pubDate><guid>https://www.salmanq.com/blog/outlooks-vcalender-using-asp/</guid><description>As part of a continuing effort to build more functional and user-friendly products I am working on an ASP-based vCalendar concept.
-Originally I was working on a training enrollment system where users could enroll/drop for a class, standby in a waiting list and things of that nature. My department has been using this product for sometime now and my boss is starting to realize that more people signup than actually showing up.</description></item><item><title>Macintosh Like Light (CSS)</title><link>https://www.salmanq.com/blog/macintosh-like-light-css/</link><pubDate>Thu, 02 Dec 2004 03:15:50 +0000</pubDate><guid>https://www.salmanq.com/blog/macintosh-like-light-css/</guid><description>I was working on a new design for something at work and I came up with this header layout. The background is separated into three images and the center image resizes to fit the content of the header information. Except the images the entire thing is done using CSS.</description></item><item><title>Torus: Smart Array - Part II</title><link>https://www.salmanq.com/blog/torus-smart-array-part-ii/</link><pubDate>Tue, 30 Nov 2004 03:49:28 +0000</pubDate><guid>https://www.salmanq.com/blog/torus-smart-array-part-ii/</guid><description>As I was discussing I am working on an intelligent vacuum cleaner. In this article I will discuss how we did our state management for the surface the robot is vacuuming.
-In order to maintain the state information for the surface, one of things we had for our intelligent Roomba was a char array (VACUUMED, UNKNOWN, BLOCKED are the possible values for each cell). However a simple array wouldn&amp;rsquo;t work because the robot could be physically placed anywhere on the floor, yet our starting position would always be (0,0).</description></item><item><title>Vacuum Cleaner</title><link>https://www.salmanq.com/blog/vacuum-cleaner/</link><pubDate>Thu, 18 Nov 2004 00:13:09 +0000</pubDate><guid>https://www.salmanq.com/blog/vacuum-cleaner/</guid><description>For the past few weeks me and a team of three extremely bright computer science graduate students have been working on a vacuum cleaner. The idea is to design a robot that can clean a room efficiently; the key term here being efficiently. There is an existing product called: Roomba which sells for about $300.00 dollars and does the same thing we are trying to do &amp;ndash; but it does it zero intelligence.</description></item><item><title>Object Databases (ORDBMS)</title><link>https://www.salmanq.com/blog/object-databases-ordbms/</link><pubDate>Wed, 10 Nov 2004 19:38:02 +0000</pubDate><guid>https://www.salmanq.com/blog/object-databases-ordbms/</guid><description>ORDBMS - Object Relational, Database Management system. Is an object oriented database management system. The concept at first is a bit suprising since relational database sort of by definition negates the concept of objects. In theory a relational database is a set of relation R; each table, formally known as relations, can be joined (cartesian product) to produce a new relation (which is an improper subset of R1xR2). There are many problems with this scenario.</description></item><item><title>JavaScript Performance - Part II</title><link>https://www.salmanq.com/blog/javascript-performance-part-ii/</link><pubDate>Tue, 02 Nov 2004 02:58:36 +0000</pubDate><guid>https://www.salmanq.com/blog/javascript-performance-part-ii/</guid><description>As I discussed last week setInterval in general gives better performance compared to setTimeout.
-Today I will discuss how in order to improve performance, one thread can be used to run multiple animations. Multiple animations come up in several scenarios. For instance, if you have a menu that does some animation onmouseover then although not clear at first this menu system could be running multiple animations at the same time. For example, let&amp;rsquo;s say the animation takes 2 secs to run.</description></item><item><title>JavaScript Performance - Part I</title><link>https://www.salmanq.com/blog/javascript-performance-part-i/</link><pubDate>Sat, 30 Oct 2004 02:34:33 +0000</pubDate><guid>https://www.salmanq.com/blog/javascript-performance-part-i/</guid><description>This is the first in a series of articles I plan to write on improving performance in JavaScript heavy web-applications. More specifically I will discuss some of the ways you can improve on JavaScript based animations, reducing object chains, cross-browser DOM, clever ways of writing/designing objects and so on.
+What we did was to connect two light sensors on both sides of the robot. Then we attached a pinwheel (printed on a paper; see diagram below) attached to the motor using gears, right in front of the sensor.</description>
+    </item>
+    
+    <item>
+      <title>Outlook’s vCalender using ASP</title>
+      <link>https://www.salmanq.com/blog/outlooks-vcalender-using-asp/</link>
+      <pubDate>Tue, 07 Dec 2004 03:47:28 +0000</pubDate>
+      
+      <guid>https://www.salmanq.com/blog/outlooks-vcalender-using-asp/</guid>
+      <description>As part of a continuing effort to build more functional and user-friendly products I am working on an ASP-based vCalendar concept.
+Originally I was working on a training enrollment system where users could enroll/drop for a class, standby in a waiting list and things of that nature. My department has been using this product for sometime now and my boss is starting to realize that more people signup than actually showing up.</description>
+    </item>
+    
+    <item>
+      <title>Macintosh Like Light (CSS)</title>
+      <link>https://www.salmanq.com/blog/macintosh-like-light-css/</link>
+      <pubDate>Thu, 02 Dec 2004 03:15:50 +0000</pubDate>
+      
+      <guid>https://www.salmanq.com/blog/macintosh-like-light-css/</guid>
+      <description>I was working on a new design for something at work and I came up with this header layout. The background is separated into three images and the center image resizes to fit the content of the header information. Except the images the entire thing is done using CSS.</description>
+    </item>
+    
+    <item>
+      <title>Torus: Smart Array - Part II</title>
+      <link>https://www.salmanq.com/blog/torus-smart-array-part-ii/</link>
+      <pubDate>Tue, 30 Nov 2004 03:49:28 +0000</pubDate>
+      
+      <guid>https://www.salmanq.com/blog/torus-smart-array-part-ii/</guid>
+      <description>As I was discussing I am working on an intelligent vacuum cleaner. In this article I will discuss how we did our state management for the surface the robot is vacuuming.
+In order to maintain the state information for the surface, one of things we had for our intelligent Roomba was a char array (VACUUMED, UNKNOWN, BLOCKED are the possible values for each cell). However a simple array wouldn&amp;rsquo;t work because the robot could be physically placed anywhere on the floor, yet our starting position would always be (0,0).</description>
+    </item>
+    
+    <item>
+      <title>Vacuum Cleaner</title>
+      <link>https://www.salmanq.com/blog/vacuum-cleaner/</link>
+      <pubDate>Thu, 18 Nov 2004 00:13:09 +0000</pubDate>
+      
+      <guid>https://www.salmanq.com/blog/vacuum-cleaner/</guid>
+      <description>For the past few weeks me and a team of three extremely bright computer science graduate students have been working on a vacuum cleaner. The idea is to design a robot that can clean a room efficiently; the key term here being efficiently. There is an existing product called: Roomba which sells for about $300.00 dollars and does the same thing we are trying to do &amp;ndash; but it does it zero intelligence.</description>
+    </item>
+    
+    <item>
+      <title>Object Databases (ORDBMS)</title>
+      <link>https://www.salmanq.com/blog/object-databases-ordbms/</link>
+      <pubDate>Wed, 10 Nov 2004 19:38:02 +0000</pubDate>
+      
+      <guid>https://www.salmanq.com/blog/object-databases-ordbms/</guid>
+      <description>ORDBMS - Object Relational, Database Management system. Is an object oriented database management system. The concept at first is a bit suprising since relational database sort of by definition negates the concept of objects. In theory a relational database is a set of relation R; each table, formally known as relations, can be joined (cartesian product) to produce a new relation (which is an improper subset of R1xR2). There are many problems with this scenario.</description>
+    </item>
+    
+    <item>
+      <title>JavaScript Performance - Part II</title>
+      <link>https://www.salmanq.com/blog/javascript-performance-part-ii/</link>
+      <pubDate>Tue, 02 Nov 2004 02:58:36 +0000</pubDate>
+      
+      <guid>https://www.salmanq.com/blog/javascript-performance-part-ii/</guid>
+      <description>As I discussed last week setInterval in general gives better performance compared to setTimeout.
+Today I will discuss how in order to improve performance, one thread can be used to run multiple animations. Multiple animations come up in several scenarios. For instance, if you have a menu that does some animation onmouseover then although not clear at first this menu system could be running multiple animations at the same time. For example, let&amp;rsquo;s say the animation takes 2 secs to run.</description>
+    </item>
+    
+    <item>
+      <title>JavaScript Performance - Part I</title>
+      <link>https://www.salmanq.com/blog/javascript-performance-part-i/</link>
+      <pubDate>Sat, 30 Oct 2004 02:34:33 +0000</pubDate>
+      
+      <guid>https://www.salmanq.com/blog/javascript-performance-part-i/</guid>
+      <description>This is the first in a series of articles I plan to write on improving performance in JavaScript heavy web-applications. More specifically I will discuss some of the ways you can improve on JavaScript based animations, reducing object chains, cross-browser DOM, clever ways of writing/designing objects and so on.
 Improving on Animations
-No matter what type of animation it is if it&amp;rsquo;s written using JavaScript it&amp;rsquo;s most likely going to make use of setTimeout or setInterval.</description></item><item><title>Using XSLT to view graphical poll results</title><link>https://www.salmanq.com/blog/using-xslt-to-view-graphical-poll-results/</link><pubDate>Thu, 21 Oct 2004 04:18:47 +0000</pubDate><guid>https://www.salmanq.com/blog/using-xslt-to-view-graphical-poll-results/</guid><description>How I came to this is not relevant I think, so I will jump straight to the examples. The idea was to convert this XML document to produce this output. So I set out to do it &amp;ndash; and it was finally done using this XSLT stylesheet. The idea is quite basic. Count the number of &amp;lsquo;I agree&amp;rsquo; responses and store it in a variable. Count the number of &amp;lsquo;I disagree&amp;rsquo; responses and store it into another variable, and so on&amp;hellip; Once that&amp;rsquo;s done, the count values are multiplied with the expansion factor (variable: efactor) and this number is set to the height of a div element.</description></item><item><title>Solution to Line Tracker</title><link>https://www.salmanq.com/blog/solution-to-line-tracker/</link><pubDate>Sat, 02 Oct 2004 01:17:34 +0000</pubDate><guid>https://www.salmanq.com/blog/solution-to-line-tracker/</guid><description>In my previous post I discussed an algorithm that it is much better than the general line following algorithm that one might think of at first. Last night I implemented the algorithm with NQC with descent results. Here&amp;rsquo;s the solution:
-/*********************************************** * Salman Quazi * CS-595EA * Date: September 19, 2004 ***********************************************/ /* Constant Definitions */ #define SENSOR SENSOR_1 #define LEFT_MOTOR OUT_C #define RIGHT_MOTOR OUT_A /* Speed settings */ #define NORMAL_SPEED 7 #define TURN_SPEED 2 #define DELAY 20 /* This setting depends on several conditions like: lighting, contrast between the tape and the floor .</description></item><item><title>Line Tracker</title><link>https://www.salmanq.com/blog/line-tracker/</link><pubDate>Mon, 27 Sep 2004 16:59:51 +0000</pubDate><guid>https://www.salmanq.com/blog/line-tracker/</guid><description>I have a project due in few weeks. The idea of the project is that the LEGO mindstorm has to follow a black line on the floor. So I started thinking about this problem and my initial approach was the following: I assume my robot starts ON the black line. So it starts traveling forward and continues until it finds white (which is the floor). At this point it has to turn but which way?</description></item><item><title>Dynamic contents</title><link>https://www.salmanq.com/blog/dynamic-contents/</link><pubDate>Fri, 06 Aug 2004 03:04:04 +0000</pubDate><guid>https://www.salmanq.com/blog/dynamic-contents/</guid><description>Generating dynamic contents can be a great way to allow your users to find information quickly. In this example the page headlines menu option was created dynamically (using JavaScript). In this case the contents was generated dynamically using H3 tags it can be very easily modified to read H1,H2, IMG, IFRAME, SPAN, DIV or any other tag that comes to mind (except perhaps BR :-))</description></item><item><title>Date Format (using XSLT)</title><link>https://www.salmanq.com/blog/date-format-using-xslt/</link><pubDate>Fri, 23 Jul 2004 22:31:59 +0000</pubDate><guid>https://www.salmanq.com/blog/date-format-using-xslt/</guid><description>It was sort of surprising to find out that XSLT does not have any predefined date formatting function. So after spending sometime on my own I came up with this solution:
-&amp;lt;xsl:template name=&amp;#34;format-date&amp;#34;&amp;gt; &amp;lt;xsl:param name=&amp;#34;date&amp;#34; /&amp;gt; &amp;lt;xsl:variable name=&amp;#34;monthName&amp;#34; select=&amp;#34;substring-before($date, &amp;#39;/&amp;#39;)&amp;#34; /&amp;gt; &amp;lt;xsl:variable name=&amp;#34;day&amp;#34; select=&amp;#34;substring-before(substring-after($date, &amp;#39;/&amp;#39;), &amp;#39;/&amp;#39;)&amp;#34; /&amp;gt; &amp;lt;xsl:variable name=&amp;#34;year&amp;#34; select=&amp;#34;substring-after(substring-after($date, &amp;#39;/&amp;#39;), &amp;#39;/&amp;#39;)&amp;#34; /&amp;gt; &amp;lt;xsl:variable name=&amp;#34;month&amp;#34; select=&amp;#34;substring(substring-after(&amp;#39;01Jan02Feb03Mar04Apr05May06Jun07Jul08Aug09Sep10Oct11Nov12Dec&amp;#39;, $monthName), 1, 3)&amp;#34; /&amp;gt; &amp;lt;xsl:value-of select=&amp;#34;concat($month, &amp;#39;, &amp;#39;, $year)&amp;#34; /&amp;gt; &amp;lt;/xsl:template&amp;gt; You can call this function like this:</description></item><item><title>Search for PGP key given a keyserver</title><link>https://www.salmanq.com/blog/search-for-pgp-key-given-a-keyserver/</link><pubDate>Tue, 20 Jul 2004 17:37:24 +0000</pubDate><guid>https://www.salmanq.com/blog/search-for-pgp-key-given-a-keyserver/</guid><description>In Linux just do this:
-gpg --keyserver &amp;#34;ldap://certserver.pgp.com&amp;#34; --search-keys &amp;#34;&amp;lt;e-mail address&amp;gt;&amp;#34; Note the option: &amp;ndash;keyserver can be other Keyservers like the MIT Key Server (pgp.mit.edu).</description></item><item><title>JavaScript Buffering - Offscreen</title><link>https://www.salmanq.com/blog/javascript-buffering-offscreen/</link><pubDate>Tue, 06 Jul 2004 14:39:12 +0000</pubDate><guid>https://www.salmanq.com/blog/javascript-buffering-offscreen/</guid><description>Just before I go to bed I thought I make an interesting post. The other day I worked on a site for a client; like most of my sites it was very heavy on style sheet (meaning most of the alignments and things were done with style sheet rather than tables, etc.) So what would happen is the page would load without style sheet for a sec. and then the style sheet would be applied.</description></item><item><title>Sequential Preloading..</title><link>https://www.salmanq.com/blog/sequential-preloading/</link><pubDate>Fri, 25 Jun 2004 14:45:49 +0000</pubDate><guid>https://www.salmanq.com/blog/sequential-preloading/</guid><description>How do you make certain JavaScript sequentially preloads your images? For instance if you have 10 images and the size of image 9 is the smallest then it&amp;rsquo;s most likely JavaScript (internet explorer rather) will load image 9 first. Then the second smallest or perhaps in no true order. However there are times when you need to make certain the images are loaded in sequence&amp;hellip;. The following accomplishes this &amp;ndash; figured it out after a lot of problems:</description></item><item><title>Speaking about events technically</title><link>https://www.salmanq.com/blog/speaking-about-events-technically/</link><pubDate>Fri, 18 Jun 2004 05:31:16 +0000</pubDate><guid>https://www.salmanq.com/blog/speaking-about-events-technically/</guid><description>The other day I was working on something in JavaScript and I thought I would share that with you. Before I can begin though I have to describe the scenario.
-I have an image in an HTML page (lets call it: MyImage). I dynamically attach an event to the Image&amp;rsquo;s onload method. Due to other events on the page MyImage&amp;rsquo;s SRC attribute gets changed to something else. Now logically the onload event should execute again once the new SRC element gets loaded.</description></item><item><title>Embedded Software</title><link>https://www.salmanq.com/blog/embedded-software/</link><pubDate>Thu, 10 Jun 2004 05:49:51 +0000</pubDate><guid>https://www.salmanq.com/blog/embedded-software/</guid><description>Interesting semester coming up for me. As some of you may know I am starting (at least partially) my masters in Computer Science. After much thought. I have decided to focus on the field of: Embedded Software Development. Embedded applications are everywhere. When you use your microwave, drive your car, program your tv, program you DVD player and on and on. Almost all household devices have some software embedded into it.</description></item><item><title>Alpha Beta Searching</title><link>https://www.salmanq.com/blog/alpha-beta-searching/</link><pubDate>Wed, 26 May 2004 04:58:27 +0000</pubDate><guid>https://www.salmanq.com/blog/alpha-beta-searching/</guid><description>I have a test tonight. I am fairly certain I will get an A; however, there is only one thing that I am unsure about: AlphaBeta searching. So I went online and read couple of books. Here&amp;rsquo;s my understanding (in brief of course): AlphaBeta searching is an optimized searching model based on MinMax searching (or MiniMax search). So to understand AlphaBeta searching we must first understand MinMax searching. MinMax searching can be applied on game trees (if you are not familiar with game trees then please go here).</description></item><item><title>Unique Elements (in XSLT)</title><link>https://www.salmanq.com/blog/unique-elements-in-xslt/</link><pubDate>Wed, 05 May 2004 23:58:32 +0000</pubDate><guid>https://www.salmanq.com/blog/unique-elements-in-xslt/</guid><description>At work I have this XML document that lists all the employees along with their responsiblities. The general format looks something like this (staff.xml):
-&amp;lt;ga-staff&amp;gt; &amp;lt;department title=&amp;#34;Administration&amp;#34;&amp;gt; &amp;lt;employee&amp;gt; &amp;lt;responsibility&amp;gt;Director, Corporate Accounting&amp;lt;/responsibility&amp;gt; &amp;lt;name&amp;gt;...&amp;lt;/name&amp;gt; &amp;lt;phone&amp;gt;...&amp;lt;/phone&amp;gt; &amp;lt;email&amp;gt;...&amp;lt;/email&amp;gt; &amp;lt;/employee&amp;gt; &amp;lt;employee&amp;gt; &amp;lt;responsibility&amp;gt;Manager&amp;lt;/responsibility&amp;gt; &amp;lt;name&amp;gt;...&amp;lt;/name&amp;gt; &amp;lt;phone&amp;gt;...&amp;lt;/phone&amp;gt; &amp;lt;email&amp;gt;...&amp;lt;/email&amp;gt; &amp;lt;/employee&amp;gt; &amp;lt;/department&amp;gt; &amp;lt;department title=&amp;#34;&amp;#34;&amp;gt; ... &amp;lt;/department&amp;gt; &amp;lt;/ga-staff&amp;gt; I was asked to generate a flat (meaning only their name, phone and e-mail) output (sorted by name) of all the staffs in our department.</description></item><item><title>Kolmogorov Complexity</title><link>https://www.salmanq.com/blog/kolmogorov-complexity/</link><pubDate>Wed, 28 Apr 2004 16:29:01 +0000</pubDate><guid>https://www.salmanq.com/blog/kolmogorov-complexity/</guid><description>A computer science/mathematics student learns various ways of measuring complexity of a problem. I feel this is an extremely important field because it allows us to measure the difficulty-level (or complexity of a problem). Without it, it would be like trying to lift a box without knowing how much it weighs.
-For instance, how complex is it to sort N numbers? Using standard notation it turns out the best possible solution can be: O(n*lg(n)) (we can prove that this is the best possible solution).</description></item><item><title>CSS: word-wrap</title><link>https://www.salmanq.com/blog/css-word-wrap/</link><pubDate>Wed, 21 Apr 2004 23:58:46 +0000</pubDate><guid>https://www.salmanq.com/blog/css-word-wrap/</guid><description>You will notice this blog site will not overflow in the x-direction no matter what resolution you view this site in (I tried upto 640x480). When you have a div area and you are using PRE or XMP to view formatted contents (like I do in this page to view code) within that div &amp;ndash; this would be almost impossible to do. Here&amp;rsquo;s the reason: unless otherwise stated a PRE or an XMP is displayed as is.</description></item><item><title>Power of PROLOG</title><link>https://www.salmanq.com/blog/power-of-prolog/</link><pubDate>Wed, 21 Apr 2004 18:01:35 +0000</pubDate><guid>https://www.salmanq.com/blog/power-of-prolog/</guid><description>Here&amp;rsquo;s yet another example of the power available to you in PROLOG. Let&amp;rsquo;s consider this simultaneous equation:
+No matter what type of animation it is if it&amp;rsquo;s written using JavaScript it&amp;rsquo;s most likely going to make use of setTimeout or setInterval.</description>
+    </item>
+    
+    <item>
+      <title>Using XSLT to view graphical poll results</title>
+      <link>https://www.salmanq.com/blog/using-xslt-to-view-graphical-poll-results/</link>
+      <pubDate>Thu, 21 Oct 2004 04:18:47 +0000</pubDate>
+      
+      <guid>https://www.salmanq.com/blog/using-xslt-to-view-graphical-poll-results/</guid>
+      <description>How I came to this is not relevant I think, so I will jump straight to the examples. The idea was to convert this XML document to produce this output. So I set out to do it &amp;ndash; and it was finally done using this XSLT stylesheet. The idea is quite basic. Count the number of &amp;lsquo;I agree&amp;rsquo; responses and store it in a variable. Count the number of &amp;lsquo;I disagree&amp;rsquo; responses and store it into another variable, and so on&amp;hellip; Once that&amp;rsquo;s done, the count values are multiplied with the expansion factor (variable: efactor) and this number is set to the height of a div element.</description>
+    </item>
+    
+    <item>
+      <title>Solution to Line Tracker</title>
+      <link>https://www.salmanq.com/blog/solution-to-line-tracker/</link>
+      <pubDate>Sat, 02 Oct 2004 01:17:34 +0000</pubDate>
+      
+      <guid>https://www.salmanq.com/blog/solution-to-line-tracker/</guid>
+      <description>In my previous post I discussed an algorithm that it is much better than the general line following algorithm that one might think of at first. Last night I implemented the algorithm with NQC with descent results. Here&amp;rsquo;s the solution:
+/*********************************************** * Salman Quazi * CS-595EA * Date: September 19, 2004 ***********************************************/ /* Constant Definitions */ #define SENSOR	SENSOR_1 #define LEFT_MOTOR	OUT_C #define RIGHT_MOTOR	OUT_A /* Speed settings */ #define NORMAL_SPEED 7 #define TURN_SPEED 2 #define DELAY	20 /* This setting depends on several conditions like: lighting, contrast between the tape and the floor .</description>
+    </item>
+    
+    <item>
+      <title>Line Tracker</title>
+      <link>https://www.salmanq.com/blog/line-tracker/</link>
+      <pubDate>Mon, 27 Sep 2004 16:59:51 +0000</pubDate>
+      
+      <guid>https://www.salmanq.com/blog/line-tracker/</guid>
+      <description>I have a project due in few weeks. The idea of the project is that the LEGO mindstorm has to follow a black line on the floor. So I started thinking about this problem and my initial approach was the following: I assume my robot starts ON the black line. So it starts traveling forward and continues until it finds white (which is the floor). At this point it has to turn but which way?</description>
+    </item>
+    
+    <item>
+      <title>Dynamic contents</title>
+      <link>https://www.salmanq.com/blog/dynamic-contents/</link>
+      <pubDate>Fri, 06 Aug 2004 03:04:04 +0000</pubDate>
+      
+      <guid>https://www.salmanq.com/blog/dynamic-contents/</guid>
+      <description>Generating dynamic contents can be a great way to allow your users to find information quickly. In this example the page headlines menu option was created dynamically (using JavaScript). In this case the contents was generated dynamically using H3 tags it can be very easily modified to read H1,H2, IMG, IFRAME, SPAN, DIV or any other tag that comes to mind (except perhaps BR :-))</description>
+    </item>
+    
+    <item>
+      <title>Date Format (using XSLT)</title>
+      <link>https://www.salmanq.com/blog/date-format-using-xslt/</link>
+      <pubDate>Fri, 23 Jul 2004 22:31:59 +0000</pubDate>
+      
+      <guid>https://www.salmanq.com/blog/date-format-using-xslt/</guid>
+      <description>It was sort of surprising to find out that XSLT does not have any predefined date formatting function. So after spending sometime on my own I came up with this solution:
+&amp;lt;xsl:template name=&amp;#34;format-date&amp;#34;&amp;gt; &amp;lt;xsl:param name=&amp;#34;date&amp;#34; /&amp;gt; &amp;lt;xsl:variable name=&amp;#34;monthName&amp;#34; select=&amp;#34;substring-before($date, &amp;#39;/&amp;#39;)&amp;#34; /&amp;gt; &amp;lt;xsl:variable name=&amp;#34;day&amp;#34; select=&amp;#34;substring-before(substring-after($date, &amp;#39;/&amp;#39;), &amp;#39;/&amp;#39;)&amp;#34; /&amp;gt; &amp;lt;xsl:variable name=&amp;#34;year&amp;#34; select=&amp;#34;substring-after(substring-after($date, &amp;#39;/&amp;#39;), &amp;#39;/&amp;#39;)&amp;#34; /&amp;gt; &amp;lt;xsl:variable name=&amp;#34;month&amp;#34; select=&amp;#34;substring(substring-after(&amp;#39;01Jan02Feb03Mar04Apr05May06Jun07Jul08Aug09Sep10Oct11Nov12Dec&amp;#39;, $monthName), 1, 3)&amp;#34; /&amp;gt; &amp;lt;xsl:value-of select=&amp;#34;concat($month, &amp;#39;, &amp;#39;, $year)&amp;#34; /&amp;gt; &amp;lt;/xsl:template&amp;gt; You can call this function like this:</description>
+    </item>
+    
+    <item>
+      <title>Search for PGP key given a keyserver</title>
+      <link>https://www.salmanq.com/blog/search-for-pgp-key-given-a-keyserver/</link>
+      <pubDate>Tue, 20 Jul 2004 17:37:24 +0000</pubDate>
+      
+      <guid>https://www.salmanq.com/blog/search-for-pgp-key-given-a-keyserver/</guid>
+      <description>In Linux just do this:
+gpg --keyserver &amp;#34;ldap://certserver.pgp.com&amp;#34; --search-keys &amp;#34;&amp;lt;e-mail address&amp;gt;&amp;#34; Note the option: &amp;ndash;keyserver can be other Keyservers like the MIT Key Server (pgp.mit.edu).</description>
+    </item>
+    
+    <item>
+      <title>JavaScript Buffering - Offscreen</title>
+      <link>https://www.salmanq.com/blog/javascript-buffering-offscreen/</link>
+      <pubDate>Tue, 06 Jul 2004 14:39:12 +0000</pubDate>
+      
+      <guid>https://www.salmanq.com/blog/javascript-buffering-offscreen/</guid>
+      <description>Just before I go to bed I thought I make an interesting post. The other day I worked on a site for a client; like most of my sites it was very heavy on style sheet (meaning most of the alignments and things were done with style sheet rather than tables, etc.) So what would happen is the page would load without style sheet for a sec. and then the style sheet would be applied.</description>
+    </item>
+    
+    <item>
+      <title>Sequential Preloading..</title>
+      <link>https://www.salmanq.com/blog/sequential-preloading/</link>
+      <pubDate>Fri, 25 Jun 2004 14:45:49 +0000</pubDate>
+      
+      <guid>https://www.salmanq.com/blog/sequential-preloading/</guid>
+      <description>How do you make certain JavaScript sequentially preloads your images? For instance if you have 10 images and the size of image 9 is the smallest then it&amp;rsquo;s most likely JavaScript (internet explorer rather) will load image 9 first. Then the second smallest or perhaps in no true order. However there are times when you need to make certain the images are loaded in sequence&amp;hellip;. The following accomplishes this &amp;ndash; figured it out after a lot of problems:</description>
+    </item>
+    
+    <item>
+      <title>Speaking about events technically</title>
+      <link>https://www.salmanq.com/blog/speaking-about-events-technically/</link>
+      <pubDate>Fri, 18 Jun 2004 05:31:16 +0000</pubDate>
+      
+      <guid>https://www.salmanq.com/blog/speaking-about-events-technically/</guid>
+      <description>The other day I was working on something in JavaScript and I thought I would share that with you. Before I can begin though I have to describe the scenario.
+I have an image in an HTML page (lets call it: MyImage). I dynamically attach an event to the Image&amp;rsquo;s onload method. Due to other events on the page MyImage&amp;rsquo;s SRC attribute gets changed to something else. Now logically the onload event should execute again once the new SRC element gets loaded.</description>
+    </item>
+    
+    <item>
+      <title>Embedded Software</title>
+      <link>https://www.salmanq.com/blog/embedded-software/</link>
+      <pubDate>Thu, 10 Jun 2004 05:49:51 +0000</pubDate>
+      
+      <guid>https://www.salmanq.com/blog/embedded-software/</guid>
+      <description>Interesting semester coming up for me. As some of you may know I am starting (at least partially) my masters in Computer Science. After much thought. I have decided to focus on the field of: Embedded Software Development. Embedded applications are everywhere. When you use your microwave, drive your car, program your tv, program you DVD player and on and on. Almost all household devices have some software embedded into it.</description>
+    </item>
+    
+    <item>
+      <title>Alpha Beta Searching</title>
+      <link>https://www.salmanq.com/blog/alpha-beta-searching/</link>
+      <pubDate>Wed, 26 May 2004 04:58:27 +0000</pubDate>
+      
+      <guid>https://www.salmanq.com/blog/alpha-beta-searching/</guid>
+      <description>I have a test tonight. I am fairly certain I will get an A; however, there is only one thing that I am unsure about: AlphaBeta searching. So I went online and read couple of books. Here&amp;rsquo;s my understanding (in brief of course): AlphaBeta searching is an optimized searching model based on MinMax searching (or MiniMax search). So to understand AlphaBeta searching we must first understand MinMax searching. MinMax searching can be applied on game trees (if you are not familiar with game trees then please go here).</description>
+    </item>
+    
+    <item>
+      <title>Unique Elements (in XSLT)</title>
+      <link>https://www.salmanq.com/blog/unique-elements-in-xslt/</link>
+      <pubDate>Wed, 05 May 2004 23:58:32 +0000</pubDate>
+      
+      <guid>https://www.salmanq.com/blog/unique-elements-in-xslt/</guid>
+      <description>At work I have this XML document that lists all the employees along with their responsiblities. The general format looks something like this (staff.xml):
+&amp;lt;ga-staff&amp;gt; &amp;lt;department title=&amp;#34;Administration&amp;#34;&amp;gt; &amp;lt;employee&amp;gt; &amp;lt;responsibility&amp;gt;Director, Corporate Accounting&amp;lt;/responsibility&amp;gt; &amp;lt;name&amp;gt;...&amp;lt;/name&amp;gt; &amp;lt;phone&amp;gt;...&amp;lt;/phone&amp;gt; &amp;lt;email&amp;gt;...&amp;lt;/email&amp;gt; &amp;lt;/employee&amp;gt; &amp;lt;employee&amp;gt; &amp;lt;responsibility&amp;gt;Manager&amp;lt;/responsibility&amp;gt; &amp;lt;name&amp;gt;...&amp;lt;/name&amp;gt; &amp;lt;phone&amp;gt;...&amp;lt;/phone&amp;gt; &amp;lt;email&amp;gt;...&amp;lt;/email&amp;gt; &amp;lt;/employee&amp;gt; &amp;lt;/department&amp;gt; &amp;lt;department title=&amp;#34;&amp;#34;&amp;gt; ... &amp;lt;/department&amp;gt; &amp;lt;/ga-staff&amp;gt; I was asked to generate a flat (meaning only their name, phone and e-mail) output (sorted by name) of all the staffs in our department.</description>
+    </item>
+    
+    <item>
+      <title>Kolmogorov Complexity</title>
+      <link>https://www.salmanq.com/blog/kolmogorov-complexity/</link>
+      <pubDate>Wed, 28 Apr 2004 16:29:01 +0000</pubDate>
+      
+      <guid>https://www.salmanq.com/blog/kolmogorov-complexity/</guid>
+      <description>A computer science/mathematics student learns various ways of measuring complexity of a problem. I feel this is an extremely important field because it allows us to measure the difficulty-level (or complexity of a problem). Without it, it would be like trying to lift a box without knowing how much it weighs.
+For instance, how complex is it to sort N numbers? Using standard notation it turns out the best possible solution can be: O(n*lg(n)) (we can prove that this is the best possible solution).</description>
+    </item>
+    
+    <item>
+      <title>CSS: word-wrap</title>
+      <link>https://www.salmanq.com/blog/css-word-wrap/</link>
+      <pubDate>Wed, 21 Apr 2004 23:58:46 +0000</pubDate>
+      
+      <guid>https://www.salmanq.com/blog/css-word-wrap/</guid>
+      <description>You will notice this blog site will not overflow in the x-direction no matter what resolution you view this site in (I tried upto 640x480). When you have a div area and you are using PRE or XMP to view formatted contents (like I do in this page to view code) within that div &amp;ndash; this would be almost impossible to do. Here&amp;rsquo;s the reason: unless otherwise stated a PRE or an XMP is displayed as is.</description>
+    </item>
+    
+    <item>
+      <title>Power of PROLOG</title>
+      <link>https://www.salmanq.com/blog/power-of-prolog/</link>
+      <pubDate>Wed, 21 Apr 2004 18:01:35 +0000</pubDate>
+      
+      <guid>https://www.salmanq.com/blog/power-of-prolog/</guid>
+      <description>Here&amp;rsquo;s yet another example of the power available to you in PROLOG. Let&amp;rsquo;s consider this simultaneous equation:
 3x + 4y = 17 4x + 3y = 18 In PROLOG I can find the values of X and Y just like this:
-compute(X,Y):- fd_domain([X,Y],0,1000), 3*X + 4*Y #= 17, 4*X + 3*Y #= 18. That almost seems like I am joking &amp;ndash; but I am really not. That 3 lines of code will find all solutions to X and Y.</description></item><item><title>Constraint Logic Programming</title><link>https://www.salmanq.com/blog/constraint-logic-programming/</link><pubDate>Wed, 21 Apr 2004 06:07:51 +0000</pubDate><guid>https://www.salmanq.com/blog/constraint-logic-programming/</guid><description>PROLOG can is one of many languages that can be used to perform Constraint Logic Programming (CLP). Just like C++ and Visual Basic can be used to program Object Oriented Programs (OOP). Same idea.
+compute(X,Y):- fd_domain([X,Y],0,1000), 3*X + 4*Y #= 17, 4*X + 3*Y #= 18. That almost seems like I am joking &amp;ndash; but I am really not. That 3 lines of code will find all solutions to X and Y.</description>
+    </item>
+    
+    <item>
+      <title>Constraint Logic Programming</title>
+      <link>https://www.salmanq.com/blog/constraint-logic-programming/</link>
+      <pubDate>Wed, 21 Apr 2004 06:07:51 +0000</pubDate>
+      
+      <guid>https://www.salmanq.com/blog/constraint-logic-programming/</guid>
+      <description>PROLOG can is one of many languages that can be used to perform Constraint Logic Programming (CLP). Just like C++ and Visual Basic can be used to program Object Oriented Programs (OOP). Same idea.
 The idea behind CLP is the following: give contraints to a problem and request all solutions. For instance, if I had:
-X+Y=100 Suppose I wanted to find all the integer solutions to this problem it would be very difficult to code in a regular language (not so much in this specific case because it&amp;rsquo;s too simple, but in general).</description></item><item><title>Hiding Elements During Printing</title><link>https://www.salmanq.com/blog/hiding-elements-during-printing/</link><pubDate>Tue, 20 Apr 2004 02:15:13 +0000</pubDate><guid>https://www.salmanq.com/blog/hiding-elements-during-printing/</guid><description>I work in an environment where my collegues surrounding me strongly believe there is no difference between &amp;ldquo;Microsoft Excel&amp;rdquo; and the web. One of the arguments I almost always hear: &amp;ldquo;&amp;hellip;why can&amp;rsquo;t you do it? it can be done in excel &amp;ndash; see!&amp;rdquo;.
-So that&amp;rsquo;s how it all started; Excel apparently has a feature that allows a user to hide certain elements from the spreadsheet during print-out; I am not sure how exactly it&amp;rsquo;s done, I am not an Excel expert.</description></item><item><title>Volume Backup</title><link>https://www.salmanq.com/blog/volume-backup/</link><pubDate>Fri, 09 Apr 2004 16:23:20 +0000</pubDate><guid>https://www.salmanq.com/blog/volume-backup/</guid><description>I am trying to work on a system/method to perform incremental backup over the network (using SAMBA). Here are some of the steps I have taken&amp;hellip;
-First I decided on the set of data that needs to be backed up. Since the very beginning all my data files (such as documents, programs, musics and so on) are kept in a completely separate drive. This drive (although large in size) is used only for my personal stuff and I never install anything or create any dependencies on this drive.</description></item><item><title>Random Numbers</title><link>https://www.salmanq.com/blog/random-numbers/</link><pubDate>Wed, 07 Apr 2004 15:41:30 +0000</pubDate><guid>https://www.salmanq.com/blog/random-numbers/</guid><description>There are tons of masters, PhD thesis written on generating uniform (as in uniform distribution) random numbers using a computer. The problem with generating random numbers is finding a true source of entropy. The usual rand() or RND function found in most languages use the system clock as the source of entropy. This is perhaps the worst method of generating a random number; the reason being the change of entropy is predictable (because the change of time is predictable &amp;ndash; the millisecond counter changes 1/1000 sec).</description></item><item><title>Unification</title><link>https://www.salmanq.com/blog/unification/</link><pubDate>Fri, 02 Apr 2004 18:51:33 +0000</pubDate><guid>https://www.salmanq.com/blog/unification/</guid><description>In PROLOG there is an idea called: unification. It&amp;rsquo;s similar to setting a variable to something but there are certainly several difference (otherwise it would be called assignment). One major difference in unification is pattern matching. For instance if I had the following code segment in PROLOG
-X / Y = 10 / a Then the variable X will be assigned 10 and the variable Y will be assigned a. This is very powerful tool.</description></item><item><title>AccessKey</title><link>https://www.salmanq.com/blog/accesskey/</link><pubDate>Wed, 31 Mar 2004 21:58:23 +0000</pubDate><guid>https://www.salmanq.com/blog/accesskey/</guid><description>Almost all HTML/XHTML tags have an attribute called: accesskey. What this does is allows the programmer to assign key-codes to elements in the page. For instance, if I did this:
-Search: &amp;lt;input type=&amp;#34;text&amp;#34; name=&amp;#34;Search&amp;#34; value=&amp;#34;&amp;#34; access=&amp;#34;S&amp;#34; /&amp;gt; Then the user could enter: ALT+S to jump to this field no matter where they are on the page. This feature can make a web-site very user friendly. For instance to jump to search field on this page enter: ALT+4.</description></item><item><title>SICP</title><link>https://www.salmanq.com/blog/sicp/</link><pubDate>Wed, 31 Mar 2004 21:25:26 +0000</pubDate><guid>https://www.salmanq.com/blog/sicp/</guid><description>Structure and Interpretaition of Computer Program is often considered one of the greatest books written on LISP or generally program structure (as the name suggests). Strangely enough the book is now available freely (through MIT) at: http://mitpress.mit.edu/sicp/full-text/book/book.html One of my favorite quotes happens to be written in the Preface section of the first edition of this book: &amp;ldquo;Programs must be written for people to read, and only incidentally for machines to execute.</description></item><item><title>Thinking in C++</title><link>https://www.salmanq.com/blog/thinking-in-c/</link><pubDate>Fri, 19 Mar 2004 08:21:50 +0000</pubDate><guid>https://www.salmanq.com/blog/thinking-in-c/</guid><description>I found this great book only it&amp;rsquo;s called: Thinking in C++. It&amp;rsquo;s a complete 1200+ pages book for FREE. Download it!</description></item><item><title>Bit Operations</title><link>https://www.salmanq.com/blog/bit-operations/</link><pubDate>Wed, 10 Mar 2004 23:30:07 +0000</pubDate><guid>https://www.salmanq.com/blog/bit-operations/</guid><description>A friend of mine once asked me what the following code does.
+X+Y=100 Suppose I wanted to find all the integer solutions to this problem it would be very difficult to code in a regular language (not so much in this specific case because it&amp;rsquo;s too simple, but in general).</description>
+    </item>
+    
+    <item>
+      <title>Hiding Elements During Printing</title>
+      <link>https://www.salmanq.com/blog/hiding-elements-during-printing/</link>
+      <pubDate>Tue, 20 Apr 2004 02:15:13 +0000</pubDate>
+      
+      <guid>https://www.salmanq.com/blog/hiding-elements-during-printing/</guid>
+      <description>I work in an environment where my collegues surrounding me strongly believe there is no difference between &amp;ldquo;Microsoft Excel&amp;rdquo; and the web. One of the arguments I almost always hear: &amp;ldquo;&amp;hellip;why can&amp;rsquo;t you do it? it can be done in excel &amp;ndash; see!&amp;rdquo;.
+So that&amp;rsquo;s how it all started; Excel apparently has a feature that allows a user to hide certain elements from the spreadsheet during print-out; I am not sure how exactly it&amp;rsquo;s done, I am not an Excel expert.</description>
+    </item>
+    
+    <item>
+      <title>Volume Backup</title>
+      <link>https://www.salmanq.com/blog/volume-backup/</link>
+      <pubDate>Fri, 09 Apr 2004 16:23:20 +0000</pubDate>
+      
+      <guid>https://www.salmanq.com/blog/volume-backup/</guid>
+      <description>I am trying to work on a system/method to perform incremental backup over the network (using SAMBA). Here are some of the steps I have taken&amp;hellip;
+First I decided on the set of data that needs to be backed up. Since the very beginning all my data files (such as documents, programs, musics and so on) are kept in a completely separate drive. This drive (although large in size) is used only for my personal stuff and I never install anything or create any dependencies on this drive.</description>
+    </item>
+    
+    <item>
+      <title>Random Numbers</title>
+      <link>https://www.salmanq.com/blog/random-numbers/</link>
+      <pubDate>Wed, 07 Apr 2004 15:41:30 +0000</pubDate>
+      
+      <guid>https://www.salmanq.com/blog/random-numbers/</guid>
+      <description>There are tons of masters, PhD thesis written on generating uniform (as in uniform distribution) random numbers using a computer. The problem with generating random numbers is finding a true source of entropy. The usual rand() or RND function found in most languages use the system clock as the source of entropy. This is perhaps the worst method of generating a random number; the reason being the change of entropy is predictable (because the change of time is predictable &amp;ndash; the millisecond counter changes 1/1000 sec).</description>
+    </item>
+    
+    <item>
+      <title>Unification</title>
+      <link>https://www.salmanq.com/blog/unification/</link>
+      <pubDate>Fri, 02 Apr 2004 18:51:33 +0000</pubDate>
+      
+      <guid>https://www.salmanq.com/blog/unification/</guid>
+      <description>In PROLOG there is an idea called: unification. It&amp;rsquo;s similar to setting a variable to something but there are certainly several difference (otherwise it would be called assignment). One major difference in unification is pattern matching. For instance if I had the following code segment in PROLOG
+X / Y = 10 / a Then the variable X will be assigned 10 and the variable Y will be assigned a. This is very powerful tool.</description>
+    </item>
+    
+    <item>
+      <title>AccessKey</title>
+      <link>https://www.salmanq.com/blog/accesskey/</link>
+      <pubDate>Wed, 31 Mar 2004 21:58:23 +0000</pubDate>
+      
+      <guid>https://www.salmanq.com/blog/accesskey/</guid>
+      <description>Almost all HTML/XHTML tags have an attribute called: accesskey. What this does is allows the programmer to assign key-codes to elements in the page. For instance, if I did this:
+Search: &amp;lt;input type=&amp;#34;text&amp;#34; name=&amp;#34;Search&amp;#34; value=&amp;#34;&amp;#34; access=&amp;#34;S&amp;#34; /&amp;gt; Then the user could enter: ALT+S to jump to this field no matter where they are on the page. This feature can make a web-site very user friendly. For instance to jump to search field on this page enter: ALT+4.</description>
+    </item>
+    
+    <item>
+      <title>SICP</title>
+      <link>https://www.salmanq.com/blog/sicp/</link>
+      <pubDate>Wed, 31 Mar 2004 21:25:26 +0000</pubDate>
+      
+      <guid>https://www.salmanq.com/blog/sicp/</guid>
+      <description>Structure and Interpretaition of Computer Program is often considered one of the greatest books written on LISP or generally program structure (as the name suggests). Strangely enough the book is now available freely (through MIT) at: http://mitpress.mit.edu/sicp/full-text/book/book.html One of my favorite quotes happens to be written in the Preface section of the first edition of this book: &amp;ldquo;Programs must be written for people to read, and only incidentally for machines to execute.</description>
+    </item>
+    
+    <item>
+      <title>Thinking in C&#43;&#43;</title>
+      <link>https://www.salmanq.com/blog/thinking-in-c/</link>
+      <pubDate>Fri, 19 Mar 2004 08:21:50 +0000</pubDate>
+      
+      <guid>https://www.salmanq.com/blog/thinking-in-c/</guid>
+      <description>I found this great book only it&amp;rsquo;s called: Thinking in C++. It&amp;rsquo;s a complete 1200+ pages book for FREE. Download it!</description>
+    </item>
+    
+    <item>
+      <title>Bit Operations</title>
+      <link>https://www.salmanq.com/blog/bit-operations/</link>
+      <pubDate>Wed, 10 Mar 2004 23:30:07 +0000</pubDate>
+      
+      <guid>https://www.salmanq.com/blog/bit-operations/</guid>
+      <description>A friend of mine once asked me what the following code does.
 register int a; a ^= a; After a bit of thought I realized that &amp;ldquo;a&amp;rdquo; gets initialized to zero. But why do it that way when you can do it like this:
-int a; a = 0; The answer lies in the machine translation for each of these segments. Let&amp;rsquo;s look at it one piece at a time. The first code segment requests &amp;ldquo;a&amp;rdquo; to be part of one of the several general paramenter registers in the CPU.</description></item><item><title>PROLOG</title><link>https://www.salmanq.com/blog/prolog/</link><pubDate>Sun, 07 Mar 2004 07:01:18 +0000</pubDate><guid>https://www.salmanq.com/blog/prolog/</guid><description>This semester I am taking a course in PROLOG. It has been almost 5 weeks now since I have been taking this course; and I strongly believe that every programmer should take at least one course in a logic programming class. I feel a course of this type will open the mind so greatly that it will not only help one program in other languages but help in several other aspects of one&amp;rsquo;s life.</description></item><item><title>Verifying your site is running?</title><link>https://www.salmanq.com/blog/verifying-your-site-is-running/</link><pubDate>Tue, 02 Mar 2004 08:00:00 +0000</pubDate><guid>https://www.salmanq.com/blog/verifying-your-site-is-running/</guid><description>This question often comes up-how do you make sure that your site is running? One solution is to run tools like WhatsUp Gold that monitors your IIS service status, SQL service status etc. As long as these services respond as saying they are running, WhatsUp gold is happy. But unfortunately, the fact that these services are running does not mean that your website is functioning to the public. For example if you have a page that depends on an external web service, and for some reason the external web service is down, then your page will not respond and will eventually time out.</description></item></channel></rss>
+int a; a = 0; The answer lies in the machine translation for each of these segments. Let&amp;rsquo;s look at it one piece at a time. The first code segment requests &amp;ldquo;a&amp;rdquo; to be part of one of the several general paramenter registers in the CPU.</description>
+    </item>
+    
+    <item>
+      <title>PROLOG</title>
+      <link>https://www.salmanq.com/blog/prolog/</link>
+      <pubDate>Sun, 07 Mar 2004 07:01:18 +0000</pubDate>
+      
+      <guid>https://www.salmanq.com/blog/prolog/</guid>
+      <description>This semester I am taking a course in PROLOG. It has been almost 5 weeks now since I have been taking this course; and I strongly believe that every programmer should take at least one course in a logic programming class. I feel a course of this type will open the mind so greatly that it will not only help one program in other languages but help in several other aspects of one&amp;rsquo;s life.</description>
+    </item>
+    
+    <item>
+      <title>Verifying your site is running?</title>
+      <link>https://www.salmanq.com/blog/verifying-your-site-is-running/</link>
+      <pubDate>Tue, 02 Mar 2004 08:00:00 +0000</pubDate>
+      
+      <guid>https://www.salmanq.com/blog/verifying-your-site-is-running/</guid>
+      <description>This question often comes up-how do you make sure that your site is running? One solution is to run tools like WhatsUp Gold that monitors your IIS service status, SQL service status etc. As long as these services respond as saying they are running, WhatsUp gold is happy. But unfortunately, the fact that these services are running does not mean that your website is functioning to the public. For example if you have a page that depends on an external web service, and for some reason the external web service is down, then your page will not respond and will eventually time out.</description>
+    </item>
+    
+  </channel>
+</rss>
