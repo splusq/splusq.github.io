@@ -18,11 +18,11 @@ params:
   defaultTheme: dark
   title: Salman Quazi
   description: Hi! I am an engineering manager for Azure Cognitive Services at Microsoft in Silicon Valley, CA.
-  author: Me
-  ShowReadingTime: true
   ShowShareButtons: false
-  ShowPostNavLinks: true
   ShowBreadCrumbs: false
+  ShowReadingTime: true
+  ShowPostNavLinks: true
+  showtoc: true
   comments: true
 
 Menus:
