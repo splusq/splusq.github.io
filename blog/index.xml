@@ -6,11 +6,11 @@
     <description>Recent content in Blogs on Salman Quazi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 11 Dec 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://www.salmanq.com/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 11 Dec 2019 21:53:00 +0000</lastBuildDate><atom:link href="https://www.salmanq.com/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Switched to Hugo from Wordpress</title>
       <link>https://www.salmanq.com/blog/switched-to-hugo-from-wordpress/</link>
-      <pubDate>Wed, 11 Dec 2019 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 11 Dec 2019 21:53:00 +0000</pubDate>
       
       <guid>https://www.salmanq.com/blog/switched-to-hugo-from-wordpress/</guid>
       <description>It&amp;rsquo;s been a relief to move away from the bloat of WordPress. I decided to use Hugo and host all of the content in Github. I am even able to use Github Actions to manage the continuous integration/delivery of the source to Github Pages all entirely for free. While Github Pages, and Hugo both generate static html pages, I was able to enable comments, via utteranc.es which stores the comments in Github as issues.</description>
