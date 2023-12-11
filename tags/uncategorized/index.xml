@@ -6,7 +6,16 @@
     <description>Recent content in Uncategorized on Salman Quazi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 13 Apr 2013 23:45:28 +0000</lastBuildDate><atom:link href="https://www.salmanq.com/tags/uncategorized/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 11 Dec 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://www.salmanq.com/tags/uncategorized/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Switched to Hugo from Wordpress</title>
+      <link>https://www.salmanq.com/blog/switched-to-hugo-from-wordpress/</link>
+      <pubDate>Wed, 11 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.salmanq.com/blog/switched-to-hugo-from-wordpress/</guid>
+      <description>It&amp;rsquo;s been a relief to move away from the bloat of WordPress. I decided to use Hugo and host all of the content in Github. I am even able to use Github Actions to manage the continuous integration/delivery of the source to Github Pages all entirely for free. While Github Pages, and Hugo both generate static html pages, I was able to enable comments, via utteranc.es which stores the comments in Github as issues.</description>
+    </item>
+    
     <item>
       <title>5 things you probably didn&#39;t know about .NET WebSockets</title>
       <link>https://www.salmanq.com/blog/5-things-you-probably-didnt-know-about-net-websockets/</link>
@@ -847,15 +856,6 @@ int a; a = 0; The answer lies in the machine translation for each of these segme
       
       <guid>https://www.salmanq.com/blog/verifying-your-site-is-running/</guid>
       <description>This question often comes up-how do you make sure that your site is running? One solution is to run tools like WhatsUp Gold that monitors your IIS service status, SQL service status etc. As long as these services respond as saying they are running, WhatsUp gold is happy. But unfortunately, the fact that these services are running does not mean that your website is functioning to the public. For example if you have a page that depends on an external web service, and for some reason the external web service is down, then your page will not respond and will eventually time out.</description>
-    </item>
-    
-    <item>
-      <title>Switched to Hugo from Wordpress</title>
-      <link>https://www.salmanq.com/blog/switched-to-hugo-from-wordpress/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.salmanq.com/blog/switched-to-hugo-from-wordpress/</guid>
-      <description>It&amp;rsquo;s been a relief to move away from the bloat of WordPress. I decided to use Hugo and host all of the content in Github. I am even able to use Github Actions to manage the continuous integration/delivery of the source to Github Pages all entirely for free. While Github Pages, and Hugo both generate static html pages, I was able to enable comments, via utteranc.es which stores the comments in Github as issues.</description>
     </item>
     
   </channel>
