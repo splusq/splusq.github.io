@@ -3,7 +3,7 @@ name: personal-website
 on:
   push:
     branches:
-    - release
+    - main
   schedule:
     # Runs at midnight every Sunday (see https://crontab.guru)
     - cron: '0 0 * * 0'
