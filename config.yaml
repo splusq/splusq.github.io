@@ -4,7 +4,7 @@ title: "Salman Quazi"
 theme: 
   - hyde
 params:
-  description: "Engineering Manager for Microsoft Azure Cognitive Services in Mountain View, CA."
+  description: "Director of Engineering for Microsoft Azure OpenAI in Mountain View, CA."
   copyright: "Opinions are my own."
   themeColor: "theme-base-08"
 Menus:
