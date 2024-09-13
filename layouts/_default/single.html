@@ -1,16 +1,26 @@
-{{ define "main" -}}
-<div class="post">
-  <h1>{{ .Title }}</h1>
-  <time datetime={{ .Date.Format "2006-01-02T15:04:05Z0700" }} class="post-date">{{ .Date.Format "Mon, Jan 2, 2006" }}</time>
-  {{ .Content }}
+{{ define "main" }}
+<div class="wrapper post">
+    <main class="page-content" aria-label="Content">
+        <article>
+            <header class="header">
+                <h1 class="header-title">{{ .Title }}</h1>
+                {{ $ISO_time := .Date.Format "2006-01-02T15:04:05-07:00" }}
+                <div class="post-meta">
+                    <time datetime="{{ $ISO_time }}" itemprop="datePublished"> {{ .Date.Format "Jan 2, 2006" }} </time>
+                </div>
+            </header>
+            <div class="page-content">
+                {{ .Content }}
+            </div>
+            <h2>Comments</h2>
+            <script src="https://utteranc.es/client.js"
+                    repo="splusq/splusq.github.io"
+                    issue-term="title"
+                    theme="github-dark"
+                    crossorigin="anonymous"
+                    async>
+            </script>
+        </article>
+    </main>
 </div>
-
-<h2>Comments</h2>
-<script src="https://utteranc.es/client.js"
-        repo="splusq/splusq.github.io"
-        issue-term="title"
-        theme="github-light"
-        crossorigin="anonymous"
-        async>
-</script>
-{{- end }}
+{{ end }}

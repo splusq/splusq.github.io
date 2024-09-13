@@ -1,19 +1,37 @@
-baseURL: "https://www.salmanq.com/"
-languageCode: "en-us"
-title: "Salman Quazi"
-theme: 
-  - hyde
-params:
-  description: "Director of Engineering for Microsoft Azure OpenAI in Mountain View, CA."
-  copyright: "Opinions are my own."
-  themeColor: "theme-base-08"
-Menus:
+baseURL: https://www.salmanq.com/
+languageCode: en-us
+title: Salman Quazi
+theme: hugo-blog-awesome
+enableEmoji: true
+googleAnalytics: G-K4WVH5P91F
+markup:
+  highlight:
+    noClasses: false
+menu:
   main:
-    - Name: "Blog"
-      URL: "/blog/"    
-    - Name: "Github"
-      URL: "https://github.com/splusq/"
-    - Name: "LinkedIn"
-      URL: "https://www.linkedin.com/in/salmanquazi/"
-    - Name: "Twitter"
-      URL: "https://www.twitter.com/splusq"
+    - pageRef: /
+      name: Home
+      url: /
+      weight: 10
+    - pageRef: blog
+      name: Blog
+      url: /blog/
+      weight: 20
+params:
+  sitename: Salman Quazi
+  defaultColor: dark
+  author:
+    avatar: "img/avatar.jpg"
+    intro: Salman Quazi
+    name: Salman Quazi
+    description: >-
+      Director of Engineering for Microsoft Azure AI in Mountain View, CA.
+  socialIcons:
+    - name: github
+      url: 'https://github.com/splusq'
+    - name: twitter
+      url: 'https://www.twitter.com/splusq'
+    - name: linkedin
+      url: 'https://www.linkedin.com/in/salmanquazi/'
+    - name: Rss
+      url: index.xml
