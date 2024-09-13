@@ -21,7 +21,7 @@ params:
   sitename: Salman Quazi
   defaultColor: dark
   author:
-    avatar: "img/avatar.jpg"
+    avatar: "avatar.jpg"
     intro: Salman Quazi
     name: Salman Quazi
     description: >-
