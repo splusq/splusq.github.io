@@ -1,0 +1,497 @@
+// ==============================================
+// Custom styles for salmanq.com
+// World-class typography: Inter + JetBrains Mono
+// Overrides the theme's empty _custom.scss
+// ==============================================
+
+// ---- 1. CSS Custom Properties ----
+:root {
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', Consolas, monospace;
+}
+
+// ---- 2. Body & text rendering ----
+body {
+  font-family: var(--font-sans);
+  font-size: #{"clamp(1rem, 0.95rem + 0.25vw, 1.0625rem)"};
+  line-height: 1.7;
+  font-optical-sizing: auto;
+  font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// ---- 3. Global heading reset ----
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+// ---- 4. Vertical rhythm override ----
+h1, h2, h3, h4, h5, h6,
+p, blockquote, pre, ul, ol, dl, figure,
+%vertical-rhythm {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+// ---- 5. Strong/bold to semibold ----
+strong, b {
+  font-weight: 600;
+}
+
+// ---- 6. Post title ----
+.header .header-title {
+  font-size: #{"clamp(2rem, 1.55rem + 1.95vw, 2.75rem)"};
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+}
+
+// ---- 7. Post meta ----
+.post-meta {
+  font-size: $medium-font-size;
+  line-height: 1.3;
+
+  time {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+// ---- 8. Content headings h1–h6 ----
+.page-content {
+  h1 {
+    font-size: #{"clamp(1.875rem, 1.45rem + 1.85vw, 2.594rem)"};
+    font-weight: 700;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  h2 {
+    font-size: #{"clamp(1.5625rem, 1.25rem + 1.35vw, 2.075rem)"};
+    margin-top: 2.25rem;
+    margin-bottom: 0.75rem;
+    padding-bottom: 6px;
+    border-bottom: 1px solid $light;
+    letter-spacing: -0.02em;
+  }
+
+  h3 {
+    font-size: #{"clamp(1.375rem, 1.15rem + 0.95vw, 1.66rem)"};
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  h4 {
+    font-size: #{"clamp(1.1875rem, 1.05rem + 0.6vw, 1.328rem)"};
+    margin-top: 1.75rem;
+    margin-bottom: 0.5rem;
+  }
+
+  h5 {
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  h6 {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: $gray;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  // Reset theme's letter-spacing on all content headings
+  h1, h2, h3, h4, h5, h6 {
+    letter-spacing: -0.02em;
+  }
+
+  // h5/h6 override the negative tracking
+  h5, h6 {
+    letter-spacing: 0.05em;
+  }
+}
+
+// ---- 9. Paragraph spacing (heading+p tighter coupling) ----
+.page-content {
+  > p {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    padding: 0;
+  }
+
+  h2 + p,
+  h3 + p,
+  h4 + p {
+    margin-top: 0.25rem;
+  }
+
+  // Link transitions
+  a {
+    text-underline-offset: 3px;
+    transition: color 150ms ease;
+  }
+}
+
+// ---- 10. Lists ----
+ul, ol {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+}
+
+li {
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+// ---- 11. Blockquotes ----
+blockquote {
+  font-style: italic;
+  font-size: 1.05em;
+  border-left: 3px solid $bloquote-border;
+  padding: 0.5rem 1rem;
+  margin-left: 0;
+  margin-right: 0;
+  background: rgba(0, 0, 0, 0.03);
+  border-radius: 4px;
+
+  > :last-child {
+    margin-bottom: 0;
+  }
+}
+
+// ---- 12. Code ----
+// Base: all code elements
+code {
+  font-family: var(--font-mono);
+  font-feature-settings: "calt" 1, "liga" 1;
+  font-variant-ligatures: common-ligatures;
+}
+
+// Inline code
+li > code,
+p > code {
+  font-size: 0.875em;
+  padding: 2px 6px;
+  border-radius: 3px;
+  background-color: rgba(0, 0, 0, 0.06);
+}
+
+// Code blocks
+pre {
+  background-color: #f6f8fa;
+  border-radius: 0.3rem;
+
+  > code {
+    font-size: 0.875rem;
+    line-height: 1.55;
+    color: $text-base-color;
+    font-family: var(--font-mono);
+  }
+
+  &::-webkit-scrollbar-track {
+    background: #e1e4e8;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #c0c4c8;
+  }
+  &::-webkit-scrollbar-thumb:hover {
+    background: #a0a4a8;
+  }
+}
+
+// kbd
+kbd {
+  font-family: var(--font-mono);
+  font-size: 0.875em;
+  padding: 2px 6px;
+  border-radius: 3px;
+  border: 1px solid rgba(128, 128, 128, 0.2);
+  background-color: rgba(0, 0, 0, 0.04);
+}
+
+// ---- 13. Tables ----
+table {
+  thead {
+    font-weight: 600;
+  }
+
+  th,
+  td,
+  tr {
+    padding: 0.5rem 0.75rem;
+  }
+}
+
+// ---- 14. Figcaptions ----
+figcaption {
+  font-size: 0.8125rem;
+  color: $gray;
+  line-height: 1.3;
+}
+
+// ---- 15. Navbar font ----
+.navbar {
+  font-family: var(--font-sans);
+}
+
+// ---- 16. Post list items ----
+.post-item {
+  font-family: var(--font-sans);
+}
+
+// ---- 17. Reading time & tags ----
+.reading-time {
+  color: $gray;
+  margin-left: 0.25em;
+}
+
+.post-tags {
+  margin-top: 6px;
+
+  .tag {
+    display: inline-block;
+    font-size: $small-font-size;
+    color: $gray;
+    background: rgba(0, 0, 0, 0.05);
+    padding: 2px 10px;
+    border-radius: 12px;
+    margin-right: 6px;
+    text-decoration: none;
+    transition: background 150ms ease, color 150ms ease;
+
+    &:hover {
+      background: rgba(0, 0, 0, 0.1);
+      color: $text-link-blue;
+    }
+  }
+}
+
+// ---- 18. Syntax highlight token colors – light mode ----
+.highlight,
+.highlight .w {
+  color: $text-base-color;
+}
+.highlight .err { color: #82071e; }
+.highlight .c,
+.highlight .cd,
+.highlight .cm,
+.highlight .c1,
+.highlight .cs { color: #57606a; font-style: italic; }
+.highlight .cp { color: #57606a; }
+.highlight .nt { color: #0550ae; }
+.highlight .o,
+.highlight .ow { color: #0550ae; }
+.highlight .p,
+.highlight .pi { color: $text-base-color; }
+.highlight .gi { color: #116329; background-color: #dafbe1; }
+.highlight .gd { color: #82071e; background-color: #ffebe9; }
+.highlight .gh { color: #0550ae; font-weight: bold; }
+.highlight .k,
+.highlight .kn,
+.highlight .kp,
+.highlight .kr,
+.highlight .kv { color: #cf222e; }
+.highlight .kc { color: #cf222e; }
+.highlight .kt { color: #cf222e; }
+.highlight .kd { color: #cf222e; }
+.highlight .s,
+.highlight .sb,
+.highlight .sc,
+.highlight .sd,
+.highlight .s2,
+.highlight .sh,
+.highlight .sx,
+.highlight .s1 { color: #0a3069; }
+.highlight .si { color: #0a3069; }
+.highlight .sr { color: #0a3069; }
+.highlight .se { color: #0a3069; }
+.highlight .nn { color: #24292e; }
+.highlight .nc { color: #1f2328; }
+.highlight .no { color: #0550ae; }
+.highlight .na { color: #1f2328; }
+.highlight .m,
+.highlight .mf,
+.highlight .mh,
+.highlight .mi,
+.highlight .il,
+.highlight .mo,
+.highlight .mb,
+.highlight .mx { color: #0550ae; }
+.highlight .ss { color: #032f62; }
+
+// ---- 19. Comments section ----
+.comments-section {
+  margin-top: 3em;
+  padding-top: 1.5em;
+  border-top: 1px solid $light;
+
+  .comments-heading {
+    font-weight: 400;
+    font-size: 1.3em;
+    color: $gray;
+    margin-bottom: 1em;
+  }
+}
+
+// ---- 20. Selection color ----
+mark,
+::selection {
+  background: rgba(0, 100, 255, 0.12);
+  color: inherit;
+}
+
+// ==============================================
+// 21. Dark mode overrides
+// ==============================================
+@mixin custom-dark-mode {
+  // Dark code blocks
+  pre {
+    background-color: #1a1b21;
+
+    > code {
+      color: white;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: #606071;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: #999ea2;
+    }
+    &::-webkit-scrollbar-thumb:hover {
+      background: #424546;
+    }
+  }
+
+  // Dark syntax highlight tokens
+  .highlight,
+  .highlight .w { color: #fbf1c7; }
+  .highlight .err { color: #fb4934; font-weight: bold; }
+  .highlight .c,
+  .highlight .cd,
+  .highlight .cm,
+  .highlight .c1,
+  .highlight .cs { color: #928374; font-style: italic; }
+  .highlight .cp { color: #8ec07c; }
+  .highlight .nt { color: #fb4934; }
+  .highlight .o,
+  .highlight .ow { color: #fbf1c7; }
+  .highlight .p,
+  .highlight .pi { color: #fbf1c7; }
+  .highlight .gi { color: #b8bb26; background-color: #282828; }
+  .highlight .gd { color: #fb4934; background-color: #282828; }
+  .highlight .gh { color: #b8bb26; font-weight: bold; }
+  .highlight .k,
+  .highlight .kn,
+  .highlight .kp,
+  .highlight .kr,
+  .highlight .kv { color: #fb4934; }
+  .highlight .kc { color: #d3869b; }
+  .highlight .kt { color: #fabd2f; }
+  .highlight .kd { color: #fe8019; }
+  .highlight .s,
+  .highlight .sb,
+  .highlight .sc,
+  .highlight .sd,
+  .highlight .s2,
+  .highlight .sh,
+  .highlight .sx,
+  .highlight .s1 { color: #b8bb26; font-style: italic; }
+  .highlight .si { color: #b8bb26; font-style: italic; }
+  .highlight .sr { color: #b8bb26; font-style: italic; }
+  .highlight .se { color: #fe8019; }
+  .highlight .nn { color: #8ec07c; }
+  .highlight .nc { color: #8ec07c; }
+  .highlight .no { color: #d3869b; }
+  .highlight .na { color: #b8bb26; }
+  .highlight .m,
+  .highlight .mf,
+  .highlight .mh,
+  .highlight .mi,
+  .highlight .il,
+  .highlight .mo,
+  .highlight .mb,
+  .highlight .mx { color: #d3869b; }
+  .highlight .ss { color: #83a598; }
+
+  // Dark h2 border
+  .page-content {
+    h2 {
+      border-bottom-color: $dark-light;
+    }
+  }
+
+  // Dark blockquote
+  blockquote {
+    background: rgba(255, 255, 255, 0.04);
+    border-color: $dark-bloquote-border;
+  }
+
+  // Dark inline code
+  li > code,
+  p > code {
+    background-color: $dark-inline-code-bg;
+  }
+
+  // Dark kbd
+  kbd {
+    background-color: $dark-inline-code-bg;
+    border-color: rgba(128, 128, 128, 0.2);
+  }
+
+  // Dark tables
+  table {
+    thead {
+      font-weight: 600;
+    }
+  }
+
+  // Dark reading time
+  .reading-time {
+    color: $dark-gray;
+  }
+
+  // Dark tags
+  .post-tags .tag {
+    color: $dark-gray;
+    background: rgba(255, 255, 255, 0.07);
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.12);
+      color: $dark-text-link-blue;
+    }
+  }
+
+  // Dark comments
+  .comments-section {
+    border-top-color: $dark-light;
+
+    .comments-heading {
+      color: $dark-gray;
+    }
+  }
+
+  // Dark selection
+  mark,
+  ::selection {
+    background: rgba(100, 160, 255, 0.2);
+    color: inherit;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  html:not(.light) {
+    @include custom-dark-mode();
+  }
+}
+
+html.dark {
+  @include custom-dark-mode();
+}
