@@ -5,6 +5,9 @@ theme: hugo-blog-awesome
 enableEmoji: true
 googleAnalytics: G-K4WVH5P91F
 markup:
+  goldmark:
+    renderer:
+      unsafe: true
   highlight:
     noClasses: false
 menu:
