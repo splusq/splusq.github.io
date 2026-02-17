@@ -7,19 +7,63 @@
                 {{ $ISO_time := .Date.Format "2006-01-02T15:04:05-07:00" }}
                 <div class="post-meta">
                     <time datetime="{{ $ISO_time }}" itemprop="datePublished"> {{ .Date.Format "Jan 2, 2006" }} </time>
+                    <span class="reading-time">&middot; {{ .ReadingTime }} min read</span>
                 </div>
+                {{ with .Params.tags }}
+                <div class="post-tags">
+                    {{ range . }}
+                    <a class="tag" href="{{ "tags/" | absURL }}{{ . | urlize }}/">{{ . }}</a>
+                    {{ end }}
+                </div>
+                {{ end }}
             </header>
             <div class="page-content">
                 {{ .Content }}
             </div>
-            <h2>Comments</h2>
-            <script src="https://utteranc.es/client.js"
-                    repo="splusq/splusq.github.io"
-                    issue-term="title"
-                    theme="github-dark"
-                    crossorigin="anonymous"
-                    async>
-            </script>
+            <section class="comments-section">
+                <h2 class="comments-heading">Comments</h2>
+                <div id="utterances-container"></div>
+                <script>
+                    (function() {
+                        function isDark() {
+                            return document.documentElement.classList.contains('dark') ||
+                                (!document.documentElement.classList.contains('light') &&
+                                 window.matchMedia('(prefers-color-scheme: dark)').matches);
+                        }
+
+                        function utterancesTheme() {
+                            return isDark() ? 'github-dark' : 'github-light';
+                        }
+
+                        // Create and insert the Utterances script
+                        var script = document.createElement('script');
+                        script.src = 'https://utteranc.es/client.js';
+                        script.setAttribute('repo', 'splusq/splusq.github.io');
+                        script.setAttribute('issue-term', 'title');
+                        script.setAttribute('theme', utterancesTheme());
+                        script.setAttribute('crossorigin', 'anonymous');
+                        script.async = true;
+                        document.getElementById('utterances-container').appendChild(script);
+
+                        // Watch for theme toggles and update the Utterances iframe
+                        var observer = new MutationObserver(function(mutations) {
+                            mutations.forEach(function(mutation) {
+                                if (mutation.attributeName === 'class') {
+                                    var iframe = document.querySelector('.utterances-frame');
+                                    if (iframe) {
+                                        iframe.contentWindow.postMessage(
+                                            { type: 'set-theme', theme: utterancesTheme() },
+                                            'https://utteranc.es'
+                                        );
+                                    }
+                                }
+                            });
+                        });
+
+                        observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+                    })();
+                </script>
+            </section>
         </article>
     </main>
 </div>
