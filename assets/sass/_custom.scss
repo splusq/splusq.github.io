@@ -241,6 +241,29 @@ figcaption {
   font-family: var(--font-sans);
 }
 
+// ---- 15b. Navbar monogram ----
+.monogram {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  color: $black;
+  background: rgba(0, 0, 0, 0.06);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  opacity: 0.85;
+  transition: opacity 150ms ease;
+}
+
+.logo:hover .monogram {
+  opacity: 1;
+}
+
 // ---- 16. Post list items ----
 .post-item {
   font-family: var(--font-sans);
@@ -420,6 +443,12 @@ mark,
   .highlight .mb,
   .highlight .mx { color: #d3869b; }
   .highlight .ss { color: #83a598; }
+
+  // Dark monogram
+  .monogram {
+    color: $dark-white;
+    background: rgba(255, 255, 255, 0.08);
+  }
 
   // Dark h2 border
   .page-content {
