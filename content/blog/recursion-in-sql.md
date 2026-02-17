@@ -2,7 +2,7 @@
 title: 'Recursion in SQL'
 date: Sun, 11 Sep 2005 15:21:31 +0000
 draft: false
-tags: ['Uncategorized']
+tags: ['Database', 'Algorithms']
 ---
 
 Oracle database supports a very strange construct called: start with, and connect by. For instance if you have a table which has two columns one that defines the parent of the other column such as:

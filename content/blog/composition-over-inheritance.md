@@ -2,7 +2,7 @@
 title: 'Composition over Inheritance'
 date: Sat, 09 Mar 2013 01:37:44 +0000
 draft: false
-tags: ['Uncategorized']
+tags: ['C#', 'Architecture']
 ---
 
 There are several ways to extend the behavior of a class. One of my preferred approach to extending behaviors is composition, and that is what we are going to talk about today. Let's start with a simple example of inheritance:

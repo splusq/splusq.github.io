@@ -2,7 +2,7 @@
 title: 'JavaScript Performance - Part I'
 date: Sat, 30 Oct 2004 02:34:33 +0000
 draft: false
-tags: ['Uncategorized']
+tags: ['Web Development', 'Performance']
 ---
 
 This is the first in a series of articles I plan to write on improving performance in JavaScript heavy web-applications. More specifically I will discuss some of the ways you can improve on JavaScript based animations, reducing object chains, cross-browser DOM, clever ways of writing/designing objects and so on. 

@@ -2,7 +2,7 @@
 title: 'Uncertaintly Principal and Software Engineering'
 date: Mon, 28 Feb 2005 23:06:14 +0000
 draft: false
-tags: ['Uncategorized']
+tags: ['Architecture']
 ---
 
 [Uncertainty Principal](http://scienceworld.wolfram.com/physics/UncertaintyPrinciple.html) is a principle of quantum mechanics postulated by [Nobel laureate](http://nobelprize.org/physics/laureates/1932/) [Werner Heisenberg](http://en.wikipedia.org/wiki/Werner_Heisenberg) in the 1920s which states that it is not possible to determine both the position and the momentum of a particle at the same instant. The reason he argued, was that the act of "observing" the particle changes its behavior with respect to what is being measured. He was one of the first scientists to bring in probability into the predictable science of physics.

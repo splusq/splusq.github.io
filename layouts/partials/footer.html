@@ -1,0 +1,24 @@
+<footer class="footer">
+    <p class="footer_tagline">Engineering, architecture, and the craft of building software.</p>
+
+    <div class="footer_links">
+        <a href="/">Home</a>
+        <a href="/blog/">Blog</a>
+        <a href="https://github.com/splusq">GitHub</a>
+        <a href="https://www.linkedin.com/in/salmanquazi/">LinkedIn</a>
+    </div>
+
+    <div class="footer_social-icons">
+        {{- partial "socialIcons.html" site.Params.socialIcons -}}
+    </div>
+
+    <small class="footer_copyright">
+        &copy; {{ now.Format "2006" }} {{ .Site.Params.author.name }}.
+    </small>
+</footer>
+
+{{- if .Site.Params.goToTop -}}
+<a href="#" title="{{ T "footer.go_to_top" }}" id="totop">
+    {{ partial "svgs/arrowUp.svg" (dict "height" 48 "width" 48) . }}
+</a>
+{{- end -}}

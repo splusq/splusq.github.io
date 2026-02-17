@@ -2,7 +2,7 @@
 title: 'ValueType Boxing'
 date: Tue, 08 Mar 2005 00:49:21 +0000
 draft: false
-tags: ['Uncategorized']
+tags: ['C#', '.NET']
 ---
 
 In .NET an interesting phehomenon occurs known as "boxing". Let me illustrate the problem and then we will look at the possible solutions:

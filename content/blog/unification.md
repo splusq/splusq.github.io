@@ -2,7 +2,7 @@
 title: 'Unification'
 date: Fri, 02 Apr 2004 18:51:33 +0000
 draft: false
-tags: ['Uncategorized']
+tags: ['Algorithms']
 ---
 
 In PROLOG there is an idea called: unification. It's similar to setting a variable to something but there are certainly several difference (otherwise it would be called assignment). One major difference in unification is pattern matching. For instance if I had the following code segment in PROLOG

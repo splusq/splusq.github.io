@@ -2,7 +2,7 @@
 title: 'Task Timeouts'
 date: Tue, 26 Feb 2013 03:25:30 +0000
 draft: false
-tags: ['Uncategorized']
+tags: ['C#', '.NET']
 ---
 
 When dealing with .NET tasks – we often want to timeout the operation if it does not complete within a certain period of time. For instance, if you make an asynchronous WebRequest call – you may want to timeout this asynchronous operation within 3 seconds if you don’t get a response back. In the past, we had to create Timers to monitor the Task (or the Thread) for completion in the callback of the timer, and then do other crazy gymnastics to make it all play well together. However, the result was a code that was extremely difficult to understand because you had these disparate methods, without any cohesiveness within the code. With .NET 4.5 we can simplify this dramatically.

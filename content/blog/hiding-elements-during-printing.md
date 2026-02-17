@@ -2,7 +2,7 @@
 title: 'Hiding Elements During Printing'
 date: Tue, 20 Apr 2004 02:15:13 +0000
 draft: false
-tags: ['Uncategorized']
+tags: ['Web Development']
 ---
 
 I work in an environment where my collegues surrounding me strongly believe there is no difference between "Microsoft Excel" and the web. One of the arguments I almost always hear: "...why can't you do it? it can be done in excel -- see!".

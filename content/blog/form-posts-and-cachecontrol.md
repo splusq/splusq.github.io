@@ -2,7 +2,7 @@
 title: 'Form posts and CacheControl'
 date: Fri, 25 Feb 2005 23:56:02 +0000
 draft: false
-tags: ['Uncategorized']
+tags: ['Web Development']
 ---
 
 Let's say you have an HTML form which posts to another page, and that page in turn posts to other page(s) (maybe even to itself). Consider what happens in a very common scenario such as this:

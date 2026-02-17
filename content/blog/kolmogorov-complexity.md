@@ -2,7 +2,7 @@
 title: 'Kolmogorov Complexity'
 date: Wed, 28 Apr 2004 16:29:01 +0000
 draft: false
-tags: ['Uncategorized']
+tags: ['Algorithms']
 ---
 
 A computer science/mathematics student learns various ways of measuring complexity of a problem. I feel this is an extremely important field because it allows us to measure the difficulty-level (or complexity of a problem). Without it, it would be like trying to lift a box without knowing how much it weighs.

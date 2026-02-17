@@ -2,7 +2,7 @@
 title: 'Old bugs are harder to catch'
 date: Wed, 20 Apr 2005 03:18:49 +0000
 draft: false
-tags: ['Uncategorized']
+tags: ['General']
 ---
 
 About three years ago I worked on an application that in-part had to blend in with several other applications. Among many features one of them was to automatically generate something known as deadlines. The actual details are far to complicated to explain in details here, so I will use a simpler example.

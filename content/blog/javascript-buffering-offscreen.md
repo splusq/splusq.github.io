@@ -2,7 +2,7 @@
 title: 'JavaScript Buffering - Offscreen'
 date: Tue, 06 Jul 2004 14:39:12 +0000
 draft: false
-tags: ['Uncategorized']
+tags: ['Web Development', 'Performance']
 ---
 
 Just before I go to bed I thought I make an interesting post. The other day I worked on a site for a client; like most of my sites it was very heavy on style sheet (meaning most of the alignments and things were done with style sheet rather than tables, etc.) So what would happen is the page would load without style sheet for a sec. and then the style sheet would be applied. So for a split second the client would have to see the page without the style sheet -- which doesn't look professional.

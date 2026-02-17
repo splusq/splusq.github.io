@@ -2,7 +2,7 @@
 title: 'Solution to Line Tracker'
 date: Sat, 02 Oct 2004 01:17:34 +0000
 draft: false
-tags: ['Uncategorized']
+tags: ['Robotics', 'Algorithms']
 ---
 
 In my [previous post](/blog/line-tracker/) I discussed an algorithm that it is much better than the _general_ line following algorithm that one might think of at first. Last night I implemented the algorithm with NQC with descent results. Here's the solution:

@@ -2,7 +2,7 @@
 title: 'Verifying your site is running?'
 date: Tue, 02 Mar 2004 08:00:00 +0000
 draft: false
-tags: ['Uncategorized']
+tags: ['DevOps', 'Web Development']
 ---
 
 This question often comes up-how do you make sure that your site is running? One solution is to run tools like [WhatsUp Gold](http://www.ipswitch.com/products/whatsup/index.asp) that monitors your IIS service status, SQL service status etc. As long as these services respond as saying they are running, WhatsUp gold is happy. But unfortunately, the fact that these services are running does not mean that your website is functioning to the public. For example if you have a page that depends on an external web service, and for some reason the external web service is down, then your page will not respond and will eventually time out. To the public your site is down. WhatsUp gold is not necessarily going to check for that. I say not necessarily because it is possible to have WhatsUp gold monitor HTTP status, but that creates a strong coupling between WhatsUp gold and generic application development.

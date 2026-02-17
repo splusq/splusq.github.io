@@ -2,7 +2,7 @@
 title: 'Reverse a linked list recursively'
 date: Wed, 23 May 2007 23:26:12 +0000
 draft: false
-tags: ['Uncategorized']
+tags: ['Algorithms']
 ---
 
 A question came up the other day while I was helping a friend of mine about recursively reversing a [singly linked list](http://en.wikipedia.org/wiki/Linked_list). The moment I heard about it I came up with a solution, but turns out the solution requires the function to accept the following signature:

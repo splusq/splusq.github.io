@@ -2,7 +2,7 @@
 title: 'Unique Elements (in XSLT)'
 date: Wed, 05 May 2004 23:58:32 +0000
 draft: false
-tags: ['Uncategorized']
+tags: ['Web Development']
 ---
 
 At work I have this XML document that lists all the employees along with their responsiblities. The general format looks something like this (staff.xml):

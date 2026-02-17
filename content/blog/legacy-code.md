@@ -2,7 +2,7 @@
 title: 'Legacy code'
 date: Thu, 17 May 2007 00:52:11 +0000
 draft: false
-tags: ['Uncategorized']
+tags: ['General']
 ---
 
 I manage a good portion of legacy code, written by so called consultants, and I can't believe how many places I have seen code like this:

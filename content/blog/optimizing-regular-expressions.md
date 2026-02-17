@@ -2,7 +2,7 @@
 title: 'Optimizing Regular Expressions'
 date: Wed, 16 Feb 2005 16:23:02 +0000
 draft: false
-tags: ['Uncategorized']
+tags: ['Algorithms', 'Performance']
 ---
 
 Optimizing regular expressions is an exceptionally complex field. A vast majority of the problems within this field is `NP` or `NP-COMPLETE`. Meaning that their solutions cannot be bound (time/space) under any definite polynomial.

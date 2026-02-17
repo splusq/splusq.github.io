@@ -2,7 +2,7 @@
 title: 'Speaking about events technically'
 date: Fri, 18 Jun 2004 05:31:16 +0000
 draft: false
-tags: ['Uncategorized']
+tags: ['Web Development']
 ---
 
 The other day I was working on something in JavaScript and I thought I would share that with you. Before I can begin though I have to describe the scenario.

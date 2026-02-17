@@ -2,7 +2,7 @@
 title: 'Using SSIS to Access Network Resources'
 date: Sat, 26 May 2007 01:38:29 +0000
 draft: false
-tags: ['Uncategorized']
+tags: ['Database', 'DevOps']
 ---
 
 SSIS (SQL Server Integration Services) is the replacement for DTS in SQL 2005. One of the more deceitful concepts in SSIS is it's security context. When you run a SSIS package form your Visual Studio Environment, it obviously runs under a different security context (most possibly as you--the developer) than it would run if it was run as a scheduled service on the SQL server itself. So let's say you've developed a SSIS package that uses resources within your domain, such as accessing a network drive. How will SSIS access such a resource? As you may know, SSIS packages are executed by the SQL server agent, which by default uses the native \[NT AUTHORITY\\SYSTEM\] account1 to execute your packages. Since this is a local account you cannot use it when you need access to resources external to the SQL server box. In order to access domain level resources, you need to use a domain proxy. A domain proxy allows the SQL agent to proxy on an existing domain account when it executes a package. The first step is to create a credential. Connect to your SQL server, expand security, right click credentials and new credential. Fill-in the dialog box to something like this: [![SQL 2005 - Credentials](/2007/05/domainproxy1.thumbnail.jpg)](/2007/05/domainproxy1.jpg "SQL 2005 - Credentials") The second step is to create a domain proxy, expand SQL Server Agent, right click proxies and click new proxy. Fill in the dialog box something similar to the image shown on the left. Identity is the domain account you are going to use and the password to the domain account.  

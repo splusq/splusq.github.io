@@ -2,7 +2,7 @@
 title: 'Using the MVVM pattern on web applications – Part II'
 date: Sun, 03 Mar 2013 04:23:51 +0000
 draft: false
-tags: ['Uncategorized']
+tags: ['Architecture', 'Web Development', 'C#']
 ---
 
 [Last time we looked at what the MVVM pattern was](/blog/using-the-mvvm-pattern-on-web-applications-part-i/), and how it is used today in XAML-based applications. Today we are going to take a step further and build a mechanism to use the MVVM pattern on traditional web applications. Imagine how powerful it would be if your UI could evolve independently. We are going to build a simple web application that will display top 5 "memory intensive" processes on the server side, and here's our basic architecture: ![MVVM Architecture for Web Applications](/2013/03/mvvm-web-pattern.png) 

@@ -23,6 +23,9 @@ menu:
 params:
   sitename: Salman Quazi
   defaultColor: dark
+  toc: true
+  tocOpen: true
+  goToTop: true
   author:
     avatar: "avatar.jpg"
     intro: Salman Quazi

@@ -2,7 +2,7 @@
 title: 'Recursive Fun (C#)'
 date: Thu, 14 Jul 2005 02:17:47 +0000
 draft: false
-tags: ['Uncategorized']
+tags: ['C#', 'Algorithms']
 ---
 
 Recursive functions can be a lot of fun! I was playing around with a collegue of mine at work about solving recursive problems. And we both worked on a problem of deciding weather a number is the median in a list of numbers. Here's my solution:

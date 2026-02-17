@@ -2,7 +2,7 @@
 title: 'Vacuum Cleaner'
 date: Thu, 18 Nov 2004 00:13:09 +0000
 draft: false
-tags: ['Uncategorized']
+tags: ['Robotics', 'Algorithms']
 ---
 
 For the past few weeks me and a team of three extremely bright computer science graduate students have been working on a vacuum cleaner. The idea is to design a robot that can clean a room _efficiently_; the key term here being efficiently. There is an existing product called: [Roomba](http://www.irobot.com/) which sells for about $300.00 dollars and does the same thing we are trying to do -- but it does it zero intelligence. Roomba works by vacuuming a room **long enough** to gurantee (probabilistically) that at least 90% of the reachable space within a room will be vacuumed. I say reachable because there could be areas in the room which is not reachable and that's not taken into account. Anyway, so in other words to vacuum a 100 sq. ft. room Roomba would spend around 10-15 (regardless of weather it's filled with objects or not -- because it has no way of knowing), where as a human being would easily vacuum the same room in under 2 minutes (83% gain) with perhaps zero unvacuumed areas. The reason Roomba has to vacuum so long is because it has no way of _tracking_ weather it has been to a specific area in the room (that's partially due to the fact that Roomba runs on only 1~2KB of memory). So a way of guranteeing better coverage is to wonder around in complete disarray for longer hoping to reach that "one" un-vacuumed area. Of course, no one really complains because who cares if it's vacuuming longer? It's cleaning better right?

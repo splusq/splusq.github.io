@@ -2,7 +2,7 @@
 title: 'Date Format (using XSLT)'
 date: Fri, 23 Jul 2004 22:31:59 +0000
 draft: false
-tags: ['Uncategorized']
+tags: ['Web Development']
 ---
 
 It was sort of surprising to find out that XSLT does not have any predefined date formatting function. So after spending sometime on my own I came up with this solution:

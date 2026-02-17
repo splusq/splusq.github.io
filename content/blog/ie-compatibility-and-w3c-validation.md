@@ -2,7 +2,7 @@
 title: 'IE Compatibility and W3C Validation'
 date: Mon, 04 Mar 2013 08:17:23 +0000
 draft: false
-tags: ['Uncategorized']
+tags: ['Web Development']
 ---
 
 I've always been a junkie when it comes to [markup validation](http://validator.w3.org/check?uri=http%3A%2F%2Fsalmanq.com%2F&charset=%28detect+automatically%29&doctype=Inline&group=0&user-agent=W3C_Validator%2F1.3). It's important to me that my sites are 100% XHTML/strict compatible. But recently I came across a situation that I thought I simply couldn't get around. In this article I am going to show you how you can add the X-UA-Compatible attribute and at the same time validate your pages through W3C validation. My website had the following tag:

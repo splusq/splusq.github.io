@@ -4,6 +4,11 @@
 // Overrides the theme's empty _custom.scss
 // ==============================================
 
+// ---- 0. Smooth scroll ----
+html {
+  scroll-behavior: smooth;
+}
+
 // ---- 1. CSS Custom Properties ----
 :root {
   --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -132,10 +137,15 @@ strong, b {
     margin-top: 0.25rem;
   }
 
-  // Link transitions
+  // Link hover effects
   a {
     text-underline-offset: 3px;
-    transition: color 150ms ease;
+    text-decoration-color: transparent;
+    transition: color 150ms ease, text-decoration-color 200ms ease;
+
+    &:hover {
+      text-decoration-color: currentColor;
+    }
   }
 }
 
@@ -155,14 +165,23 @@ blockquote {
   font-style: italic;
   font-size: 1.05em;
   border-left: 3px solid $bloquote-border;
-  padding: 0.5rem 1rem;
+  padding: 0.75rem 1.25rem;
   margin-left: 0;
   margin-right: 0;
-  background: rgba(0, 0, 0, 0.03);
-  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.025);
+  border-radius: 6px;
+  position: relative;
+
+  > :first-child {
+    margin-top: 0;
+  }
 
   > :last-child {
     margin-bottom: 0;
+  }
+
+  p {
+    line-height: 1.65;
   }
 }
 
@@ -264,9 +283,31 @@ figcaption {
   opacity: 1;
 }
 
-// ---- 16. Post list items ----
+// ---- 16. Post list items (with hover lift) ----
 .post-item {
   font-family: var(--font-sans);
+  padding: 10px 12px;
+  margin-left: -12px;
+  margin-right: -12px;
+  border-radius: 8px;
+  transition: background 200ms ease, transform 200ms ease, box-shadow 200ms ease;
+
+  &:hover {
+    background: rgba(0, 0, 0, 0.03);
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  }
+}
+
+// ---- 16b. Post images ----
+.page-content {
+  img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    margin: 1rem 0;
+  }
 }
 
 // ---- 17. Reading time & tags ----
@@ -363,11 +404,67 @@ figcaption {
   }
 }
 
+// ---- 19b. Footer ----
+.footer {
+  border-top: 1px solid $light;
+  padding-top: 2rem;
+  margin-top: 4rem;
+  text-align: center;
+
+  &_tagline {
+    font-size: 0.8125rem;
+    color: $gray;
+    margin-bottom: 1rem;
+    font-style: italic;
+  }
+
+  &_links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 1.25rem;
+    font-size: 0.8125rem;
+
+    a {
+      color: $gray;
+      text-decoration: none;
+      transition: color 150ms ease;
+
+      &:hover {
+        color: $text-link-blue;
+      }
+    }
+  }
+}
+
 // ---- 20. Selection color ----
 mark,
 ::selection {
-  background: rgba(0, 100, 255, 0.12);
+  background: rgba(45, 90, 200, 0.18);
   color: inherit;
+}
+
+// ---- 20b. Table of Contents ----
+.toc {
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: rgba(0, 0, 0, 0.02);
+
+  summary {
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+
+  a {
+    color: $text-base-color;
+    text-decoration: none;
+    transition: color 150ms ease;
+
+    &:hover {
+      color: $text-link-blue;
+    }
+  }
 }
 
 // ==============================================
@@ -450,6 +547,33 @@ mark,
     background: rgba(255, 255, 255, 0.08);
   }
 
+  // Dark post card lift
+  .post-item {
+    &:hover {
+      background: rgba(255, 255, 255, 0.04);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    }
+  }
+
+  // Dark post images
+  .page-content img {
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+  }
+
+  // Dark TOC
+  .toc {
+    border-color: rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.03);
+
+    a {
+      color: $dark-text-base-color;
+
+      &:hover {
+        color: $dark-text-link-blue;
+      }
+    }
+  }
+
   // Dark h2 border
   .page-content {
     h2 {
@@ -461,6 +585,23 @@ mark,
   blockquote {
     background: rgba(255, 255, 255, 0.04);
     border-color: $dark-bloquote-border;
+  }
+
+  // Dark footer
+  .footer {
+    border-top-color: $dark-light;
+
+    &_tagline {
+      color: $dark-gray;
+    }
+
+    &_links a {
+      color: $dark-gray;
+
+      &:hover {
+        color: $dark-text-link-blue;
+      }
+    }
   }
 
   // Dark inline code

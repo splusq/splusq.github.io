@@ -2,7 +2,7 @@
 title: 'Improving Wordpress site speed on IIS'
 date: Sun, 24 Mar 2013 19:03:14 +0000
 draft: false
-tags: ['Uncategorized']
+tags: ['Web Development', 'Performance']
 ---
 
 One of the first things I did when I started this blog was to change the way static files are cached by IIS to improve site speed. Static files are things that aren't going to change, things like CSS, JavaScript, images, documents, and so on. With IIS this is actually quite easy to achieve, you can start by making the following change to your web.config:

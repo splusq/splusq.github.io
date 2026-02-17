@@ -2,7 +2,7 @@
 title: 'Bit Operations'
 date: Wed, 10 Mar 2004 23:30:07 +0000
 draft: false
-tags: ['Uncategorized']
+tags: ['Performance', 'Algorithms']
 ---
 
 A friend of mine once asked me what the following code does.

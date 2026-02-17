@@ -2,7 +2,7 @@
 title: 'Roomba: Maintaining Direction Part III'
 date: Sat, 11 Dec 2004 00:56:27 +0000
 draft: false
-tags: ['Uncategorized']
+tags: ['Robotics']
 ---
 
 So far I have discussed the following topics:

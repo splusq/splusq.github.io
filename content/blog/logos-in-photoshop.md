@@ -2,7 +2,7 @@
 title: 'Logos in Photoshop'
 date: Wed, 19 Jan 2005 14:43:44 +0000
 draft: false
-tags: ['Uncategorized']
+tags: ['General']
 ---
 
  [![Macintosh Panther Logo. Click to enlarge](/2005/01/mac-panther.jpg)](/2005/01/mac-panther-big.jpg) 

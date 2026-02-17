@@ -2,7 +2,7 @@
 title: '.NET and Node.JS - Performance Comparison (Updated)'
 date: Tue, 26 Mar 2013 08:57:39 +0000
 draft: false
-tags: ['Uncategorized']
+tags: ['.NET', 'Performance', 'Web Development']
 ---
 
 **Update (3/31/2013 - 11:41 PM PST):** 

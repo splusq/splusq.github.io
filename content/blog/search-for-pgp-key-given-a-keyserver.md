@@ -2,7 +2,7 @@
 title: 'Search for PGP key given a keyserver'
 date: Tue, 20 Jul 2004 17:37:24 +0000
 draft: false
-tags: ['Uncategorized']
+tags: ['Security']
 ---
 
 In Linux just do this:

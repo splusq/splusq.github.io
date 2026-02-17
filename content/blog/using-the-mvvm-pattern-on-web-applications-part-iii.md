@@ -2,7 +2,7 @@
 title: 'Using the MVVM pattern on web applications – Part III'
 date: Wed, 06 Mar 2013 06:39:59 +0000
 draft: false
-tags: ['Uncategorized']
+tags: ['Architecture', 'Web Development']
 ---
 
 We are at the finale of this three part series. [In part I](/blog/using-the-mvvm-pattern-on-web-applications-part-i/) we discussed the MVVM design pattern, [in part II](/blog/using-the-mvvm-pattern-on-web-applications-part-ii/) we looked at the overall architecture and how the server side fits into the picture. In this article we are going to look at the client side of this and close with some final thoughts. The best place to start with the client is the HTML - so here's the part of the HTML that's interesting:

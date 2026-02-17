@@ -2,7 +2,7 @@
 title: 'Building a service execution pipeline'
 date: Mon, 08 Apr 2013 05:19:13 +0000
 draft: false
-tags: ['Uncategorized']
+tags: ['C#', '.NET', 'Architecture']
 ---
 
 Most software built today have a notion of a client and a service. This is even more true with mobile/web applications because you want your client apps to do as little as possible, and your service to do most of the heavy lifting. This allows you to improve your service without requiring constant client updates. Also since you have a single service that serves potentially various native clients (iOS, Android, or Windows Phone), being able to update it independently of your users gives you a clear competitive edge. So today I want to focus on building a service based on this notion of a "pipeline". Most .NET client/service frameworks already have this concept. For instance, Windows Communication Foundation (WCF) has an execution pipeline, and so does ASP.NET. This allows you to extend the behavior of these frameworks at various points during the execution. But that's not really what I want to talk about today. I want to talk about how _you can build_ your services such that you can add/remove functionality using a pipeline-style execution. As we are talking about the implementation of this pipeline I also want to take this opportunity to discuss good software design practices, and it's uses. ![service-execution-pipeline](/2013/04/service-execution-pipeline.png)

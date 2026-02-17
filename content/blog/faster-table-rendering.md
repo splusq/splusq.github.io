@@ -2,7 +2,7 @@
 title: 'Faster table rendering'
 date: Fri, 11 Feb 2005 23:55:26 +0000
 draft: false
-tags: ['Uncategorized']
+tags: ['Web Development', 'Performance']
 ---
 
 Unlike FireFox, Internet Explorer does not display a table until the complete table data has arrived. This can be looked at both positvely and negatively. The positives are, once the table is rendered it is not modified (width, height, positioning) because all the data has already arrived and IE can properly compute the width and height of the cells and rendered it top-down, right-to-left without making any other adjustments to the cells already displayed. This makes things look a bit better, but this approach is definetly quite slow.

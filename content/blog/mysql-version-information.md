@@ -2,7 +2,7 @@
 title: 'MySQL version information'
 date: Thu, 31 Mar 2005 07:32:22 +0000
 draft: false
-tags: ['Uncategorized']
+tags: ['Database']
 ---
 
 You can use this simple command to find the MySQL version you are running:

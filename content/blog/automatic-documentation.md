@@ -2,7 +2,7 @@
 title: 'Automatic Documentation'
 date: Thu, 31 May 2007 19:16:21 +0000
 draft: false
-tags: ['Uncategorized']
+tags: ['C#', 'Tools']
 ---
 
 Generally all programmers are lazy--and specially when it comes to documentation because it takes so much time and doesn't necessarily produce any material benefit. [GhostDoc](http://www.roland-weigelt.de/ghostdoc/)1, designed by Roland Weigelt, is a plugin for Visual Studio 2005 that automates the generation of XML comments. For example if you have the following C#1 function:

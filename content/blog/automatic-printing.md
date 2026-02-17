@@ -2,7 +2,7 @@
 title: 'Automatic Printing'
 date: Tue, 20 Sep 2005 23:42:20 +0000
 draft: false
-tags: ['Uncategorized']
+tags: ['Web Development']
 ---
 
 **Summary:** Learn about automatic printing in a Windows platform using WScript.

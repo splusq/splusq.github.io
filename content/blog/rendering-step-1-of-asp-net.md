@@ -2,7 +2,7 @@
 title: 'Rendering Step 1 of … (ASP.NET)'
 date: Thu, 27 Sep 2007 01:01:29 +0000
 draft: false
-tags: ['Uncategorized']
+tags: ['.NET', 'Web Development']
 ---
 
 The MultiView control, Wizard control or even a custom panel-based control is very useful to collect large sets of data in wizard form; and it's often useful to give visual ques to the user as to which step he/she is in. Something similar to:

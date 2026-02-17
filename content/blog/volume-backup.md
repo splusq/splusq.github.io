@@ -2,7 +2,7 @@
 title: 'Volume Backup'
 date: Fri, 09 Apr 2004 16:23:20 +0000
 draft: false
-tags: ['Uncategorized']
+tags: ['DevOps']
 ---
 
 I am trying to work on a system/method to perform incremental backup over the network (using SAMBA). Here are some of the steps I have taken...

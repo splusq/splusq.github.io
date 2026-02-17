@@ -2,7 +2,7 @@
 title: 'Torus: Smart Array - Part II'
 date: Tue, 30 Nov 2004 03:49:28 +0000
 draft: false
-tags: ['Uncategorized']
+tags: ['Robotics', 'Algorithms']
 ---
 
 [As I was discussing](/blog/vacuum-cleaner/) I am working on an intelligent vacuum cleaner. In this article I will discuss how we did our state management for the surface the robot is vacuuming.

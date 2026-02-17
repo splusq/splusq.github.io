@@ -2,7 +2,7 @@
 title: 'Using the MVVM pattern on web applications – Part I'
 date: Thu, 28 Feb 2013 09:01:15 +0000
 draft: false
-tags: ['Uncategorized']
+tags: ['Architecture', 'Web Development']
 ---
 
 In this series I will be discussing how the MVVM pattern can be used for almost any type of web application. MVVM (a variant on the MVP pattern) - is a really powerful pattern that can be used in UI applications. Traditionally these UI applications has been WPF and Silverlight. In this article I will show you how you can use the same principles to build web applications. With MVVM you have the following three ideas:

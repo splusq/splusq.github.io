@@ -2,7 +2,7 @@
 title: 'Typed ToArray() from ArrayList'
 date: Fri, 09 Sep 2005 07:47:12 +0000
 draft: false
-tags: ['Uncategorized']
+tags: ['C#', '.NET']
 ---
 
 To get a typed Array of type int \[\] from an ArrayList you can do the following:

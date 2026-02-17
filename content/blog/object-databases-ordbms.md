@@ -2,7 +2,7 @@
 title: 'Object Databases (ORDBMS)'
 date: Wed, 10 Nov 2004 19:38:02 +0000
 draft: false
-tags: ['Uncategorized']
+tags: ['Database', 'Architecture']
 ---
 
 ORDBMS - Object Relational, Database Management system. Is an object oriented database management system. The concept at first is a bit suprising since relational database sort of by definition negates the concept of objects. In theory a relational database is a set of relation R; each table, formally known as relations, can be joined (cartesian product) to produce a new relation (which is an improper subset of R1xR2). There are many problems with this scenario. Lets say you want a database that contains sets of points where computers are physically located in a global positioning system. This hypothetical organization contains various departments, a set of departments makes up a local-organization, and a set of local-organization makes up an organization, to make situations worst, each continent can contain several organizations; and there are seven continents. This company is so large they have branches all over the seven continents. The point of this all is to find the minimal net-cost (where cost is distance) for communication between computers. Your product is expected to answers queries of this type:

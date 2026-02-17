@@ -2,7 +2,7 @@
 title: 'Alpha Beta Searching'
 date: Wed, 26 May 2004 04:58:27 +0000
 draft: false
-tags: ['Uncategorized']
+tags: ['Algorithms', 'AI/ML']
 ---
 
 I have a test tonight. I am fairly certain I will get an A; however, there is only one thing that I am unsure about: AlphaBeta searching. So I went online and read couple of books. Here's my understanding (in brief of course): AlphaBeta searching is an optimized searching model based on MinMax searching (or MiniMax search). So to understand AlphaBeta searching we must first understand MinMax searching. MinMax searching can be applied on game trees (if you are not familiar with game trees then please [go here](http://www.google.com/search?hl=en&ie=UTF-8&q=Game+Trees)). The MinMax comes from the fact that the searching algorithm alternates between searching for a maximum value, and a minimum value. For instance, if it's the computers move then the computer searches for a maximum node (when I refer to maximum I am referring to the move-value which is the heuristic value for that move). On the other hand, when it turn for the opponents move the computer searches for a MIN value and so on. AlphaBeta searching improves on the MinMax algorithm with the following assumption. Lets say you know a node K is better than node K' and you can prove that the best possible move can be K then how much better is K than K' is absolutely irrelivant because no matter what value K' is you will end up choosing K because K is the best move. Therefore if K' had a subtree none of that needs to be computed which eventually saves tremendous amount of time.

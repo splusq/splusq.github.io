@@ -2,7 +2,7 @@
 title: 'Outlook’s vCalender using ASP'
 date: Tue, 07 Dec 2004 03:47:28 +0000
 draft: false
-tags: ['Uncategorized']
+tags: ['Web Development']
 ---
 
 As part of a continuing effort to build more functional and user-friendly products I am working on an ASP-based vCalendar concept.

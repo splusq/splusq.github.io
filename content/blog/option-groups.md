@@ -2,7 +2,7 @@
 title: 'Option Groups'
 date: Fri, 25 Feb 2005 01:50:47 +0000
 draft: false
-tags: ['Uncategorized']
+tags: ['Web Development']
 ---
 
 Not many people know about this. In a HTML dropdown (select) there is a option group tag that groups your options together. For instance:

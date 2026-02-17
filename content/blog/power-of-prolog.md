@@ -2,7 +2,7 @@
 title: 'Power of PROLOG'
 date: Wed, 21 Apr 2004 18:01:35 +0000
 draft: false
-tags: ['Uncategorized']
+tags: ['Algorithms']
 ---
 
 Here's yet another example of the power available to you in PROLOG. Let's consider this simultaneous equation:

@@ -2,7 +2,7 @@
 title: 'Constraint Logic Programming'
 date: Wed, 21 Apr 2004 06:07:51 +0000
 draft: false
-tags: ['Uncategorized']
+tags: ['Algorithms']
 ---
 
 PROLOG can is one of many languages that can be used to perform Constraint Logic Programming (CLP). Just like C++ and Visual Basic can be used to program Object Oriented Programs (OOP). Same idea.

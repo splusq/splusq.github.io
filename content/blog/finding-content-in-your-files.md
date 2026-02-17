@@ -2,7 +2,7 @@
 title: 'Finding Content in your files'
 date: Sat, 17 Sep 2005 00:57:23 +0000
 draft: false
-tags: ['Uncategorized']
+tags: ['Tools']
 ---
 
 If you want to search text files in your computer for a specific string you can do this easily using the following code:

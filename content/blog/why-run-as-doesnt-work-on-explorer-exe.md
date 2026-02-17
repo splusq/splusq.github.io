@@ -2,7 +2,7 @@
 title: 'Why run as doesn’t work on explorer.exe?'
 date: Wed, 23 Feb 2005 20:54:39 +0000
 draft: false
-tags: ['Uncategorized']
+tags: ['General']
 ---
 
 You will notice in windows no matter how you want to "Run as" explorer.exe it will not work. Almost all programs you can right-click or hold CTRL and right click to get the run as option but with explorer this doesn't seem work. You cannot even use the command line tool runas /u:administrator to run explorer.

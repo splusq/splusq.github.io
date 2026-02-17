@@ -2,7 +2,7 @@
 title: '5 things you probably didn''t know about .NET WebSockets'
 date: Sat, 13 Apr 2013 23:45:28 +0000
 draft: false
-tags: ['Uncategorized']
+tags: ['.NET', 'Web Development']
 ---
 
  ![WebSockets](/2013/04/websockets.png) As most of you probably already know WebSocket provides full-duplex communication over a single TCP connection. .NET 4.5 added support for WebSockets as part of the BCL. In this article I am going to talk about few of the subtleties that you need to think about.

@@ -2,7 +2,7 @@
 title: 'AccessKey'
 date: Wed, 31 Mar 2004 21:58:23 +0000
 draft: false
-tags: ['Uncategorized']
+tags: ['Web Development']
 ---
 
 Almost all HTML/XHTML tags have an attribute called: accesskey. What this does is allows the programmer to assign key-codes to elements in the page. For instance, if I did this:

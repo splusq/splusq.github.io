@@ -2,7 +2,7 @@
 title: 'Using ASP.NET to authenticate against AD'
 date: Sun, 18 Sep 2005 02:58:44 +0000
 draft: false
-tags: ['Uncategorized']
+tags: ['C#', '.NET', 'Security']
 ---
 
 The company I work for reliies heavily on active-directory to organize, authenticate and integrate. In order to login to the intranet from our site, we currently request the integrated windows authentication box and ask the user to login. For some people this was a little flattering because it didn't really say why the login was taking place -- where are they loging into and so on. So to remedy this issue, I am working on a ASP.NET product that will authenticate against AD. This can be done using DirectoryServices provided within the .NET framework.

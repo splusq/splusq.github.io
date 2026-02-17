@@ -2,7 +2,7 @@
 title: 'JavaScript Performance - Part II'
 date: Tue, 02 Nov 2004 02:58:36 +0000
 draft: false
-tags: ['Uncategorized']
+tags: ['Web Development', 'Performance']
 ---
 
 _As I [discussed last week](/blog/javascript-performance-part-i) setInterval in general gives better performance compared to setTimeout._

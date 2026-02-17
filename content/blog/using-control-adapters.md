@@ -2,7 +2,7 @@
 title: 'Using Control Adapters'
 date: Tue, 15 May 2007 04:55:43 +0000
 draft: false
-tags: ['Uncategorized']
+tags: ['.NET', 'Web Development']
 ---
 
 ASP.NET 2.0 introduced a new way of modifying how ASP.NET renders a control. For example, when you say:
