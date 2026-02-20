@@ -555,9 +555,10 @@ mark,
     }
   }
 
-  // Dark post images
+  // Dark post images – invert white backgrounds, restore hues
   .page-content img {
     box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+    filter: invert(1) hue-rotate(180deg);
   }
 
   // Dark TOC
